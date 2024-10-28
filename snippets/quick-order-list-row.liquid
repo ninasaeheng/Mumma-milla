@@ -27,7 +27,7 @@
             {%- assign img_height = 43 | divided_by: image.aspect_ratio | ceil -%}
             {{
               image
-              | image_url: width: 86
+              | image_url: width: 86, format: 'pjpg'
               | image_tag:
                 loading: 'lazy',
                 fetchpriority: 'low',

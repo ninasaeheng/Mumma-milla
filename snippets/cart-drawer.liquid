@@ -295,7 +295,7 @@ button.drawer__close {
                             <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
                             <img
                               class="cart-item__image"
-                              src="{{ item.image | image_url: width: 300 }}"
+                              src="{{ item.image | image_url: width: 300, format: 'pjpg' }}"
                               alt="{{ item.image.alt | escape }}"
                               loading="lazy"
                               width="150"

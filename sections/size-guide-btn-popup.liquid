@@ -46,7 +46,7 @@
                     {{ block.settings.page.content }}
                     {% endif %}
                     {% if block.settings.chart_image != blank %}
-                    <img src="{{ block.settings.chart_image | image_url: width: 2500 }}">
+                    <img src="{{ block.settings.chart_image | image_url: width: 2500, format: 'pjpg' }}">
                     {% endif %}
                   </div>
                 </div>

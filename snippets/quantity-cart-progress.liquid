@@ -20,14 +20,14 @@
     {% if settings.discount_product_1 != blank %}
     <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
-        <img src="{{ settings.icon_1 | img_url: '100x100' }}">
+        <img src="{{ settings.icon_1 | img_url: '100x100', format: 'pjpg' }}">
       </div>
       <div class="cdi__content">
         <div class="cdi__text">{{ settings.text_1 }}</div>
       </div>
       <div class="cdi__product">
         <div class="cdip_image">
-          <img src="{{ product_one.featured_image | img_url: '150x150' }} ">
+          <img src="{{ product_one.featured_image | img_url: '150x150', format: 'pjpg' }} ">
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
     {% if settings.discount_product_2 != blank  %}
     <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
-        <img src="{{ settings.icon_2 | img_url: '100x100' }}">
+        <img src="{{ settings.icon_2 | img_url: '100x100', format: 'pjpg' }}">
       </div>
       <div class="cdi__content">
         <div class="cdi__text">{{ settings.text_2 }}</div>
@@ -53,14 +53,14 @@
     {% if settings.discount_product_3 != blank  %}
     <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
-        <img src="{{ settings.icon_3 | img_url: '100x100' }}">
+        <img src="{{ settings.icon_3 | img_url: '100x100', format: 'pjpg' }}">
       </div>
       <div class="cdi__content">
         <div class="cdi__text">{{ settings.text_3 }}</div>
       </div>
       <div class="cdi__product">
         <div class="cdip_image">
-          <img src="{{ product_three.featured_image | img_url: '150x150' }} ">
+          <img src="{{ product_three.featured_image | img_url: '150x150', format: 'pjpg' }} ">
         </div>
       </div>
     </div>
@@ -71,14 +71,14 @@
     {% if settings.discount_product_4 != blank  %}
     <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
-        <img src="{{ settings.icon_4 | img_url: '100x100' }}">
+        <img src="{{ settings.icon_4 | img_url: '100x100', format: 'pjpg' }}">
       </div>
       <div class="cdi__content">
         <div class="cdi__text">{{ settings.text_4 }}</div>
       </div>
       <div class="cdi__product">
         <div class="cdip_image">
-          <img src="{{ product_four.featured_image | img_url: '150x150' }} ">
+          <img src="{{ product_four.featured_image | img_url: '150x150', format: 'pjpg' }} ">
         </div>
       </div>
     </div>

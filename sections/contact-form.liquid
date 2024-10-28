@@ -18,7 +18,7 @@
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
   {% if section.settings.image %}
    <div class="left-side-image--body">
-    <img src="{{ section.settings.image | img_url:'master' }}">
+    <img src="{{ section.settings.image | img_url:'master', format: 'pjpg' }}">
    </div>
   {% endif %}
   {% if section.settings.image %}

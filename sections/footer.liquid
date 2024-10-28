@@ -193,7 +193,8 @@
                               loading: 'lazy',
                               widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
                               height: brand_image_height,
-                              width: settings.brand_image_width
+                              width: settings.brand_image_width,
+                              format: 'pjpg'
                           }}
                         </div>
                       {%- endif -%}
@@ -216,8 +217,8 @@
                           style="max-width: min(100%, {{ block.settings.image_width }}px);"
                         >
                           <img
-                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                            src="{{ block.settings.image | image_url: width: 760 }}"
+                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width, format: 'pjpg' }}, {{ block.settings.image | image_url: width: image_size_2x, format: 'pjpg' }} 2x"
+                            src="{{ block.settings.image | image_url: width: 760, format: 'pjpg' }}"
                             alt="{{ block.settings.image.alt | escape }}"
                             loading="lazy"
                             width="{{ block.settings.image.width }}"

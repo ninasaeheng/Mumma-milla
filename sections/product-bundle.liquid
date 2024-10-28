@@ -213,14 +213,14 @@
                         {% if product.metafields.custom.transparent_image != blank %}
                           {{
                             product.metafields.custom.transparent_image
-                            | image_url: width: 1500
+                            | image_url: width: 1500, format: 'pjpg'
                             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
                           }}
                         {% elsif product.featured_media != blank %}
                          
                           {{
                             product.featured_media
-                            | image_url: width: 1500
+                            | image_url: width: 1500, format: 'pjpg'
                             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
                           }}
                         {%- else -%}
@@ -250,14 +250,14 @@
                         {% if product.metafields.custom.transparent_image != blank %}
                           {{
                             product.metafields.custom.transparent_image
-                            | image_url: width: 1500
+                            | image_url: width: 1500, format: 'pjpg'
                             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
                           }}
                         {% elsif product.featured_media != blank %}
                          
                           {{
                             product.featured_media
-                            | image_url: width: 1500
+                            | image_url: width: 1500, format: 'pjpg'
                             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
                           }}
                         {%- else -%}

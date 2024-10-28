@@ -36,7 +36,7 @@
     {%- when 'image' -%}
       {{
         value
-        | image_url: width: 300
+        | image_url: width: 300, format: 'pjpg'
         | image_tag: class: 'visual-display__child visual-display__image', alt: value.alt
       }}
     {%- else -%}
