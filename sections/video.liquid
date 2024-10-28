@@ -38,6 +38,24 @@
   {%- endif %}
 {%- endcapture -%}
 
+{%- liquid
+  # Set video sizes based on device and container
+  assign mobile_video_size = '400x'
+  assign tablet_video_size = '800x'
+  assign desktop_video_size = '1100x'
+  
+  # Set initial video size
+  assign video_size = mobile_video_size
+  
+  # Adjust size based on device and settings
+  if request.device_type == 'tablet'
+    assign video_size = tablet_video_size
+  elsif request.device_type == 'desktop' or section.settings.full_width
+    assign video_size = desktop_video_size
+  endif
+-%}
+
+
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
     <div
@@ -66,8 +84,13 @@
             {%- if poster != null -%}
               {{
                 poster
-                | image_url: width: 3840
-                | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+                | image_url: width: 1200
+                | image_tag: 
+                  loading: 'lazy',
+                  sizes: '(min-width: 1200px) 1200px, 100vw',
+                  widths: '375, 550, 750, 1100, 1200',
+                  class: 'poster-image',
+                  alt: alt
               }}
             {%- else -%}
               {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
@@ -76,7 +99,15 @@
         {%- else -%}
           {{
             section.settings.video
-            | video_tag: image_size: '1100x', loop: section.settings.enable_video_looping, controls: true, playsinline: true, muted: false
+            | video_tag:
+              image_size: video_size,
+              loop: section.settings.enable_video_looping,
+              controls: true,
+              playsinline: true,
+              muted: false,
+              preload: "metadata",
+              loading: "lazy",
+              class: "video-element"
           }}
         {%- endif -%}
       </div>
@@ -96,10 +127,15 @@
       >
         {%- if poster != null -%}
           {{
-            poster
-            | image_url: width: 3840
-            | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
-          }}
+              poster
+              | image_url: width: 1200
+              | image_tag: 
+                loading: 'lazy',
+                sizes: '(min-width: 1200px) 1200px, 100vw',
+                widths: '375, 550, 750, 1100, 1200',
+                class: 'poster-image',
+                alt: alt
+            }}
         {%- else -%}
           {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
         {%- endif -%}
@@ -136,12 +172,15 @@
           {{
             section.settings.video
             | video_tag:
-              image_size: '1100x',
+              image_size: video_size,
               autoplay: true,
               loop: section.settings.enable_video_looping,
               controls: true,
               playsinline: true,
-              muted: false
+              muted: false,
+              preload: "metadata",
+              loading: "lazy",
+              class: "video-element"
           }}
         {%- endif -%}
       </template>

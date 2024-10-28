@@ -18,7 +18,7 @@
     </span> -->
     {% assign product_one = settings.discount_product_1 %}
     {% if settings.discount_product_1 != blank %}
-    <div class="cart_disocunt__item cart_disocunt__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
+    <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
         <img src="{{ settings.icon_1 | img_url: '100x100' }}">
       </div>
@@ -34,7 +34,7 @@
     {% endif %}
     {% assign product_two = settings.discount_product_2 %}   
     {% if settings.discount_product_2 != blank  %}
-    <div class="cart_disocunt__item cart_disocunt__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
+    <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
         <img src="{{ settings.icon_2 | img_url: '100x100' }}">
       </div>
@@ -51,7 +51,7 @@
 {% endif %}    
     {% assign product_three = settings.discount_product_3 %}  
     {% if settings.discount_product_3 != blank  %}
-    <div class="cart_disocunt__item cart_disocunt__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
+    <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
         <img src="{{ settings.icon_3 | img_url: '100x100' }}">
       </div>
@@ -69,7 +69,7 @@
 
     {% assign product_four = settings.discount_product_4 %}
     {% if settings.discount_product_4 != blank  %}
-    <div class="cart_disocunt__item cart_disocunt__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
+    <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
       <div class="cdi__image">
         <img src="{{ settings.icon_4 | img_url: '100x100' }}">
       </div>
@@ -151,7 +151,7 @@
       height: 100%;
       background-color: {{settings.cart_discount_bar_fillcolor}};
     }
-.cart_disocunt__item {
+.cart_discount__item {
   position: absolute;
   top: -18px;
   display: flex;
@@ -159,19 +159,19 @@
   justify-content: center;
   align-items: center;
 }
-.cart_disocunt__item-one {
+.cart_discount__item-one {
     left: calc({{ discount_one }}% - 30px);
     left: 30%;
 }
-.cart_disocunt__item-two {
+.cart_discount__item-two {
   left: calc({{ discount_two }}% - 30px);
   left: 65%;
 }
-.cart_disocunt__item-three {
+.cart_discount__item-three {
   left: calc({{ discount_three }}% - 30px);
   left: 54%;
 }
-.cart_disocunt__item-four {
+.cart_discount__item-four {
   left: calc({{ discount_four }}% - 30px);
   left: 75%;
 }
@@ -279,7 +279,7 @@
      var items = data.items;
 
       
-    const discountItems = document.querySelectorAll('.cart_disocunt__item');
+    const discountItems = document.querySelectorAll('.cart_discount__item');
       if (discountItems.length > 0) {
         discountItems.forEach(discount_item => {
           let price = parseFloat(discount_item.getAttribute('data-price'));
@@ -291,7 +291,7 @@
   
               if (varaint_id == id) {
                 alreadyExist = true;
-                $('.cart_disocunt__item[data-id="'+id+'"]').addClass("active_discount");
+                $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
               }
 
             });
@@ -337,7 +337,7 @@
                 const data = await response.json();
                 if (data.items) {
                   // Handle success
-                  $('.cart_disocunt__item[data-id="'+id+'"]').addClass("active_discount");
+                  $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
                 } else if (data.status === 422) {
                   alert(data.message);
                 }
@@ -355,7 +355,7 @@
                     },
                     success: (data) => {
                       resolve(data);
-                      $('.cart_disocunt__item[data-id="'+id+'"]').removeClass("active_discount");
+                      $('.cart_discount__item[data-id="'+id+'"]').removeClass("active_discount");
                     },
                     error: (xhr, status, error) => {
                       console.error(error);
@@ -386,7 +386,7 @@
                 .finally(() => {
                   // alert("All items have been added to the cart.");
                   laodingBar.classList.add('hidden');
-                  var discount_items = $('.cart_disocunt__item:not(.active_discount)');
+                  var discount_items = $('.cart_discount__item:not(.active_discount)');
                   fetch('/cart.js')
                   .then(response => response.json())
                   .then(data => {

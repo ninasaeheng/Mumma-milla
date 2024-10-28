@@ -450,6 +450,16 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.body_scale.label",
         "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Custom Fonts"
+      },
+      {
+        "type": "checkbox",
+        "id": "custom_fonts_enabled",
+        "label": "Enable custom fonts",
+        "default": true
       }
     ]
   },
