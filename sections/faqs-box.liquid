@@ -1,0 +1,175 @@
+<div class="faq-body-row">
+ <div class="page-width">
+  <div class="faq-body-inner-row">
+   {% if section.settings.heading != '' %}
+     <div class="faq-body-heading-box">
+      <h3>{{ section.settings.heading }}</h3>
+     </div>
+   {% endif %}
+   {% for block in section.blocks %}
+    {% if block.settings.question != blank %}
+      <div class="faq-body-column-box {% if forloop.first %}first--child-here{% endif %}">
+       <div class="faq-body-column-box-question">
+        <h2>{{ block.settings.question }}</h2>
+        <div class="faq-icon-parent-body">
+          <span class="faq-body-column-icon plus-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+          </span>
+          <span class="faq-body-column-icon minus-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+          </span>
+        </div>
+       </div>
+       {% if block.settings.answer != '' %}
+         <div class="faq-body-column-box-answer">
+          {{ block.settings.answer }}
+         </div>
+       {% endif %}
+      </div>
+    {% endif %}
+   {% endfor %}
+  </div>
+ </div>
+</div>
+{% schema %}
+  {
+    "name": "FAQs box",
+    "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        }
+
+    ],
+    "blocks":[
+      {
+      "type" : "text",
+      "name" : "FAQ",
+      "settings" : [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "presets" : [
+      {
+        "name" : "FAQs box"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+.faq-body-row {
+    width: 100%;
+    padding: 30px 0;
+}
+.faq-body-inner-row, .faq-body-column-box  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.faq-body-column-box  {
+    align-items: flex-start;
+}
+.faq-body-inner-row {
+    max-width: 1000px;
+    margin: auto;
+}
+.faq-body-heading-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.faq-body-column-box-question, .faq-body-column-box-answer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faq-body-heading-box h3 {
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 30px;
+}  
+.faq-body-column-box-question h2 {
+    margin: 0;
+    font-size: 18px;
+    color: black;
+}
+.faq-body-column-box {
+    border-bottom: 1px solid #80808063;
+}
+.faq-body-column-box-answer {
+    padding: 20px 5px;
+}
+.faq-body-column-box-answer p {
+    margin: 0;
+    font-size: 14px;
+}
+.faq-body-column-box-question {
+    padding: 20px 10px 20px 0px;
+    cursor: pointer;
+}
+.faq-body-column-box-answer {
+    display: none;
+}
+.first--child-here {
+    border-top: 1px solid #80808063;
+}
+.faq-icon-parent-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.faq-body-column-icon svg {
+    width: 10px;
+}
+.faq-body-column-icon.minus-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.faq-box-active .plus-icon {
+    opacity: 0;
+}
+.faq-body-column-icon.plus-icon {
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+  .faq-body-column-box-question h2 {
+    font-size: 14px;
+  }
+  .faq-body-column-box-answer {
+    padding: 10px 0px;
+  }
+}
+</style>
+
+<script>
+$(document).on("click",".faq-body-column-box-question",function() {
+  if($(this).parent().hasClass('faq-box-active')){
+    $(this).parent().removeClass('faq-box-active');
+    $(this).parent().find('.faq-body-column-box-answer').slideUp();
+  }else{
+    $('.faq-body-column-box').removeClass('faq-box-active');
+    $('.faq-body-column-box').find('.faq-body-column-box-answer').slideUp();
+    
+    $(this).parent().addClass('faq-box-active');
+    $(this).parent().find('.faq-body-column-box-answer').slideDown();
+  }
+});
+</script>

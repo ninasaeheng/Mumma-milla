@@ -1,0 +1,186 @@
+<div class="custom-product-form">
+  <div id="size-select" >
+    {%- for option in card_product.options_with_values -%}
+      <div class="size-select-inner main-{{ option.name }}">
+       <div class="option__title">{{ option.name }}:</div> 
+        <div class="field_set">
+        {%- for value in option.values -%}
+        <div class="option__selector" {% if value == 'BLACK' %}style='background:#000;' {% endif %} {% if value == 'NUDE' %}style='background:#E7C3B1;' {% endif %}>
+           <input type="radio" class="{{ option.name }}--{{ value }}" name="{{ card_product.id }}--{{ option.name }}" value="{{ value }}">
+            <label for="html">{{ value }}</label>
+        </div>
+        {% endfor %}
+       </div>
+      </div>
+    {% endfor %}
+  </div>
+  <select style="height:0;opacity:0;">
+    {%- for variant in card_product.variants -%} 
+      <option value='{{ variant.id }}'>{{ variant.title }}</option>
+    {% endfor %}
+  </select>
+  <script type="application/json">
+    {{ card_product.variants  | json }}
+  </script>
+  <product-form data-section-id="{{ section.id }}">
+      {%- form 'product',
+        card_product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ card_product.selected_or_first_available_variant.id }}"
+          class="product-variant-id"
+          {% if card_product.selected_or_first_available_variant.available == false %}
+            disabled
+          {% endif %}
+        >
+        <button
+          id="{{ product_form_id }}-submit"
+          type="submit"
+          name="add"
+          class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+          aria-haspopup="dialog"
+          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+          aria-live="polite"
+          data-sold-out-message="true"
+          {% if card_product.selected_or_first_available_variant.available == false %}
+            disabled
+          {% endif %}
+        >
+        <span>
+          {%- if card_product.selected_or_first_available_variant.available -%}
+            Add to Bag
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </span>
+        <span class="sold-out-message hidden">
+          {{ 'products.product.sold_out' | t }}
+        </span>
+        {%- if horizontal_quick_add -%}
+          <span class="icon-wrap">{% render 'icon-plus' %}</span>
+        {%- endif -%}
+        {%- render 'loading-spinner' -%}
+      </button>
+    {%- endform -%}
+  </product-form>
+</div>
+
+<style>
+.field_set, .size-select-inner {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+  .field_set input {
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    position:absolute;
+    z-index: 99999;
+    margin:0;
+  }
+
+  .field_set label {
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-Size .field_set input,
+  .main-Size .field_set label{
+    width: fit-content;
+    height: fit-content;
+    line-height: 1;
+    padding-bottom: 3px;
+    font-size: 11px;
+  }
+
+  .main-Size .field_set .option__selector {
+    margin-right: 10px;
+    height:fit-content;
+    line-height: 1;
+  }
+  
+  .option__selector {
+    position: relative;
+  }
+  
+  .option__selector:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid;
+    transition: width .1s cubic-bezier(.645,.045,.355,1);
+  }
+
+  .option__selector:hover:after {
+    width: 100%;
+  }
+
+  .field_set input[type="radio"]:checked + label{
+    border-bottom: 1px solid;
+  }
+
+  .main-Colour .option__selector {
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .main-Colour .field_set input[type="radio"]:checked + label:after {
+    position:relative;
+  }
+  
+  .main-Colour .field_set input[type="radio"]:checked + label:after {
+    content: '';
+    display: block;
+    border: 1px solid #000;
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .main-Colour .field_set {
+    font-size: 0;
+  }
+
+  .main-Colour .field_set input[type="radio"]:checked + label {
+    border-bottom: none;
+  }
+
+  .main-Colour .option__selector:hover:after {
+    width: 0;
+  }
+
+  .option__title {
+    font-size: 14px;
+    line-height: 1;
+    margin-right: 40px;
+  }
+
+  .size-select-inner {
+    margin-top: 20px;
+  }
+
+
+
+
+
+
+</style>
+
+              

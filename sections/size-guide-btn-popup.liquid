@@ -1,0 +1,331 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: calc({{ section.settings.padding_top }}px * 0.75);
+    padding-bottom: calc({{ section.settings.padding_bottom }}px  * 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.blocks.size > 0 %}
+  <div class="color-{{ section.settings.color_scheme }} gradient size-guide-btn-sec">
+    <div class="section-{{ section.id }}-padding">
+      <div class="page-width">
+        <h2 class='guide-top-heading'>{{ section.settings.size_guide_heading }}</h2>
+        <div class="size-guide-flex">
+          {% for block in section.blocks %}
+            {% if block.settings.btn_text != '' %}
+              <div class="size-btn" data-id="{{ block.settings.btn_text | remove: " " }}">{{ block.settings.btn_text }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="size-guide-flex-popup">
+          {% for block in section.blocks %}
+         
+              <div class="size-popup_box" data-id="{{ block.settings.btn_text | remove: " " }}">
+                <div class="size-popup-layout"></div>
+                <div class="size-popup">
+                  <div class="size-popup-header">
+                    <button class="size-popup-modal-close">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/></svg>
+                    </button>
+                    <h2 class="size-popup--title-header">{{ block.settings.btn_text }}</h2>
+                    {% if block.settings.paragraph != '' %}
+                      <div class="size-guide-p-wrapper">
+          				{{ block.settings.paragraph }}	
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="size-popup-body">
+                      {% if block.settings.page.content != blank %}
+                    {{ block.settings.page.content }}
+                    {% endif %}
+                    {% if block.settings.chart_image != blank %}
+                    <img src="{{ block.settings.chart_image | image_url: width: 2500 }}">
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+          
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Size Guide Buttons",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+      "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Size",
+       "type": "size",
+       "settings": [
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text"
+          },
+          {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+          },
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Page"
+          },
+         {
+            "type": "image_picker",
+            "id": "chart_image",
+            "label": "Size Chart Image"
+          }
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "name": "Size Guide Buttons"
+    }
+  ]
+}
+{% endschema %}
+
+
+<style>
+.size-popup-layout {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: #00000069;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.size-popup_box-active .size-popup-layout {
+    opacity: 1;
+    visibility: inherit;
+}
+.size-popup {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 80px);
+    z-index: 5;
+    max-width: 1200px;
+    padding: 10px 30px 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    background-color: white;
+    margin-top: 50px;
+    opacity: 0;
+    visibility: hidden;
+}
+.size-popup-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+.size-popup_box-active .size-popup {
+    opacity: 1;
+    visibility: inherit;
+}
+.size-popup-modal-close svg {
+    width: 100%;
+    height: auto;
+}
+.size-popup-modal-close {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+.size-popup::-webkit-scrollbar {
+    display: none;
+}
+.size-popup--title-header {
+    margin: 0;
+    padding: 2.2rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: calc(.87671vw + 18.71233px);
+}
+.size-guide-p-wrapper p {
+    margin: 0;
+    font-size: 15px;
+}
+.size-guide-p-wrapper {
+    text-align: center;
+    width: 100%;
+    max-width: 430px;
+    margin-bottom: 30px;
+}
+.size-popup-body {
+    width: 100%;
+}
+
+.size-popup-body img {
+  width: 100%;
+} 
+  
+.size-popup-body table {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.size-popup-body table:not([class]) td, .size-popup-body table:not([class]) th {
+    color: #5a534f;
+    text-align: center;
+    white-space: nowrap;
+    padding: 20px 10px;
+    line-height: 16px;
+    font-weight: 400;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #d8d8d8;
+}
+.size-popup-body table tr:first-child td, .size-popup-body table tr td:first-child, .highlighted, .size-popup-body table tr:hover {
+    font-weight: 400;
+    background-color: #f7f5ec;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .size-popup-body {
+    overflow: auto;
+    padding-right: 20px;
+  }
+  .size-popup {
+    padding: 10px 0px 10px 20px;
+    margin-top: 10px;
+    height: calc(100% - 20px);
+  }
+  .size-popup-header {
+    padding-right: 20px;
+  }
+  .size-popup-modal-close {
+    right: 20px;
+  }
+  .size-popup-body table tr td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+  .size-popup-body table {
+    min-width: 620px;
+    border: 1px solid rgba(var(--color-foreground),.2);
+    box-shadow: unset;
+  }
+}
+</style>
+
+
+<script>
+$('.size-popup-body table td').hover(
+    function(event) {
+      var td = event.target.parentElement.querySelectorAll('td');
+      var position = '';
+      
+      for (let i = 0; i < td.length; i++) {
+        if(event.target == td[i]){
+          position = i+1;
+        }
+      }
+      
+      $('.size-popup_box-active table tr td:nth-child('+position+')').addClass("highlighted");
+    },
+    function(event) {
+      var td = event.target.parentElement.querySelectorAll('td');
+      var position = '';
+      
+      for (let i = 0; i < td.length; i++) {
+        if(event.target == td[i]){
+          position = i+1;
+        }
+      }
+      
+      $('.size-popup_box-active table tr td:nth-child('+position+')').removeClass("highlighted");
+    }
+);
+
+$(document).on("click",".size-btn",function() {
+  var value = $(this).data('id');
+  
+  $('.size-popup_box[data-id="'+value+'"]').addClass('size-popup_box-active');
+});
+
+$(document).on("click",".size-popup-modal-close, .size-popup-layout",function() {
+  $(this).parents('.size-popup_box').removeClass('size-popup_box-active');
+});
+  
+</script>

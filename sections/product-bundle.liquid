@@ -1,0 +1,326 @@
+<div class="product__bundle_section section--{{ section.id }}">
+  <div class="pb__main page-width">
+    <div class="pb__content">
+      <div class="pb__sibar">
+        <!-- {% if section.settings.title != blank or section.settings.sub_heading != blank %} -->
+        <!-- {% endif %} -->
+        <div class="pb__header">
+          <div class="pb_tiitle">
+            <h2 class="heading h2">{{ section.settings.title }}</h2>
+          </div>
+          <div class="pb_subheading">
+            <div class="sub_heading">{{ section.settings.sub_heading }}</div>
+          </div>
+          <div class="pb__sizing">
+            <div class="pb_sizing_title">CHOOSE YOUR SIZING</div>
+            <div class="pb_sizing_countries">
+              <div class="pb_sizing_tiem">US</div>
+              <div class="pb_sizing_tiem">AU</div>
+              <div class="pb_sizing_tiem">EU</div>
+            </div>
+          </div>
+        </div>
+        <!-- ....... start pb top detail.......... -->
+        <div class="pb_top_detail">
+          <div class="pb_top_detail__main">
+            {% assign total_price = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'top_product' %}
+                {% for product in block.settings.product_list %}
+                  {% assign card_product = product %}
+                  {% if forloop.index == 1 %}
+                    {% assign total_price = total_price
+                      | plus: card_product.selected_or_first_available_variant.price
+                    %}
+                  {% endif %}
+                  <div
+                    class="pb__td_item {% if forloop.index > 1 %} hidden {% else %} selected {% endif %}"
+                    data-id="product-{{ card_product.id }}"
+                    v-id="{{ card_product.selected_or_first_available_variant.id }}"
+                  >
+                    <div class="pd_price" data-price="{{ card_product.selected_or_first_available_variant.price }}">
+                      <div class="pd_tag">Top</div>
+                      <div class="price">{{ card_product.selected_or_first_available_variant.price | money }}</div>
+                    </div>
+                    <div class="title">{{ card_product.title }}</div>
+                    <div class="product__options" product__options>
+                      {%- for option in card_product.options_with_values -%}
+                        <div class="bundle_options  {{ option.name}}">
+                          <div class="option__title">{{ option.name }}:</div>
+                          <div class="field_set">
+                            {%- for value in option.values -%}
+                              <div class="option__selector">
+                                <input
+                                  type="radio"
+                                  id="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  class="{{ option.name }}--{{ value }}"
+                                  name="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  value="{{ value }}"
+                                >
+                                <label
+                                  for="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  {% if value == 'BLACK' %}
+                                    style="background:#000; color:#000"
+                                  {% endif %}
+                                  {% if value == 'NUDE' %}
+                                    style="background:#E7C3B1;color:#E7C3B1"
+                                  {% endif %}
+                                >
+                                  {{- value -}}
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                    <script type="application/json">
+                      {{ card_product.variants  | json }}
+                    </script>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <!-- ... end pb top deatil..... -->
+
+        <div class="pb_bottom_detail">
+          <div class="pb_bottom_detail__main">
+            {% assign form_product = '' %}
+            {% for block in section.blocks %}
+              {% if block.type == 'bottom_product' %}
+                {% for product in block.settings.product_list %}
+                  {% assign card_product = product %}
+
+                  {% if forloop.index == 1 %}
+                    {% assign total_price = total_price
+                      | plus: card_product.selected_or_first_available_variant.price
+                    %}
+                    {% assign form_product = card_product %}
+                  {% endif %}
+                  <div
+                    class="pb__td_item {% if forloop.index > 1 %} hidden {% else %} selected {% endif %}"
+                    data-id="product-{{ card_product.id }}"
+                    v-id="{{ card_product.selected_or_first_available_variant.id }}"
+                  >
+                    <div class="pd_price" data-price="{{ card_product.selected_or_first_available_variant.price }}">
+                      <div class="pd_tag">Bottom</div>
+                      <div class="price">{{ card_product.selected_or_first_available_variant.price | money }}</div>
+                    </div>
+                    <div class="title">{{ card_product.title }}</div>
+                    <div class="product__options" product__options>
+                      {%- for option in card_product.options_with_values -%}
+                        <div class="bundle_options {{ option.name}}">
+                          <div class="option__title {{ option.name}}">{{ option.name }}:</div>
+                          <div class="field_set">
+                            {%- for value in option.values -%}
+                              <div class="option__selector">
+                                <input
+                                  type="radio"
+                                  id="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  class="{{ option.name }}--{{ value }}"
+                                  name="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  value="{{ value }}"
+                                >
+                                <label
+                                  for="{{ block.id }}--{{ product.id }}--{{ option.name }}"
+                                  {% if value == 'BLACK' %}
+                                    style="background:#000; color:#000"
+                                  {% endif %}
+                                  {% if value == 'NUDE' %}
+                                    style="background:#E7C3B1;color:#E7C3B1"
+                                  {% endif %}
+                                >
+                                  {{- value -}}
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                    <script type="application/json">
+                      {{ card_product.variants  | json }}
+                    </script>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <!-- ... end pb bottom deatil..... -->
+        <!-- .........product form ........ -->
+        <div class="total_price">
+          <div class="tp_title">Total:</div>
+          <div class="tp_ptice">{{ total_price | money }}</div>
+        </div>
+        <product-form data-section-id="{{ section.id }}">
+          {%- form 'product',
+            form_product,
+            id: section.id,
+            class: 'form',
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form'
+          -%}
+            <input
+              type="hidden"
+              name="id"
+              value="43001808093421"
+              class="product-variant-id"
+            >
+            <button
+              id="{{ section.id }}-submit"
+              type="submit"
+              name="add"
+              class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+              aria-haspopup="dialog"
+              aria-labelledby="{{ section.id}}-submit title-{{ section_id }}-{{ section.id }}"
+              aria-live="polite"
+              data-sold-out-message="true"
+            >
+              <span>
+                {{ 'products.product.add_to_cart' | t }}
+              </span>
+              <span class="sold-out-message hidden">
+                {{ 'products.product.sold_out' | t }}
+              </span>
+              {%- if horizontal_quick_add -%}
+                <span class="icon-wrap">{% render 'icon-plus' %}</span>
+              {%- endif -%}
+              {%- render 'loading-spinner' -%}
+            </button>
+          {%- endform -%}
+        </product-form>
+
+        <!-- .........End product form ........ -->
+      </div>
+      <div class="pb_products">
+        <div class="pb_products_main">
+          <!-- --------- top product ........... -->
+          <div class="pb_top_products">
+            <div class="pb__product_list product__slider">
+              {% for block in section.blocks %}
+                {% if block.type == 'top_product' %}
+                  {% for product in block.settings.product_list %}
+                    <div class="pb__product" data-id="product-{{ product.id }}">
+                      <div class="pb__image">
+                         {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                          {%- capture sizes -%}
+                            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)   
+                          {%- endcapture -%}
+                        {% if product.metafields.custom.transparent_image != blank %}
+                          {{
+                            product.metafields.custom.transparent_image
+                            | image_url: width: 1500
+                            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                          }}
+                        {% elsif product.featured_media != blank %}
+                         
+                          {{
+                            product.featured_media
+                            | image_url: width: 1500
+                            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                          }}
+                        {%- else -%}
+                          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <!-- ........ bottomporducts --------- -->
+          <div class="pb_bottom_products">
+            <div class="pb__product_list product__slider">
+              {% for block in section.blocks %}
+                {% if block.type == 'bottom_product' %}
+                  {% for product in block.settings.product_list %}
+                    <div class="pb__product" data-id="product-{{ product.id }}">
+                      <div class="pb__image">
+                        <div class='top-text'></div>
+                         {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                          {%- capture sizes -%}
+                            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)   
+                          {%- endcapture -%}
+                        {% if product.metafields.custom.transparent_image != blank %}
+                          {{
+                            product.metafields.custom.transparent_image
+                            | image_url: width: 1500
+                            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                          }}
+                        {% elsif product.featured_media != blank %}
+                         
+                          {{
+                            product.featured_media
+                            | image_url: width: 1500
+                            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                          }}
+                        {%- else -%}
+                          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <!-- -----------end bottom products ------------ -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "product bundle",
+  "settings": [
+    {
+      "type":"text",
+      "id":"title",
+      "label":"add title"
+    },
+    {
+      "type":"text",
+      "id":"sub_heading",
+      "label":"Add Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top_product",
+      "name": "Top Products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "Products"
+        }
+      ]
+    },
+    {
+      "type": "bottom_product",
+      "name": "Bottom Products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "Products"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Bundle"
+    }
+  ]
+}
+{% endschema %}

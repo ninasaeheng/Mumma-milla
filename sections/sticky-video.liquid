@@ -1,0 +1,218 @@
+<!--sticky-video-->
+<style>
+.sticky-video {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 180px; /* Initial width */
+    height: 280px; /* Initial height */
+    z-index: 1000;
+    transition: width 0.3s ease, height 0.3s ease; /* Transition for size change */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.sticky-video .video-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure video does not overflow */
+}
+
+.sticky-video .video-item video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sticky-video .play-button {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    padding: 20px;
+    background: #000000a8;
+    border-radius: 40px;
+    bottom: 30px;
+    opacity: 0; /* Hidden by default */
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    transition: opacity 0.3s ease;
+}
+
+.sticky-video .play-button.play:after {
+    margin-left: -6px;
+}
+
+.play-button:not(.play):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left: 12px solid #fff;
+    margin-top: -13px;
+    margin-left: -4px;
+}
+
+.sticky-video .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #000000a8;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sticky-video.expanded {
+    width: 360px; /* Expanded width */
+    height: 560px; /* Expanded height */
+}
+
+@media screen and (max-width: 600px) {
+    .sticky-video {
+        width: 180px; /* Initial width */
+        height: 280px; /* Initial height */
+    }
+
+    .sticky-video.expanded {
+        width: 200px; /* Initial width */
+        height: 300px; /* Initial height */
+    }
+  .play-button:not(.play):after {
+    border: 8px solid transparent;
+    border-left: 12px solid #fff;
+    margin-top: -8px;
+    margin-left: -4px;
+}
+}
+
+
+
+ 
+</style>
+   <div class="sticky-video">
+        <div class='video-item'>
+          <video class="" loop="" preload="metadata" playsinline= 'true'>
+            <source src="{{ section.settings.sec_video_url }}" type="video/mp4">
+          </video>
+          <div class="play-button"> </div>
+        </div>
+	</div>  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var videoContainers = document.querySelectorAll(".sticky-video");
+
+    videoContainers.forEach(videoContainer => {
+      var playButton = videoContainer.querySelector('.play-button');
+      var closeButton = document.createElement('div');
+      closeButton.className = 'close-button';
+      closeButton.innerText = '×';
+      videoContainer.querySelector('.video-item').appendChild(closeButton);
+      
+      var video = videoContainer.querySelector('video');
+      video.muted = true; // Mute video by default
+      video.play(); // Start playing video on load
+
+      var isExpanded = false; // Track if video has been expanded
+
+      videoContainer.addEventListener('click', function(event) {
+        // Handle expand/collapse
+        if (!isExpanded) {
+          videoContainer.classList.add('expanded');
+          video.muted = false; // Enable sound when expanded
+          isExpanded = true;
+          playButton.style.opacity = video.paused ? 1 : 0; // Show play button if video is paused
+        } else {
+          // Pause the video if it's expanded and clicked
+          if (video.paused) {
+            video.play();
+            playButton.classList.add('play');
+            playButton.style.opacity = 0; // Hide play button when playing
+          } else {
+            video.pause();
+            playButton.classList.remove('play');
+            playButton.style.opacity = 1; // Show play button when paused
+          }
+        }
+        event.stopPropagation(); // Prevent click event from bubbling up
+      });
+      
+      // Handle play/pause button click
+      playButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent click event from bubbling up to videoContainer
+        if (video.paused) {
+          video.play();
+          this.classList.add('play');
+          this.style.opacity = 0; // Hide play button when playing
+        } else {
+          video.pause();
+          this.classList.remove('play');
+          this.style.opacity = 1; // Show play button when paused
+        }
+      });
+      
+      // Handle close button click
+      closeButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent click event from bubbling up to videoContainer
+        video.pause();
+        videoContainer.style.display = 'none';
+      });
+      
+      // Ensure play button visibility matches video state
+      video.addEventListener('play', function() {
+        if (isExpanded) {
+          playButton.classList.add('play');
+          playButton.style.opacity = 0; // Hide play button when playing
+        }
+      });
+
+      video.addEventListener('pause', function() {
+        if (isExpanded) {
+          playButton.classList.remove('play');
+          playButton.style.opacity = 1; // Show play button when paused
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Sticky Video",
+    "settings": [
+      {
+        "type": "url",
+        "id": "sec_video_url",
+        "info": "Upload video in shopify content and paste link here.",
+        "label": "Video Link"
+      }
+    ],
+      "presets": [
+    {
+      "name": "Sticky Video",
+      "category": "Custom"
+    }
+  ]
+  }
+{% endschema %}

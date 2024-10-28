@@ -1,0 +1,225 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .custom-customer-review {
+    background-color: {{ section.settings.section_background }}
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+    {% if section.settings.customer_review_heading  %} 
+      <div class="cutomer-heading">{{ section.settings.customer_review_heading }}</div>
+    {% endif %}
+    <div class="customer-review-main">
+      {% for block in section.blocks %}
+        <div class="item-review">
+          <div class="review-comment">{{ block.settings.review_comment }}</div>
+          <div class="review-author">{{ block.settings.review_author }}</div>
+          <div class="review-start">
+            <ul>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Capa_1" viewBox="0 0 53.867 53.867" xml:space="preserve">
+                  <polygon style="fill:#000;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798   10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+                </svg>
+              </li>
+               <li>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Capa_1" viewBox="0 0 53.867 53.867" xml:space="preserve">
+                  <polygon style="fill:#000;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798   10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+                </svg>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Capa_1" viewBox="0 0 53.867 53.867" xml:space="preserve">
+                  <polygon style="fill:#000;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798   10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+                </svg>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Capa_1" viewBox="0 0 53.867 53.867" xml:space="preserve">
+                  <polygon style="fill:#000;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798   10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+                </svg>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Capa_1" viewBox="0 0 53.867 53.867" xml:space="preserve">
+                  <polygon style="fill:#000;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798   10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "/>
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .customer-review-main {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .customer-review-main .slick-arrow {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9;
+  }
+  
+  .customer-review-main .slick-slider__next.slick-arrow {
+    right: 0;
+  }
+
+  .customer-review-main .slick-slider__next.slick-arrow svg {
+    transform: rotate(-90deg);
+  }
+
+  .customer-review-main .slick-slider__prev.slick-arrow svg {
+    transform: rotate(90deg);
+  }
+
+  .item-review {
+    text-align: center;
+  }
+
+  .custom-customer-review .gradient {
+    background: transparent;
+  }
+
+  .review-comment {
+    width: 80%;
+    margin: auto;
+    font-family: Figue-Regular!important;
+  }
+
+  .cutomer-heading {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 24px;
+    font-family: Figue-Regular!important;
+  }
+
+  .review-start ul {
+    display:flex;
+    align-items:center;
+    list-style: none;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .review-start ul li {
+    margin: 0 5px;
+  }
+
+  .review-start ul li svg {
+    width: 12px;
+    height: 12px;
+  }
+
+    @media screen and (max-width: 750px) {
+      .customer-review-main {
+          width: 95%;
+      }
+
+      .review-comment {
+        width: 90%;
+      }
+    }
+
+  
+</style>
+
+{% schema %}
+{
+  "name": "Customer Review",
+  "tag": "section",
+  "class": "section custom-customer-review",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [  
+    {
+      "type": "color_background",
+      "id": "section_background",
+      "label": "Background Color",
+      "default": "#ECD4BB"
+    },
+     {
+      "type": "text",
+      "id": "customer_review_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.rich-text.settings.full_width.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+      {
+        "type": "Review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "review_comment",
+            "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "label": "Review Comment"
+          },
+          {
+            "type": "text",
+            "id": "review_author",
+            "default": "Katrina K",
+            "label": "Review Author"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Customer Review"
+    }
+  ]
+}
+{% endschema %}
