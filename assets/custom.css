@@ -1058,7 +1058,9 @@ footer .newsletter-form__field-wrapper .field input {
 #shopify-section-template--17224909062381__rich_text .rich-text__text * {
   font-family: "ProximaSansRegular" !important;
 }
-
+.tooltip-plugin {
+  overflow: hidden;
+}
 .tooltip-plugin .image-with-text__heading {
   text-align: center;
 }
