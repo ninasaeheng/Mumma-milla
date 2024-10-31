@@ -285,21 +285,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // // 13 date nk.........
   // // ....End nk developer.......
 
-  // // customer review script starts here
-
-  // $(".customer-review-main").slick({
-  //   infinite: true,
-  //   slidesToShow: 1,
-  //   arrows: true,
-  //   slidesToScroll: 1,
-  //   prevArrow:
-  //     '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-  //   nextArrow:
-  //     '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-  // });
-
-  // customer review script ends here
-
   // this function only work for cart recomm product
   $(document).ready(function () {
     cart_recomm();
