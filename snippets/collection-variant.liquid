@@ -1,19 +1,24 @@
 <div class="custom-product-form">
-  <div id="size-select" >
-    {%- for option in card_product.options_with_values -%}
-      <div class="size-select-inner main-{{ option.name }}">
-       <div class="option__title">{{ option.name }}:</div> 
-        <div class="field_set">
-        {%- for value in option.values -%}
-        <div class="option__selector" {% if value == 'BLACK' %}style='background:#000;' {% endif %} {% if value == 'NUDE' %}style='background:#E7C3B1;' {% endif %}>
-           <input type="radio" class="{{ option.name }}--{{ value }}" name="{{ card_product.id }}--{{ option.name }}" value="{{ value }}">
-            <label for="html">{{ value }}</label>
-        </div>
-        {% endfor %}
-       </div>
-      </div>
-    {% endfor %}
-  </div>
+  {% comment %} TODO: Added if {% endcomment %}
+  {% if card_product.options_with_values %} 
+    <div id="size-select" >
+      {%- for option in card_product.options_with_values -%}
+        {% unless option.name == "Title" %}
+          <div class="size-select-inner main-{{ option.name }}">
+          <div class="option__title">{{ option.name }}:</div> 
+            <div class="field_set">
+            {%- for value in option.values -%}
+            <div class="option__selector" {% if value == 'BLACK' %}style='background:#000;' {% endif %} {% if value == 'NUDE' %}style='background:#E7C3B1;' {% endif %}>
+              <input type="radio" class="{{ option.name }}--{{ value }}" name="{{ card_product.id }}--{{ option.name }}" value="{{ value }}">
+                <label for="html">{{ value }}</label>
+            </div>
+            {% endfor %}
+          </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  {% endif %}
   <select style="height:0;opacity:0;">
     {%- for variant in card_product.variants -%} 
       <option value='{{ variant.id }}'>{{ variant.title }}</option>
@@ -72,12 +77,12 @@
 </div>
 
 <style>
-.field_set, .size-select-inner {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 5px;
-}
+  .field_set, .size-select-inner {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 5px;
+  }
 
   .field_set input {
     width: 14px;
@@ -150,6 +155,9 @@
     width: 19px;
     height: 18px;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 0;
     border-radius: 50%;
   }
@@ -170,16 +178,12 @@
     font-size: 14px;
     line-height: 1;
     margin-right: 40px;
+    min-width: 3em;
   }
 
   .size-select-inner {
     margin-top: 20px;
   }
-
-
-
-
-
 
 </style>
 

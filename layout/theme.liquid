@@ -1,13 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "nfexyiz4mw");
-</script>
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +7,21 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    <!-- DNS prefetch for Shopify domains -->
+    <link rel="dns-prefetch" href="//cdn.shopify.com">
+    <link rel="dns-prefetch" href="//fonts.shopifycdn.com">
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
+    <!-- Resource hints -->
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
 
     <title>
       {{ page_title }}
@@ -36,13 +36,52 @@
 
     {% render 'meta-tags' %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Script loading error handling -->
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.target.tagName === 'SCRIPT') {
+          console.error('Script loading error:', e.target.src);
+        }
+      }, true);
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript" defer async>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "nfexyiz4mw");
+    </script>
+
+    <!-- jQuery and core scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer crossorigin="anonymous"></script>
+    <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <!-- Inline critical CSS -->
+    <style>
+      /* Performance: LCP Reduction */
+      .slideshow__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      
+      .js-loading {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .js-loading.loaded {
+        opacity: 1;
+      }
+    </style>
 
     {{ content_for_header }}
 
@@ -53,215 +92,44 @@
     %}
 
     {% style %}
+    
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-      {% for scheme in settings.color_schemes -%}
-        {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
-        {% if forloop.index == 1 -%}
-          :root,
-        {%- endif %}
-        .color-{{ scheme.id }} {
-          --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient != empty %}
-          --gradient-background: {{ scheme.settings.background_gradient }};
-        {% else %}
-          --gradient-background: {{ scheme.settings.background }};
-        {% endif %}
-
-        {% liquid
-          assign background_color = scheme.settings.background
-          assign background_color_brightness = background_color | color_brightness
-          if background_color_brightness <= 26
-            assign background_color_contrast = background_color | color_lighten: 50
-          elsif background_color_brightness <= 65
-            assign background_color_contrast = background_color | color_lighten: 5
-          else
-            assign background_color_contrast = background_color | color_darken: 25
-          endif
-        %}
-
-        --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-background-contrast: {{ background_color_contrast.red }},{{ background_color_contrast.green }},{{ background_color_contrast.blue }};
-        --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
-        --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }};
-        --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
-        --color-secondary-button: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-link: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-badge-border: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
-      }
-      {% endfor %}
-
-      {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
-        background-color: rgb(var(--color-background));
-      }
-
+      {% render 'color-scheme-variables' %}
+      
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: {{ settings.type_body_font.weight }};
-        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
-
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
-        --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.type_header_font.weight }};
-
-        --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
-        --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
-
-        --media-padding: {{ settings.media_padding }}px;
-        --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
-        --media-border-width: {{ settings.media_border_thickness }}px;
-        --media-radius: {{ settings.media_radius }}px;
-        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
-        --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
-        --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
-        --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
-        --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
-
-        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
-
-        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-        --product-card-text-alignment: {{ settings.card_text_alignment }};
-        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
-
-        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
-        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
-        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
-
-        --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
-        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
-        --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
-        --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
-        --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
-
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
-
-        --popup-border-width: {{ settings.popup_border_thickness }}px;
-        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
-        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
-        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
-        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
-
-        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
-        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
-        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
-        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
-        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
-
-        --spacing-sections-desktop: {{ settings.spacing_sections }}px;
-        --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
-
-        --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
-        --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
-        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
-        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
-
-        --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
-        --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
-        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
-        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
-        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
-        --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
-        --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
-
-        --buttons-radius: {{ settings.buttons_radius }}px;
-        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-        --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-        --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
-        --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
-        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
-        --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
-        --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
-        --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
-
-        --inputs-radius: {{ settings.inputs_radius }}px;
-        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
-        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
-        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
-        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
-        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
-
-        --variant-pills-radius: {{ settings.variant_pills_radius }}px;
-        --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
-        --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
-        --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
-        --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
-        --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
-        --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+        {% render 'typography-variables' %}
+        {% render 'layout-variables' %}
+        {% render 'component-variables' %}
       }
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
+      {% render 'base-styles' %}
 
-      html {
-        box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 62.5%);
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-      }
-
-      @media screen and (min-width: 750px) {
-        body {
-          font-size: 1.6rem;
-        }
-      }
+      
     {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    <!-- Critical CSS -->
+    {% if 'base.css' | asset_url %}
+      {{ 'base.css' | asset_url | preload_tag: as: 'style' }}
+      <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
+    {% endif %}
+      
+    <!-- Defer non-critical CSS -->
+    {% if 'custom.css' | asset_url %}
+      <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
+    {% endif %}
+    {% if 'slick.min.css' | asset_url %}
+      <link rel="stylesheet" href="{{ 'slick.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    {% endif %}
+    {% if 'slick-theme.min.css' | asset_url %}
+      <link rel="stylesheet" href="{{ 'slick-theme.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    {% endif %}
 
+    <!-- Preload Shopify fonts -->
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -269,18 +137,39 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
+    {%- if settings.custom_fonts_enabled -%}
+      <!-- Font declarations -->
+      <style>
+      @font-face {
+        font-family: "ProximaSansRegular";
+        src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.woff2?v=1707315117) format("woff2");
+      }
+      @font-face {
+        font-family: "ProximaSansRegular";
+        src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.woff?v=1707315117) format("woff");
+      }
+      @font-face {
+        font-family: "ProximaSansRegular";
+        src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.otf?v=1707315118) format("opentype");
+      }
+      @font-face {
+            font-family: "Figue-Regular";
+            src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/Figue-Regular.woff2?v=1707928028) format("woff2"),
+                url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/Figue-Regular.woff?v=1707928028) format("woff");
+            font-display: swap;
+      }
+    </style>
+    {%- endif -%}
+
+    <!-- Localization -->
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    <!-- Predictive search -->
     {%- if settings.predictive_search_enabled -%}
-      <link
-        rel="stylesheet"
-        href="{{ 'component-predictive-search.css' | asset_url }}"
-        media="print"
-        onload="this.media='all'"
-      >
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
 
     <script>
@@ -289,45 +178,31 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-		@font-face {
-			font-family: 'ProximaSansRegular';
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.ttf?v=1707315117) format("truetype");
-		}
-		@font-face {
-			font-family: "ProximaSansRegular";
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.woff2?v=1707315117) format("woff2");
-		}
-		@font-face {
-			font-family: "ProximaSansRegular";
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.woff?v=1707315117) format("woff");
-		}
-		@font-face {
-			font-family: "ProximaSansRegular";
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/ProximaSansRegular.otf?v=1707315118) format("opentype");
-		}
-
-       
-		@font-face {
-			font-family: "Figue-Regular";
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/Figue-Regular.woff2?v=1707928028) format("woff2");
-		}
-		@font-face {
-			font-family: "Figue-Regular";
-			src: url(https://cdn.shopify.com/s/files/1/0629/9451/4157/files/Figue-Regular.woff?v=1707928028) format("woff");
-		}
-		
-	</style>
-
+    <!-- Performance monitoring -->
+    <script>
+      window.performance.mark('head_end');
+      document.addEventListener('DOMContentLoaded', function() {
+        window.performance.mark('dom_loaded');
+        try {
+          const headEnd = performance.getEntriesByName('head_end')[0];
+          const domLoaded = performance.getEntriesByName('dom_loaded')[0];
+          console.log(`Page load time: ${domLoaded.startTime - headEnd.startTime}ms`);
+        } catch(e) {
+          console.error('Performance monitoring error:', e);
+        }
+        document.body.classList.add('loaded');
+      });
+    </script>
     
-  {{ 'custom.css' | asset_url | stylesheet_tag }}
-
+    <noscript>
+      <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'slick.min.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'slick-theme.min.css' | asset_url }}">
+    </noscript>
   </head>
 
-  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', '-' | handle }} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="js-loading template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', '-' | handle }} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -390,110 +265,81 @@
       };
     </script>
 
+    <!-- Load remaining scripts -->
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>   
- <script>
-      $(document).ready(function($) {
-          $('.video-slider').slick({
-            dots: false,
-            arrows:true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: false,
-            arrows: true,
-            prevArrow: '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-            nextArrow: '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-            responsive: [{
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-               breakpoint: 370,
-               settings: {
-                  arrows: false,
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-               }
-            }]
-          });
-        });
-    </script>
-    <script>
-      $(document).ready(function() {
-        $('body').on('click', '#size-select span', function() {
-            var selectedVariant = $(this).text().trim(); // Get the text of the selected variant
-            console.log(selectedVariant);
-            var $select = $('select'); // Corrected selector here
-            var variantId = 'aa';
-            $select.find('option').each(function() {
-              if ($(this).text().trim() === selectedVariant) {
-                variantId = $(this).val();
-                return false; // Exit the loop once the matching option is found
-              }
-            });
-            $('.product-variant-id').val(variantId);
-            console.log(variantId); 
-        });
-      });
-    </script>
+    <!-- Core scripts with proper loading order -->
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'video-slider-init.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'custom.js' | asset_url }}"></script>
+
     <script>
-       setInterval(function () {
-     // Calculate the progress number, and the width of the progress bar.
-      function calculateProgress(currentVal, targetVal) {
-        var progressBar = document.querySelectorAll('.cart-shippingThreshold__progress');
-        var progressNum = document.querySelectorAll('.cart-shipping__num');
-        var progressOuter = document.querySelectorAll('.cart-shipping__numOuter');
-        var successMsg = document.querySelectorAll('.cart-shipping__success');
-        // calculate how far progress is from the total as a percentage
-        var result = Math.round(100 * currentVal / targetVal);
-        progressBar.forEach(function(el){
-          el.setAttribute('style', "width: ".concat(result, "%"));
-        })
-         // Update the progess text. If threshold is met, show success message
-        var newProgressNum = (targetVal - currentVal) / 100;
-        if(newProgressNum <= 0){
-          successMsg.forEach(function(el){
-            el.style.display = 'block';
+      document.addEventListener("DOMContentLoaded", function () {
+        $(document).ready(function() {
+          $('body').on('click', '#size-select span', function() {
+              var selectedVariant = $(this).text().trim(); // Get the text of the selected variant
+              console.log(selectedVariant);
+              var $select = $('select'); // Corrected selector here
+              var variantId = 'aa';
+              $select.find('option').each(function() {
+                if ($(this).text().trim() === selectedVariant) {
+                  variantId = $(this).val();
+                  return false; // Exit the loop once the matching option is found
+                }
+              });
+              $('.product-variant-id').val(variantId);
+              console.log(variantId); 
           });
-          progressOuter.forEach(function(el){
-            el.style.display = 'none';
-          });
-          progressNum.forEach(function(el){
-            el.textContent = newProgressNum;
-          });
-        } else {
-          successMsg.forEach(function(el){
-            el.style.display = 'none';
-          });
-          progressOuter.forEach(function(el){
-            el.style.display = 'block';
-          });
-          progressNum.forEach(function(el){
-            el.textContent = newProgressNum;
-          });
-        }
-      };
-    
-        // In your theme's main JS file, find each ajax call where your store adds to, deletes from, and updates the cart. Put this in the success function of each.
-        // NOTE: If you make this ajax request outside of the functions that update the cart, the calculator won't sync with the current cart state without refreshing the page. You need to specify that you want to read the current cart data AFTER the new items are added/removed.
-         fetch('/cart.js')
-        .then(response => response.json())
-        .then(data => {
-          calculateProgress(data.total_price, {{settings.cart_free_shipping_amount | times: 100}} );
         });
-      }, 600); 
+        
+        setInterval(function () {
+          // Calculate the progress number, and the width of the progress bar.
+          function calculateProgress(currentVal, targetVal) {
+            var progressBar = document.querySelectorAll('.cart-shippingThreshold__progress');
+            var progressNum = document.querySelectorAll('.cart-shipping__num');
+            var progressOuter = document.querySelectorAll('.cart-shipping__numOuter');
+            var successMsg = document.querySelectorAll('.cart-shipping__success');
+            // calculate how far progress is from the total as a percentage
+            var result = Math.round(100 * currentVal / targetVal);
+            progressBar.forEach(function(el){
+              el.setAttribute('style', "width: ".concat(result, "%"));
+            })
+            // Update the progess text. If threshold is met, show success message
+            var newProgressNum = (targetVal - currentVal) / 100;
+            if(newProgressNum <= 0){
+              successMsg.forEach(function(el){
+                el.style.display = 'block';
+              });
+              progressOuter.forEach(function(el){
+                el.style.display = 'none';
+              });
+              progressNum.forEach(function(el){
+                el.textContent = newProgressNum;
+              });
+            } else {
+              successMsg.forEach(function(el){
+                el.style.display = 'none';
+              });
+              progressOuter.forEach(function(el){
+                el.style.display = 'block';
+              });
+              progressNum.forEach(function(el){
+                el.textContent = newProgressNum;
+              });
+            }
+          };
+      
+          // In your theme's main JS file, find each ajax call where your store adds to, deletes from, and updates the cart. Put this in the success function of each.
+          // NOTE: If you make this ajax request outside of the functions that update the cart, the calculator won't sync with the current cart state without refreshing the page. You need to specify that you want to read the current cart data AFTER the new items are added/removed.
+          fetch('/cart.js')
+          .then(response => response.json())
+          .then(data => {
+            calculateProgress(data.total_price, {{settings.cart_free_shipping_amount | times: 100}} );
+          });
+        }, 600); 
+      });
     </script>
   </body>
 </html>

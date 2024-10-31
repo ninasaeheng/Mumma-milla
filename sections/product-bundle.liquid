@@ -1,3 +1,5 @@
+{% assign form_product = '' %}
+{% assign total_price = 0 %}
 <div class="product__bundle_section section--{{ section.id }}">
   <div class="pb__main page-width">
     <div class="pb__content">
@@ -23,15 +25,17 @@
         <!-- ....... start pb top detail.......... -->
         <div class="pb_top_detail">
           <div class="pb_top_detail__main">
-            {% assign total_price = 0 %}
+            
             {% for block in section.blocks %}
               {% if block.type == 'top_product' %}
                 {% for product in block.settings.product_list %}
                   {% assign card_product = product %}
+                  
                   {% if forloop.index == 1 %}
                     {% assign total_price = total_price
                       | plus: card_product.selected_or_first_available_variant.price
                     %}
+                    {% assign form_product = card_product %}
                   {% endif %}
                   <div
                     class="pb__td_item {% if forloop.index > 1 %} hidden {% else %} selected {% endif %}"
@@ -87,7 +91,6 @@
 
         <div class="pb_bottom_detail">
           <div class="pb_bottom_detail__main">
-            {% assign form_product = '' %}
             {% for block in section.blocks %}
               {% if block.type == 'bottom_product' %}
                 {% for product in block.settings.product_list %}
@@ -127,9 +130,8 @@
                                   for="{{ block.id }}--{{ product.id }}--{{ option.name }}"
                                   {% if value == 'BLACK' %}
                                     style="background:#000; color:#000"
-                                  {% endif %}
-                                  {% if value == 'NUDE' %}
-                                    style="background:#E7C3B1;color:#E7C3B1"
+                                  {% elsif value == 'NUDE' %}
+                                    style="background:#E7C3B1; color:#E7C3B1"
                                   {% endif %}
                                 >
                                   {{- value -}}

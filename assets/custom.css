@@ -300,13 +300,9 @@ body .product-card-wrapper .card:not(.ratio) > .card__content {
   position: absolute;
   bottom: 0;
   z-index: 99;
-  transform: translateY(calc(100% - 90px));
+  transform: translateY(calc(100% - 100px));
   overflow: hidden;
 }
-
-/* .product-grid .underline-links-hover:hover a {
-  text-decoration:none;
-} */
 
 .product-grid .card__heading {
   font-size: 14px;
@@ -865,6 +861,9 @@ body .product-media-container.constrain-height .media {
   width: 19px;
   height: 19px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0;
   border-radius: 50%;
   margin: 0;
@@ -931,7 +930,7 @@ body .product__info-container .price__regular .price-item--regular {
 }
 
 .tooltip-plugin-main a.button.button--secondary {
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
 }
 
