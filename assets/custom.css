@@ -29,6 +29,23 @@ b,
 strong {
   font-family: "Figue-Regular" !important;
 }
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.card-product-button {
+  text-decoration: none !important;
+}
+.card-product-button:hover {
+  background: #000;
+  color: #fff;
+}
 nav.header__inline-menu {
   text-align: left !important;
 }
@@ -205,7 +222,6 @@ body .header--top-center .mega-menu__list {
 body .price__regular .price-item--regular {
   font-size: 22px;
   font-family: var(--font-heading-family);
-  margin-top: 10px;
 }
 
 .image-size-chart-link {
@@ -225,10 +241,12 @@ body .price__regular .price-item--regular {
 }
 
 .product__info-container .product-form__buttons .button {
-  max-width: 33.8rem;
+  /* max-width: 33.8rem; */
   min-height: 38px;
   height: 38px;
+  width: 100%;
   background-color: #bc866a;
+  color: #fff;
 }
 
 .product__info-container .product-form__buttons .button:before,
@@ -321,11 +339,12 @@ body .price__regular .price-item--regular {
   margin: 0;
   line-height: 1;
 }
-
+.product-card-wrapper .card__information {
+  min-height: 100px;
+}
 .product-card-wrapper .card-wrapper {
   overflow: hidden;
 }
-
 .product-card-wrapper .card:not(.ratio) {
   padding-bottom: 80px;
 }
@@ -721,9 +740,25 @@ body .product-media-container.constrain-height .media {
 .sub_heading {
   font-size: 12px;
 }
-.pb__header {
-  padding: 0px 20px 40px 0;
-  /* border-bottom: 1px solid  #111; */
+@media (min-width: 749px) {
+  .pb__header {
+    padding: 0px 20px 40px 0;
+  }
+  .pb__td_item {
+    padding: 20px 0 50px 0;
+    font-size: 12px;
+  }
+  .pb__sibar {
+    padding-right: 30px;
+  }
+}
+
+.pd_heading {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-bottom: 24px;
+  justify-content: space-between;
 }
 .pd_price {
   display: flex;
@@ -733,13 +768,14 @@ body .product-media-container.constrain-height .media {
 .pd_tag {
   display: none;
 }
-.pb__td_item {
-  padding: 20px 20px 50px 0;
-  font-size: 12px;
+@media (max-width: 748px) {
+  .pb__td_item {
+    padding: 20px 0;
+    font-size: 12px;
+  }
 }
 .pb__td_item .title {
   margin: 0;
-  margin-bottom: 24px;
 }
 .pd_price .price {
   font-size: 12px;
@@ -757,14 +793,11 @@ body .product-media-container.constrain-height .media {
   font-size: 12px;
   color: inherit;
 }
-.pb__sibar product-form form {
-  padding-right: 20px;
-}
 .total_price {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  padding: 20px 20px 30px 0;
+  padding: 20px 0 30px 0;
   border-top: 1px solid #c3c3c3;
 }
 .bundle_options {
@@ -783,7 +816,7 @@ body .product-media-container.constrain-height .media {
   border-bottom: 1px solid #c3c3c3;
 }
 .product__bundle_section .option__selector label {
-  margin: 0 8px;
+  margin: 8px;
 }
 .product__bundle_section .product__options {
   display: flex;
@@ -930,8 +963,8 @@ body .product__info-container .price__regular .price-item--regular {
 }
 
 .tooltip-plugin-main a.button.button--secondary {
-  left: 49%;
-  transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-49%);
 }
 
 .rich-text__wrapper .rich-text__heading {
@@ -1177,7 +1210,8 @@ body .shopify-section-header-sticky .mega-menu__content {
 }
 
 .header--top-center .mega-menu__list > li {
-  padding-top: 30px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 body,
@@ -1186,8 +1220,10 @@ body,
   font-size: 14px;
 }
 
-.slick-current .pb__image {
-  border-right: 1px solid #c3c3c3;
+@media screen and (min-width: 749px) {
+  .slick-current .pb__image {
+    border-right: 1px solid #c3c3c3;
+  }
 }
 
 .product__bundle_section .button--full-width {
@@ -1596,10 +1632,44 @@ body .mega-menu[open] .mega-menu__content {
   }
 }
 .f-badge {
-    background: #e4e4cd;
-    padding: 4px 8px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .4px;
-    margin-top: 7px;
+  background: #e4e4cd;
+  padding: 4px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 0.25em;
+}
+.card__content .price,
+.custom-tag .price--show-badge {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+/* Ship Insurance on Cart */
+.ship-insurance .tm_cart {
+  margin: 0 auto !important;
+  transform: scale(1) !important;
+}
+.ship-insurance .tm_cart .logo_img {
+  flex: 0 0 40px !important;
+}
+.ship-insurance .tm_cart .logo_img img {
+  width: 40px !important;
+  height: 40px !important;
+}
+.ship-insurance .tm_cart .tm_description,
+.ship-insurance .tm_cart .tm_branding {
+  font-size: 0.75em !important;
+}
+@media screen and (min-width: 750px) {
+  .ship-insurance .tm_cart .tm_description {
+    width: 59%;
+    display: inline-block;
+  }
+  .ship-insurance .tm_cart .tm_branding {
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+  }
 }

@@ -43,11 +43,13 @@
                     data-id="product-{{ card_product.id }}"
                     v-id="{{ card_product.selected_or_first_available_variant.id }}"
                   >
-                    <div class="pd_price" data-price="{{ card_product.selected_or_first_available_variant.price }}">
-                      <div class="pd_tag">Top</div>
-                      <div class="price">{{ card_product.selected_or_first_available_variant.price | money }}</div>
+                    <div class="pd_heading">
+                      <div class="title">{{ card_product.title }}</div>
+                      <div class="pd_price" data-price="{{ card_product.selected_or_first_available_variant.price }}">
+                        <div class="pd_tag">Top</div>
+                        <div class="price">{{ card_product.selected_or_first_available_variant.price | money }}</div>
+                      </div>
                     </div>
-                    <div class="title">{{ card_product.title }}</div>
                     <div class="product__options" product__options>
                       {%- for option in card_product.options_with_values -%}
                         <div class="bundle_options  {{ option.name}}">
