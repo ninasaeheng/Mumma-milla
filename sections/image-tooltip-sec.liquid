@@ -32,10 +32,28 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="tooltip-plugin-main isolate{% unless section.settings.full_width %} page-width{% endunless %}">
     <section class="tooltip-plugin">
-      <div class="container left-side"><img class="big-image" src="{{ section.settings.tool_tip_image | img_url: ''}}" alt="tol tip image"/>
+      <div class="container left-side">
+        <img
+          srcset="
+            {%- if section.settings.tool_tip_image.width >= 165 -%}{{ section.settings.tool_tip_image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if section.settings.tool_tip_image.width >= 360 -%}{{ section.settings.tool_tip_image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if section.settings.tool_tip_image.width >= 533 -%}{{ section.settings.tool_tip_image | image_url: width: 533 }} 533w,{%- endif -%}
+            {%- if section.settings.tool_tip_image.width >= 720 -%}{{ section.settings.tool_tip_image | image_url: width: 720 }} 720w,{%- endif -%}
+            {%- if section.settings.tool_tip_image.width >= 940 -%}{{ section.settings.tool_tip_image | image_url: width: 940 }} 940w,{%- endif -%}
+            {%- if section.settings.tool_tip_image.width >= 1066 -%}{{ section.settings.tool_tip_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+            {{ section.settings.tool_tip_image | image_url }} {{ section.settings.tool_tip_image.width }}w
+          "
+          src="{{ section.settings.tool_tip_image | image_url: width: 720 }}"
+          sizes="(min-width: 990px) 720px, 100vw"
+          alt="{{ section.settings.tool_tip_image.alt | escape }}"
+          class="big-image motion-reduce"
+          loading="lazy"
+          width="{{ section.settings.tool_tip_image.width }}"
+          height="{{ section.settings.tool_tip_image.height }}"
+        >
         <article class="tooltip-container">
           <div class="tooltip">
-            <button class="tooltip__pin button1" style="top:{{ section.settings.top1 }}vh; left:{{ section.settings.left1 }}vw"></button>
+            <button class="tooltip__pin button1" aria-label="Tooltip Button" style="top:{{ section.settings.top1 }}vh; left:{{ section.settings.left1 }}vw"></button>
             <div class="tooltip__content invert-order"> 
               <div class="tooltip__content__text">
                 <h1>{{ section.settings.btn_text1 }}</h1>
@@ -43,7 +61,7 @@
             </div>
           </div>
           <div class="tooltip">
-            <button class="tooltip__pin button2" style="top:{{ section.settings.top2 }}vh; left:{{ section.settings.left2 }}vw"></button>
+            <button class="tooltip__pin button2" aria-label="Tooltip Button" style="top:{{ section.settings.top2 }}vh; left:{{ section.settings.left2 }}vw"></button>
             <div class="tooltip__content invert-order"> 
               <div class="tooltip__content__text">
                 <h1>{{ section.settings.btn_text2 }}</h1>
@@ -51,7 +69,7 @@
             </div>
           </div>
           <div class="tooltip">
-            <button class="tooltip__pin button3" style="top:{{ section.settings.top3 }}vh; left:{{ section.settings.left3 }}vw"></button>
+            <button class="tooltip__pin button3" aria-label="Tooltip Button" style="top:{{ section.settings.top3 }}vh; left:{{ section.settings.left3 }}vw"></button>
             <div class="tooltip__content">
               <div class="tooltip__content__text">
                 <h1>{{ section.settings.btn_text3 }}</h1>

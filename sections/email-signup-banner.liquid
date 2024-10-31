@@ -35,14 +35,14 @@
       {%- if section.settings.image != blank -%}
         <img
           srcset="
-            {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
-            {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
-            {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
-            {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
-            {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
-            {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+            {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375, format: 'pjpg' }} 375w,{%- endif -%}
+            {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750, format: 'pjpg' }} 750w,{%- endif -%}
+            {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100, format: 'pjpg' }} 1100w,{%- endif -%}
+            {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500, format: 'pjpg' }} 1500w,{%- endif -%}
+            {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780, format: 'pjpg' }} 1780w,{%- endif -%}
+            {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000, format: 'pjpg' }} 2000w,{%- endif -%}
+            {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000, format: 'pjpg' }} 3000w,{%- endif -%}
+            {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840, format: 'pjpg' }} 3840w,{%- endif -%}
             {{ section.settings.image | image_url }} {{ section.settings.image.width }}w
           "
           sizes="100vw"
