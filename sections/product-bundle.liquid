@@ -43,7 +43,7 @@
                     data-id="product-{{ card_product.id }}"
                     v-id="{{ card_product.selected_or_first_available_variant.id }}"
                   >
-                    <div class="pd_heading">
+                    <div style="display: flex; gap: 0.5em; align-items: center; margin-bottom: 24px; justify-content: space-between;">
                       <div class="title">{{ card_product.title }}</div>
                       <div class="pd_price" data-price="{{ card_product.selected_or_first_available_variant.price }}">
                         <div class="pd_tag">Top</div>
