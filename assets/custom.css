@@ -342,6 +342,9 @@ body .price__regular .price-item--regular {
 .product-card-wrapper .card__information {
   min-height: 100px;
 }
+.cart_recomm .product-card-wrapper .card__information {
+  min-height: 0;
+}
 .product-card-wrapper .card-wrapper {
   overflow: hidden;
 }

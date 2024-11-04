@@ -18,7 +18,7 @@
     "enable_desktop_slider": true,
     "image_ratio": "portrait",
     "show_secondary_image": true,
-    "enable_quick_add": false,
+    "enable_quick_add": true,
     "columns_mobile": "2",
     "swipe_on_mobile": true,
     "logo": "shopify://shop_images/MUMMA_MILLA_LOGO_TRANSPARENT_5701c4a3-d54c-4616-b1a4-207108b96ee7.png",
