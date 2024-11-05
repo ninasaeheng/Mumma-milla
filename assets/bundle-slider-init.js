@@ -1,10 +1,10 @@
 // Create constants for common configurations
-const commonArrows = {
+let commonArrows = {
     prevArrow: '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
     nextArrow: '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>'
 };
 
-const productBundleArrows = {
+let productBundleArrows = {
     prevArrow: '<div class="slick-slider__prev"><svg xmlns="http://www.w3.org/2000/svg" width="24.105" height="42.731" viewBox="0 0 24.105 42.731"><g id="g2193" transform="translate(180.386 456.21)"><path id="path1803-1-2" d="M-179.326-367.222l21.986,20.306" transform="translate(0 -67.623)" fill="none" stroke="#c3c3c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path id="path1805-1-8" d="M-179.326-434.845l21.986-20.306" transform="translate(0)" fill="none" stroke="#c3c3c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g></svg></div>',
     nextArrow: '<div class="slick-slider__next"><svg xmlns="http://www.w3.org/2000/svg" width="24.105" height="42.731" viewBox="0 0 24.105 42.731"><g id="g2193" transform="translate(1.06 1.06)"><path id="path1803-1-2" d="M-157.341-367.222l-21.986,20.306" transform="translate(179.326 387.528)" fill="none" stroke="#c3c3c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path id="path1805-1-8" d="M-157.341-434.845l-21.986-20.306" transform="translate(179.326 455.151)" fill="none" stroke="#c3c3c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g></svg></div>'
 };
