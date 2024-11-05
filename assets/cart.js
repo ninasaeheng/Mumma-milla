@@ -263,6 +263,9 @@ if (!customElements.get('cart-note')) {
   );
 }
 
+/*
+// ALREADY DECLEARED IN custom.js
+
 function collVariant() {
   var products = $('.custom-product-form');
   
@@ -338,3 +341,5 @@ $(document).ready(function() {
   console.log('Running initial collVariant');
   collVariant();
 });
+
+*/
