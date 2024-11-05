@@ -1,4 +1,5 @@
 {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'review-slider-init.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -19,7 +20,7 @@
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} {% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     {% if section.settings.customer_review_heading  %} 
       <div class="customer-heading">{{ section.settings.customer_review_heading }}</div>
     {% endif %}

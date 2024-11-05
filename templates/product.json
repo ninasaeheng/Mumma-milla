@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -20,12 +11,12 @@
         "text_3HFnrY": {
           "type": "text",
           "settings": {
-            "text": "Our <em>clip-free </em>nursing intimates feature built-in, non-removable  leakproof layers to catch your breastfeeding spills. All styles have been designed to be worn from pregnancy - <em>postpartum.</em>",
+            "text": "Our <em>clip-free <\/em>nursing intimates feature built-in, non-removable  leakproof layers to catch your breastfeeding spills. All styles have been designed to be worn from pregnancy - <em>postpartum.<\/em>",
             "text_style": "body"
           }
         },
         "4d8b38f9-1e3a-47e2-9140-900421d6159b": {
-          "type": "shopify://apps/growave-loyalty-wishlist/blocks/block.product.reviewAvgProfile/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
           "disabled": true,
           "settings": {
           }
@@ -44,7 +35,7 @@
           }
         },
         "simple_bundles_kits_infinite_options_selector_AqCTPt": {
-          "type": "shopify://apps/simple-bundles-kits/blocks/infinite-options-selector/e553276b-36b2-446d-b80a-aa47fe5f96ac",
+          "type": "shopify:\/\/apps\/simple-bundles-kits\/blocks\/infinite-options-selector\/e553276b-36b2-446d-b80a-aa47fe5f96ac",
           "disabled": true,
           "settings": {
             "select_placeholder": "Please select an option",
@@ -82,7 +73,7 @@
           "settings": {
             "heading": "About this item",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.about_this_item | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.about_this_item | metafield_tag }}<\/p>",
             "page": ""
           }
         },
@@ -91,7 +82,7 @@
           "settings": {
             "heading": "Fabric",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.fabric | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.fabric | metafield_tag }}<\/p>",
             "page": ""
           }
         },
@@ -100,7 +91,7 @@
           "settings": {
             "heading": "Size and Fit",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.size_and_fit | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.size_and_fit | metafield_tag }}<\/p>",
             "page": ""
           }
         },
@@ -109,7 +100,7 @@
           "settings": {
             "heading": "Absorbency",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.absorbency | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.absorbency | metafield_tag }}<\/p>",
             "page": ""
           }
         },
@@ -118,7 +109,7 @@
           "settings": {
             "heading": "Care",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.care | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.care | metafield_tag }}<\/p>",
             "page": ""
           }
         },
@@ -127,7 +118,7 @@
           "settings": {
             "heading": "Shipping and Returns",
             "icon": "none",
-            "content": "<p>{{ product.metafields.custom.shipping_and_returns | metafield_tag }}</p>",
+            "content": "<p>{{ product.metafields.custom.shipping_and_returns | metafield_tag }}<\/p>",
             "page": ""
           }
         }
@@ -153,7 +144,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/398974a29a474bfb8bb808da078c8db2.mp4",
+        "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/398974a29a474bfb8bb808da078c8db2.mp4",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "cover",
@@ -213,13 +204,13 @@
         "text_iz8XBb": {
           "type": "text",
           "settings": {
-            "text": "<h1>Bundle + <em>Save.</em><br/>Select 4 or more of your favourites for 15% off, plus Free Shipping. </h1>"
+            "text": "<h1>Bundle + <em>Save.<\/em><br\/>Select 4 or more of your favourites for 15% off, plus Free Shipping. <\/h1>"
           }
         },
         "heading_VgCVw8": {
           "type": "heading",
           "settings": {
-            "heading": "USE CODE BUNDLE15 AT THE CHECKOUT. Return *T's and C's <a href=\"https://mumma-milla.com/pages/shipping-and-returns\" title=\"https://mumma-milla.com/pages/shipping-and-returns\">apply</a>.",
+            "heading": "USE CODE BUNDLE15 AT THE CHECKOUT. Return *T's and C's <a href=\"https:\/\/mumma-milla.com\/pages\/shipping-and-returns\" title=\"https:\/\/mumma-milla.com\/pages\/shipping-and-returns\">apply<\/a>.",
             "heading_size": "h0"
           }
         }
@@ -278,7 +269,7 @@
       "type": "apps",
       "blocks": {
         "8866f504-865b-4613-8f57-6486c399dc55": {
-          "type": "shopify://apps/growave-loyalty-wishlist/blocks/block.product.reviewWidget/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
           "settings": {
           }
         }
@@ -316,7 +307,7 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify://shop_images/Screen_Shot_2022-03-01_at_7.30.59_pm.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-01_at_7.30.59_pm.png",
             "heading": "Making the fourth trimester a little more glamorous.",
             "heading_size": "medium",
             "subheading": "Buttery soft maternity basics to keep feeling feminine, comfortable and dry.",
@@ -384,7 +375,7 @@
           "disabled": true,
           "settings": {
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -416,7 +407,7 @@
       "type": "sticky-video",
       "disabled": true,
       "settings": {
-        "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/e8fbf27310a9495ca685f2bf903dd23b.mp4"
+        "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e8fbf27310a9495ca685f2bf903dd23b.mp4"
       }
     }
   },

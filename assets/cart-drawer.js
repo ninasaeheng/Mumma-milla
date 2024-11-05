@@ -27,9 +27,18 @@ class CartDrawer extends HTMLElement {
     if (triggeredBy) this.setActiveElement(triggeredBy);
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
+    
     // here the animation doesn't seem to always get triggered. A timeout seem to help
     setTimeout(() => {
       this.classList.add('animate', 'active');
+      
+      // Initialize variants when drawer opens
+      try {
+        console.log('Initializing variants on drawer open');
+        collVariant();
+      } catch (error) {
+        console.error('Error initializing drawer variants:', error);
+      }
     });
 
     this.addEventListener(
@@ -72,21 +81,39 @@ class CartDrawer extends HTMLElement {
     this.querySelector('.drawer__inner').classList.contains('is-empty') &&
       this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
+    
+    // First, update the DOM
     this.getSectionsToRender().forEach((section) => {
       const sectionElement = section.selector
         ? document.querySelector(section.selector)
         : document.getElementById(section.id);
       sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
     });
-    setTimeout(() => {
-      this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
-      this.open();
-    });
 
-    // this function is in custom.js for reload cart recomm
-    setTimeout(function () {
+    // Then initialize variants and setup the drawer
+    setTimeout(() => {
+      try {
+        // Initialize variants first
+        console.log('Initializing cart drawer variants');
+        collVariant();
+        
+        // Then load recommendations
+        console.log('Loading cart recommendations');
         cart_recomm();
-    },1000);
+        
+        // Setup drawer events
+        this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
+        this.open();
+
+      } catch (error) {
+        console.error('Error initializing cart drawer:', error);
+      }
+    }, 100);
+
+    // Dispatch cart update event
+    document.dispatchEvent(new CustomEvent('cart:updated', { 
+      detail: { cartData: parsedState }
+    }));
   }
 
   getSectionInnerHTML(html, selector = '.shopify-section') {
@@ -114,8 +141,6 @@ class CartDrawer extends HTMLElement {
   }
 }
 
-customElements.define('cart-drawer', CartDrawer);
-
 class CartDrawerItems extends CartItems {
   getSectionsToRender() {
     return [
@@ -133,4 +158,43 @@ class CartDrawerItems extends CartItems {
   }
 }
 
+// Add a MutationObserver to handle dynamic content
+function initializeCartDrawerVariants() {
+  const cartDrawer = document.querySelector('cart-drawer');
+  if (!cartDrawer) return;
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.addedNodes.length) {
+        const hasProductForms = Array.from(mutation.addedNodes).some(node => 
+          node.nodeType === 1 && (
+            node.classList?.contains('custom-product-form') ||
+            node.querySelector?.('.custom-product-form')
+          )
+        );
+
+        if (hasProductForms) {
+          console.log('New product forms detected in cart drawer');
+          setTimeout(() => {
+            collVariant();
+          }, 100);
+        }
+      }
+    });
+  });
+
+  observer.observe(cartDrawer, { 
+    childList: true, 
+    subtree: true,
+    characterData: false,
+    attributes: false 
+  });
+}
+
+// Initialize everything when the document is ready
+document.addEventListener('DOMContentLoaded', () => {
+  initializeCartDrawerVariants();
+});
+
+customElements.define('cart-drawer', CartDrawer);
 customElements.define('cart-drawer-items', CartDrawerItems);

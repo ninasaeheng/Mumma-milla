@@ -6,6 +6,13 @@ const commonArrows = {
     '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
 };
 
+const thumbnailArrows = {
+  prevArrow:
+    '<button class="slide-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>',
+  nextArrow:
+    '<button class="slide-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>',
+};
+
 const commonSettings = {
   infinite: true,
   autoplay: false,
@@ -20,43 +27,23 @@ const commonSettings = {
 };
 
 // Enhanced initialize function with Safari fixes
-function initVideoSliders() {
+function initGallerySliders() {
   // Force layout recalculation for Safari
   document.body.offsetHeight;
 
   const sliderConfigs = [
     {
-      selector: ".video-slider",
+      selector: ".thumbnail-slider .slider--mobile",
       options: {
-        ...commonSettings,
-        slidesToShow: 3,
+        ...thumbnailArrows,
+        vertical: true,
+        verticalSwiping: true,
+        slidesToShow: 6,
         slidesToScroll: 1,
-        lazyLoad: "progressive",
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 370,
-            settings: {
-              arrows: false,
-              slidesToShow: 1,
-              adaptiveHeight: true,
-            },
-          },
-        ],
-      },
-    },
-    {
-      selector: ".customer-review-main",
-      options: {
-        ...commonSettings,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        infinite: false,
+        dots: false,
       },
     },
   ];
@@ -72,29 +59,6 @@ function initVideoSliders() {
 
       // Initialize with error handling
       $slider.slick(options);
-
-      // Special handling for video sliders
-      if (selector === ".video-slider") {
-        $slider.on(
-          "beforeChange",
-          function (event, slick, currentSlide, nextSlide) {
-            const videos = slick.$slides.find("video").get();
-            videos.forEach((video) => {
-              video.pause();
-              video.currentTime = 0;
-            });
-          }
-        );
-
-        $slider.on("afterChange", function (event, slick, currentSlide) {
-          const currentVideo = $(slick.$slides[currentSlide]).find("video")[0];
-          if (currentVideo) {
-            currentVideo
-              .play()
-              .catch((e) => console.log("Video autoplay prevented:", e));
-          }
-        });
-      }
 
       // Force slider refresh and show
       setTimeout(() => {
@@ -133,7 +97,7 @@ function checkSlickLoaded() {
 }
 
 // Initialize everything with better error handling
-async function init() {
+async function initGallerySlider() {
   try {
     await checkSlickLoaded();
 
@@ -144,28 +108,28 @@ async function init() {
       // Add Safari-specific CSS fixes
       const style = document.createElement("style");
       style.textContent = `
-        .slick-slider {
-          -webkit-transform: translate3d(0,0,0);
-          -webkit-backface-visibility: hidden;
-          -webkit-perspective: 1000;
-        }
-        .slick-slide {
-          -webkit-transform: translate3d(0,0,0);
-        }
-      `;
+            .slick-slider {
+                -webkit-transform: translate3d(0,0,0);
+                -webkit-backface-visibility: hidden;
+                -webkit-perspective: 1000;
+            }
+            .slick-slide {
+                -webkit-transform: translate3d(0,0,0);
+            }
+        `;
       document.head.appendChild(style);
     }
 
     // Initialize sliders
     if (document.readyState === "complete") {
-      initVideoSliders();
+      initGallerySliders();
     } else {
-      document.addEventListener("DOMContentLoaded", initVideoSliders);
+      document.addEventListener("DOMContentLoaded", initGallerySliders);
     }
 
     // Reinitialize on Shopify section updates
     document.addEventListener("shopify:section:load", function () {
-      initVideoSliders();
+      initGallerySliders();
     });
   } catch (error) {
     console.error("Slider initialization failed:", error);
@@ -173,4 +137,4 @@ async function init() {
 }
 
 // Start initialization
-init();
+initGallerySlider();

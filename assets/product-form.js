@@ -20,17 +20,17 @@ if (!customElements.get('product-form')) {
         evt.preventDefault();
         
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
-
+      
         this.handleErrorMessage();
-
+      
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
         this.querySelector('.loading__spinner').classList.remove('hidden');
-
+      
         const config = fetchConfig('javascript');
         config.headers['X-Requested-With'] = 'XMLHttpRequest';
         delete config.headers['Content-Type'];
-
+      
         const formData = new FormData(this.form);
         if (this.cart) {
           formData.append(
@@ -41,7 +41,7 @@ if (!customElements.get('product-form')) {
           this.cart.setActiveElement(document.activeElement);
         }
         config.body = formData;
-
+      
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
@@ -53,7 +53,7 @@ if (!customElements.get('product-form')) {
                 message: response.message,
               });
               this.handleErrorMessage(response.description);
-
+      
               const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
               if (!soldOutMessage) return;
               this.submitButton.setAttribute('aria-disabled', true);
@@ -65,7 +65,7 @@ if (!customElements.get('product-form')) {
               window.location = window.routes.cart_url;
               return;
             }
-
+      
             if (!this.error)
               publish(PUB_SUB_EVENTS.cartUpdate, {
                 source: 'product-form',
@@ -88,11 +88,6 @@ if (!customElements.get('product-form')) {
             } else {
               this.cart.renderContents(response);
             }
-
-            
-            setTimeout(function() {
-              collVariant()
-            }, 1000); 
           })
           .catch((e) => {
             console.error(e);
@@ -102,7 +97,16 @@ if (!customElements.get('product-form')) {
             if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
             this.querySelector('.loading__spinner').classList.add('hidden');
-             cart_recomm();
+            
+            // Combined callback functions with proper timing and error handling
+            setTimeout(() => {
+              try {
+                collVariant();
+                cart_recomm();
+              } catch (error) {
+                console.error('Error updating cart recommendations:', error);
+              }
+            }, 1500);
           });
       }
 

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "slideshow_LzfDik": {
@@ -17,12 +8,12 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify://shop_images/WEBSITE_BANNER_16dbe154-23b7-4404-92d1-90d4cb4b83a2.jpg",
+            "image": "shopify:\/\/shop_images\/WEBSITE_BANNER_16dbe154-23b7-4404-92d1-90d4cb4b83a2.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "SHOP COLLECTION NOW",
-            "link": "shopify://collections/leakproof-bra-collection",
+            "link": "shopify:\/\/collections\/leakproof-bra-collection",
             "button_style_secondary": false,
             "box_align": "bottom-left",
             "show_text_box": true,
@@ -36,13 +27,13 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "banner_video_url": "https://cdn.shopify.com/videos/c/o/v/63d13ee2bb8f45b9a230aa2ccb2bd7e9.mp4",
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/63d13ee2bb8f45b9a230aa2ccb2bd7e9.mp4",
             "show_video": true,
             "heading": "A Modern Approach to Maternity.",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "Shop the collection",
-            "link": "shopify://collections/all",
+            "link": "shopify:\/\/collections\/all",
             "button_style_secondary": false,
             "box_align": "bottom-left",
             "show_text_box": false,
@@ -56,11 +47,11 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "banner_video_url": "https://cdn.shopify.com/videos/c/o/v/c9d97a8e63214d349c3e81ea360a31e9.mp4",
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c9d97a8e63214d349c3e81ea360a31e9.mp4",
             "show_video": true,
             "heading": "NEW IN | THE LEAKPROOF MATERNITY SPORTS BRA",
             "heading_size": "h2",
-            "subheading": "<a href=\"/products/leakproof-maternity-sports-bra\" target=\"_blank\" title=\"NEW IN : Leakproof Maternity Sports Bra\">SHOP NOW</a>",
+            "subheading": "<a href=\"\/products\/leakproof-maternity-sports-bra\" target=\"_blank\" title=\"NEW IN : Leakproof Maternity Sports Bra\">SHOP NOW<\/a>",
             "button_label": "",
             "link": "",
             "button_style_secondary": false,
@@ -102,14 +93,14 @@
         "text_VbLiQw": {
           "type": "text",
           "settings": {
-            "text": "<h2>Modern Nursing Intimates designed to be worn from pregnancy to postpartum and beyond. With built-in <em>leakproof</em> layers to catch your breastfeeding spills, you will feel confident and comfortable <br/>all day, and night.</h2>"
+            "text": "<h2>Modern Nursing Intimates designed to be worn from pregnancy to postpartum and beyond. With built-in <em>leakproof<\/em> layers to catch your breastfeeding spills, you will feel confident and comfortable <br\/>all day, and night.<\/h2>"
           }
         },
         "button_dKb3ga": {
           "type": "button",
           "settings": {
             "button_label": "SHOP",
-            "button_link": "shopify://collections/leakproof-bra-collection",
+            "button_link": "shopify:\/\/collections\/leakproof-bra-collection",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -138,7 +129,7 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "<span>Leakproof Nursing Bralettes</span>",
+            "heading": "<span>Leakproof Nursing Bralettes<\/span>",
             "heading_size": "h2"
           }
         },
@@ -147,7 +138,7 @@
           "disabled": true,
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify:\/\/collections\/all",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -222,14 +213,14 @@
         "text_LDCXtg": {
           "type": "text",
           "settings": {
-            "text": "<h1>Featuring<em> built-in </em>moisture wicking layers to catch breastfeeding spills and prevent leaks.</h1>"
+            "text": "<h1>Featuring<em> built-in <\/em>moisture wicking layers to catch breastfeeding spills and prevent leaks.<\/h1>"
           }
         },
         "text_QWnrpR": {
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<h5>Say goodbye to using copious amounts of disposable nursing pads with an easy, fuss-free and comfortable alternative for breastfeeding + <em>motherhood</em>. </h5>"
+            "text": "<h5>Say goodbye to using copious amounts of disposable nursing pads with an easy, fuss-free and comfortable alternative for breastfeeding + <em>motherhood<\/em>. <\/h5>"
           }
         },
         "button_UJjjak": {
@@ -269,7 +260,7 @@
         "heading": "",
         "heading_size": "h2",
         "enable_video_looping": true,
-        "video": "shopify://files/videos/Leakproof Video Nude.mp4",
+        "video": "shopify:\/\/files\/videos\/Leakproof Video Nude.mp4",
         "video_url": "",
         "description": "",
         "full_width": true,
@@ -297,7 +288,7 @@
       "settings": {
         "title": "Bundle + Save",
         "heading_size": "h1",
-        "description": "<p>Bundle your favourites to save 15% + Free Shipping*<br/>Use code BUNDLE15 at checkout</p>",
+        "description": "<p>Bundle your favourites to save 15% + Free Shipping*<br\/>Use code BUNDLE15 at checkout<\/p>",
         "show_description": false,
         "description_style": "body",
         "collection": "bundle-save",
@@ -333,14 +324,14 @@
         "text_JhjdVq": {
           "type": "text",
           "settings": {
-            "text": "<h3>Designed with super absorbent leakproof layers to catch breastfeeding leaks. MUMMA MILLA was created to offer a sustainable, chic and functional nursing bra alternative. </h3><p></p><p></p><h4></h4>"
+            "text": "<h3>Designed with super absorbent leakproof layers to catch breastfeeding leaks. MUMMA MILLA was created to offer a sustainable, chic and functional nursing bra alternative. <\/h3><p><\/p><p><\/p><h4><\/h4>"
           }
         },
         "button_bz3wJR": {
           "type": "button",
           "settings": {
             "button_label": "SHOP LEAKPROOF BRAS",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify:\/\/collections\/all",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -368,14 +359,14 @@
         "heading_PzAyNc": {
           "type": "heading",
           "settings": {
-            "heading": "Better For Breastfeeding. Better For <em>You</em>.",
+            "heading": "Better For Breastfeeding. Better For <em>You<\/em>.",
             "heading_size": "h2"
           }
         },
         "text_fjJLGd": {
           "type": "text",
           "settings": {
-            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"size-guide_svg__a\" maskunits=\"userSpaceOnUse\" x=\"2\" y=\"6\" width=\"21\" height=\"11\" fill=\"#000\"><path fill=\"#fff\" d=\"M2 6h21v11H2z\"></path><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\"></path></mask><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\" fill=\"currentColor\"></path><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#size-guide_svg__a)\"></path></svg>",
+            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><mask id=\"size-guide_svg__a\" maskunits=\"userSpaceOnUse\" x=\"2\" y=\"6\" width=\"21\" height=\"11\" fill=\"#000\"><path fill=\"#fff\" d=\"M2 6h21v11H2z\"><\/path><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\"><\/path><\/mask><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\" fill=\"currentColor\"><\/path><path d=\"M21.61 7H3.39c-.215 0-.39.17-.39.382v8.236c0 .211.175.382.39.382h18.22c.215 0 .39-.17.39-.382V7.382A.386.386 0 0 0 21.61 7Zm-.39 8.236H3.78V7.764h2.256v1.88c0 .21.175.382.39.382.217 0 .391-.171.391-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v2.883c0 .211.175.382.39.382.216 0 .39-.17.39-.382V7.764h2.257v1.88c0 .21.174.382.39.382.216 0 .39-.171.39-.382v-1.88h2.256v7.472Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#size-guide_svg__a)\"><\/path><\/svg>",
             "text": "Clip-free wire free bralettes with a feminine sweetheart neckline neckline for the perfect blend of comfort and chic.",
             "text_style": "body"
           }
@@ -383,15 +374,15 @@
         "text_9TLE7J": {
           "type": "text",
           "settings": {
-            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"full-bust_svg__a\" maskunits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"13\" height=\"20\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M0 0h13v20H0z\"></path><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\"></path></mask><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\" fill=\"currentColor\"></path><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__a)\"></path><mask id=\"full-bust_svg__b\" maskunits=\"userSpaceOnUse\" x=\"10.802\" y=\"0\" width=\"13\" height=\"20\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M10.802 0h13v20h-13z\"></path><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\"></path></mask><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\" fill=\"currentColor\"></path><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__b)\"></path><mask id=\"full-bust_svg__c\" maskunits=\"userSpaceOnUse\" x=\"1.878\" y=\"16.909\" width=\"20\" height=\"5\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M1.878 16.909h20v5h-20z\"></path><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\"></path></mask><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\" fill=\"currentColor\"></path><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__c)\"></path></svg>",
-            "text": "Built-in, non-removable leakproof layers to catch breastfeeding spills. No need to rely on nursing pads 24/7.",
+            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><mask id=\"full-bust_svg__a\" maskunits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"13\" height=\"20\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M0 0h13v20H0z\"><\/path><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\"><\/path><\/mask><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\" fill=\"currentColor\"><\/path><path d=\"M6.392 19.788c-.842 0-1.656-.19-2.416-.565a5.421 5.421 0 0 1-2.173-1.988 5.44 5.44 0 0 1-.794-3.152c.06-1.073.49-2.134 1.239-3.07a7.171 7.171 0 0 0 1.57-4.469V2.41C3.818 1.632 4.45 1 5.227 1s1.409.632 1.409 1.41v3.823a9.718 9.718 0 0 0 5.75 8.864l.078.035a.47.47 0 0 1 .205.68l-.48.76a6.805 6.805 0 0 1-5.797 3.216ZM5.227 1.939a.47.47 0 0 0-.47.47v4.135A8.106 8.106 0 0 1 2.98 11.6c-.627.783-.985 1.66-1.035 2.536a4.497 4.497 0 0 0 .657 2.607 4.477 4.477 0 0 0 1.792 1.639c.628.31 1.3.466 1.998.466a5.873 5.873 0 0 0 5.003-2.776l.196-.312a10.657 10.657 0 0 1-5.895-9.527V2.41a.47.47 0 0 0-.47-.47Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__a)\"><\/path><mask id=\"full-bust_svg__b\" maskunits=\"userSpaceOnUse\" x=\"10.802\" y=\"0\" width=\"13\" height=\"20\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M10.802 0h13v20h-13z\"><\/path><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\"><\/path><\/mask><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\" fill=\"currentColor\"><\/path><path d=\"M18.153 19.788a6.81 6.81 0 0 1-5.8-3.217l-.478-.76a.47.47 0 0 1 .205-.68l.078-.034a9.715 9.715 0 0 0 5.75-8.864V2.41c0-.777.633-1.409 1.41-1.409.776 0 1.409.632 1.409 1.41v4.134c0 1.62.558 3.206 1.57 4.468.75.936 1.178 1.997 1.238 3.07a5.437 5.437 0 0 1-.792 3.15 5.424 5.424 0 0 1-2.171 1.989 5.414 5.414 0 0 1-2.42.567Zm-5.2-4.027.196.31a5.876 5.876 0 0 0 5.004 2.777c.697 0 1.37-.156 2-.468a4.478 4.478 0 0 0 1.79-1.639 4.486 4.486 0 0 0 .655-2.605c-.05-.877-.408-1.753-1.034-2.536a8.109 8.109 0 0 1-1.777-5.056V2.41a.47.47 0 0 0-.94 0v3.824c0 4.044-2.298 7.734-5.894 9.528Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__b)\"><\/path><mask id=\"full-bust_svg__c\" maskunits=\"userSpaceOnUse\" x=\"1.878\" y=\"16.909\" width=\"20\" height=\"5\" fill=\"currentColor\"><path fill=\"#fff\" d=\"M1.878 16.909h20v5h-20z\"><\/path><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\"><\/path><\/mask><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\" fill=\"currentColor\"><\/path><path d=\"M20.257 21.667H4.287a1.41 1.41 0 0 1-1.409-1.41V18.38a.47.47 0 0 1 .94 0v1.879c0 .259.211.47.47.47h15.969a.47.47 0 0 0 .47-.47v-1.88a.47.47 0 0 1 .94 0v1.88a1.41 1.41 0 0 1-1.41 1.409Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#full-bust_svg__c)\"><\/path><\/svg>",
+            "text": "Built-in, non-removable leakproof layers to catch breastfeeding spills. No need to rely on nursing pads 24\/7.",
             "text_style": "body"
           }
         },
         "text_eWgLBV": {
           "type": "text",
           "settings": {
-            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"bestseller_svg__a\" maskunits=\"userSpaceOnUse\" x=\"2\" y=\"4\" width=\"20\" height=\"16\" fill=\"#000\"><path fill=\"#fff\" d=\"M2 4h20v16H2z\"></path><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\"></path></mask><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\" fill=\"currentColor\"></path><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#bestseller_svg__a)\"></path></svg>",
+            "text_icon": "<svg width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><mask id=\"bestseller_svg__a\" maskunits=\"userSpaceOnUse\" x=\"2\" y=\"4\" width=\"20\" height=\"16\" fill=\"#000\"><path fill=\"#fff\" d=\"M2 4h20v16H2z\"><\/path><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\"><\/path><\/mask><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\" fill=\"currentColor\"><\/path><path d=\"M12.002 19.57a2.28 2.28 0 0 1-1.216-.35c-1.03-.65-3.011-1.985-4.687-3.615C4.043 13.604 3 11.718 3 10.001c0-1.194.36-2.287 1.04-3.162a4.752 4.752 0 0 1 2.585-1.69 4.825 4.825 0 0 1 3.095.243c.873.37 1.651.993 2.282 1.821.631-.83 1.41-1.453 2.282-1.821a4.825 4.825 0 0 1 3.096-.243c1.03.263 1.94.858 2.585 1.69.68.875 1.04 1.968 1.04 3.162 0 1.717-1.043 3.602-3.1 5.603-1.675 1.63-3.655 2.964-4.686 3.615a2.28 2.28 0 0 1-1.217.351ZM7.806 6.014a3.75 3.75 0 0 0-2.949 1.438c-.54.698-.827 1.579-.827 2.55 0 1.438.94 3.081 2.794 4.884 1.607 1.565 3.521 2.854 4.518 3.481a1.241 1.241 0 0 0 1.319 0c.997-.629 2.91-1.917 4.518-3.48 1.854-1.804 2.794-3.447 2.794-4.885 0-.971-.287-1.85-.828-2.55a3.75 3.75 0 0 0-1.984-1.312c-1.408-.376-3.386.017-4.716 2.245a.51.51 0 0 1-.444.25.522.522 0 0 1-.445-.25c-1.045-1.754-2.494-2.37-3.75-2.37Z\" stroke=\"currentColor\" stroke-width=\"0.2\" mask=\"url(#bestseller_svg__a)\"><\/path><\/svg>",
             "text": "Super stretchy, buttery soft eco botanic fabric to move with your changes during pregnancy and postpartum.",
             "text_style": "body"
           }
@@ -413,7 +404,7 @@
         "button_az3dMX"
       ],
       "settings": {
-        "tool_tip_image": "shopify://shop_images/0F3A1433.jpg",
+        "tool_tip_image": "shopify:\/\/shop_images\/0F3A1433.jpg",
         "btn_text1": "Clip-free nursing bra with easy feeding access. Pull down to feed.",
         "top1": "80",
         "left1": "18",
@@ -442,7 +433,7 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify://shop_images/ibclc_b3efa71e-c0f0-4eeb-ba2d-d6b87f1eecb6.jpg",
+            "image": "shopify:\/\/shop_images\/ibclc_b3efa71e-c0f0-4eeb-ba2d-d6b87f1eecb6.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -462,7 +453,7 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify://shop_images/ibclc2_4387a409-0192-449c-a483-ac2b1d3c456d.jpg",
+            "image": "shopify:\/\/shop_images\/ibclc2_4387a409-0192-449c-a483-ac2b1d3c456d.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -482,7 +473,7 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify://shop_images/ibclc3.jpg",
+            "image": "shopify:\/\/shop_images\/ibclc3.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -521,14 +512,14 @@
         "heading_er4CUt": {
           "type": "heading",
           "settings": {
-            "heading": "Postpartum is not about \"bouncing back.\" It's about <em>celebrating</em> our new body, new changes, new challenges, new life.",
+            "heading": "Postpartum is not about \"bouncing back.\" It's about <em>celebrating<\/em> our new body, new changes, new challenges, new life.",
             "heading_size": "h2"
           }
         },
         "text_qrDBQm": {
           "type": "text",
           "settings": {
-            "text": "<p>We want mums to celebrate their bodies through a time of change and growth. There is no better way to do this than embodying your own style and wearing clothes that make ‘you’ <em>feel</em> good, embracing the change and experiencing maximum comfort and confidence all day, and night.</p>",
+            "text": "<p>We want mums to celebrate their bodies through a time of change and growth. There is no better way to do this than embodying your own style and wearing clothes that make ‘you’ <em>feel<\/em> good, embracing the change and experiencing maximum comfort and confidence all day, and night.<\/p>",
             "text_style": "body"
           }
         },
@@ -536,7 +527,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP THE COLLECTION",
-            "button_link": "shopify://collections/the-leakproof-cami",
+            "button_link": "shopify:\/\/collections\/the-leakproof-cami",
             "button_style_secondary": true
           }
         }
@@ -547,7 +538,7 @@
         "button_xV8VB9"
       ],
       "settings": {
-        "image": "shopify://shop_images/darcy_a3249538-e201-49ba-86d5-240d45f6e012.jpg",
+        "image": "shopify:\/\/shop_images\/darcy_a3249538-e201-49ba-86d5-240d45f6e012.jpg",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "text_first",
@@ -575,7 +566,7 @@
         "text_K3aRzE": {
           "type": "text",
           "settings": {
-            "text": "<h2>We love seeing mums in MUMMA MILLA. A functional and modern nursing bra that is comfortable, chic and designed to <em>grow</em> with you from pregnancy-to- postpartum, and beyond.</h2>"
+            "text": "<h2>We love seeing mums in MUMMA MILLA. A functional and modern nursing bra that is comfortable, chic and designed to <em>grow<\/em> with you from pregnancy-to- postpartum, and beyond.<\/h2>"
           }
         },
         "button_ddzeiq": {
@@ -611,37 +602,37 @@
         "video_HRfEjd": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/26f38d86f0954020aa02141eb661d320.mp4"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/26f38d86f0954020aa02141eb661d320.mp4"
           }
         },
         "video_hmMQNz": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/f4fd7ffb3eb44db9b0d85e7063cbe33a.mp4"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f4fd7ffb3eb44db9b0d85e7063cbe33a.mp4"
           }
         },
         "video_nkNLyk": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/369e5f6f3cc54a7b8138f16a97a07567.mp4"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/369e5f6f3cc54a7b8138f16a97a07567.mp4"
           }
         },
         "video_HhVfTX": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/e8fbf27310a9495ca685f2bf903dd23b.mp4"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e8fbf27310a9495ca685f2bf903dd23b.mp4"
           }
         },
         "video_kBPUDV": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/253592b9896b46a686581df7bbfbb239.mp4"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/253592b9896b46a686581df7bbfbb239.mp4"
           }
         },
         "video_xByiH3": {
           "type": "video",
           "settings": {
-            "sec_video_url": "https://cdn.shopify.com/videos/c/o/v/8e90ce9fa9a64086bda82aba199bf891.mov"
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8e90ce9fa9a64086bda82aba199bf891.mov"
           }
         }
       },
@@ -671,21 +662,21 @@
         "text_ximWBL": {
           "type": "text",
           "settings": {
-            "text": "<h3>Finding the<em>perfect </em>bra for you, especially during pregnancy and post-birth can be a game changer, and guess what, it can be an easy thing to achieve if you know what to look for.</h3>"
+            "text": "<h3>Finding the<em>perfect <\/em>bra for you, especially during pregnancy and post-birth can be a game changer, and guess what, it can be an easy thing to achieve if you know what to look for.<\/h3>"
           }
         },
         "text_WmhcD9": {
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_VCBVtz": {
           "type": "button",
           "settings": {
             "button_label": "SEE SIZE GUIDE",
-            "button_link": "shopify://pages/size-guide",
+            "button_link": "shopify:\/\/pages\/size-guide",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -722,7 +713,7 @@
         "text_Ww3yLB": {
           "type": "text",
           "settings": {
-            "text": "<p></p><p>We're here to help if you have any questions in regards to size, style or fit. Please send us an email so we can personally get back to you. </p>",
+            "text": "<p><\/p><p>We're here to help if you have any questions in regards to size, style or fit. Please send us an email so we can personally get back to you. <\/p>",
             "text_style": "body"
           }
         },
@@ -730,7 +721,7 @@
           "type": "button",
           "settings": {
             "button_label": "PERSONAL SIZE ASSISTANCE",
-            "button_link": "https://mumma-milla.com/pages/size-guide",
+            "button_link": "https:\/\/mumma-milla.com\/pages\/size-guide",
             "button_style_secondary": true
           }
         }
@@ -741,7 +732,7 @@
         "button_gNm7Jp"
       ],
       "settings": {
-        "image": "shopify://shop_images/Screenshot_2024-07-11_at_12.28.26_PM.png",
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-07-11_at_12.28.26_PM.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -762,35 +753,35 @@
         "review_tF3ide": {
           "type": "Review",
           "settings": {
-            "review_comment": "<p>\"Incredible to have such a great quality without all the plastic clips. I’m wearing these daily and still am only 31 weeks pregnant. These save me from the occasional leakage I have had for the last 12 weeks now and I’m so glad I’m set for when I am actually breastfeeding! I’ve already thought about how I’d probably keep wearing them after breastfeeding too. Love them, so happy. Worth the splurge.<em> 10/10!</em>\"</p>",
+            "review_comment": "<p>\"Incredible to have such a great quality without all the plastic clips. I’m wearing these daily and still am only 31 weeks pregnant. These save me from the occasional leakage I have had for the last 12 weeks now and I’m so glad I’m set for when I am actually breastfeeding! I’ve already thought about how I’d probably keep wearing them after breastfeeding too. Love them, so happy. Worth the splurge.<em> 10\/10!<\/em>\"<\/p>",
             "review_author": "Kirstie G."
           }
         },
         "review_BJi7Ma": {
           "type": "Review",
           "settings": {
-            "review_comment": "<p>\"I bought one cami a few weeks ago, then had to come back for <em>more</em>. Decided on this two pack. Stunning soft fabric that washes well. Delicate neckline is so pretty and feminine. Very comfortable. The padding isn’t too thick, I can wear this on a hot muggy day in Auckland and be comfortable. I<em> love</em> them I will probably wear this when I’m not breastfeeding too! I’m a size 10 and got a medium. Fits great.\"</p>",
+            "review_comment": "<p>\"I bought one cami a few weeks ago, then had to come back for <em>more<\/em>. Decided on this two pack. Stunning soft fabric that washes well. Delicate neckline is so pretty and feminine. Very comfortable. The padding isn’t too thick, I can wear this on a hot muggy day in Auckland and be comfortable. I<em> love<\/em> them I will probably wear this when I’m not breastfeeding too! I’m a size 10 and got a medium. Fits great.\"<\/p>",
             "review_author": "Kate T."
           }
         },
         "review_cGgPnH": {
           "type": "Review",
           "settings": {
-            "review_comment": "<p>\"The comfiest <em>breastfeeding</em> bra - ended up getting the 4 pack after my first 2! Highly recommend!\"</p>",
+            "review_comment": "<p>\"The comfiest <em>breastfeeding<\/em> bra - ended up getting the 4 pack after my first 2! Highly recommend!\"<\/p>",
             "review_author": "Alena C."
           }
         },
         "review_WyHQgP": {
           "type": "Review",
           "settings": {
-            "review_comment": "<p>\"After lots of trial and error, found these<em> perfect </em>maternity bras. No clips, pads or bulkiness and very discreet. Wish I had them the entire <em>breastfeeding</em> journey!\"</p>",
+            "review_comment": "<p>\"After lots of trial and error, found these<em> perfect <\/em>maternity bras. No clips, pads or bulkiness and very discreet. Wish I had them the entire <em>breastfeeding<\/em> journey!\"<\/p>",
             "review_author": "Anne H."
           }
         },
         "review_wnTCm6": {
           "type": "Review",
           "settings": {
-            "review_comment": "<p>\"A beautiful cut and quality fit. I have enjoyed wearing the bralette as loungewear during my pregnancy. As a <em>lactation consultant,</em> I am happy to recommend this bralette to all of my clients who want comfort, support and style.\"</p>",
+            "review_comment": "<p>\"A beautiful cut and quality fit. I have enjoyed wearing the bralette as loungewear during my pregnancy. As a <em>lactation consultant,<\/em> I am happy to recommend this bralette to all of my clients who want comfort, support and style.\"<\/p>",
             "review_author": "Joelleen WP."
           }
         }

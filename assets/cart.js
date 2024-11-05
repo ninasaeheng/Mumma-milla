@@ -108,6 +108,8 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
+    if(isNaN(quantity)) { return; }
+    
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -118,9 +120,7 @@ class CartItems extends HTMLElement {
     });
 
     fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
-      .then((response) => {
-        return response.text();
-      })
+      .then((response) => response.text())
       .then((state) => {
         const parsedState = JSON.parse(state);
         const quantityElement =
@@ -176,19 +176,23 @@ class CartItems extends HTMLElement {
         // this function is in custom.js for reload cart recomm
 
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error('Cart update error:', error);
         this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
       })
       .finally(() => {
-      
+        // Remove setTimeout and handle all updates synchronously
         this.disableLoading(line);
         calculateDiscount();
-        setTimeout(function () {
+        
+        // Trigger variant updates immediately after cart is updated
+        try {
           collVariant();
-          cart_recomm();
-        },1000);
+        } catch (error) {
+          console.error('Error updating variants:', error);
+        }
       });
   }
 
@@ -259,84 +263,78 @@ if (!customElements.get('cart-note')) {
   );
 }
 
-  function collVariant() {
-        
-  var products= $('.custom-product-form');
-  products.each(function(){
+function collVariant() {
+  var products = $('.custom-product-form');
+  
+  products.each(function() {
     var field = $(this);
-    var current_variatn = parseInt($(this).find('[name="id"]').val());
-    var script = $(this).find('script[type="application/json"]');
-    script = JSON.parse(script.text());
-    var selected_option = script.find((item) => {
-      if(item.id == current_variatn){
-      return item.title;
-      }
-    });
-   selected_option.options.forEach(function (item) {
-     field.find('input[value="'+item+'"]').prop("checked", true);
-   });
-  })
-  products.find('input[type="radio"]').change(function() {
-    var product_form = $(this).closest('.custom-product-form');
-    var selected_option = product_form.find('input[type="radio"]:checked');
-    selected_option= selected_option.map((index,item)=>{
-      return item.getAttribute('value'); 
-    });
-    var script = product_form.find('script[type="application/json"]');
-    script = JSON.parse(script.text());
-    var current_variant="";
-    try {
-       script.forEach(function (item){
-        var matched= false;
-        try {
-          item.options.forEach(function(options,index){
-             if(options == selected_option[index]){
-               matched = true;
-             }else{
-               matched = false;
-               throw new Error("Break inner the loop.");
-             }
-            });
-          }catch(error){
-            // console.log(error);
-          }
-          
-          if(matched == true){
-            current_variant = item;
-            console.log(item);
-            throw new Error("Break the loop.");
-          }
-        })
-      } catch (error) {
-           // console.log(error);
-      }
-      if(current_variant == ""){
-        product_form.find('.quick-add__submit>span').addClass("hidden");
-        product_form.find('.quick-add__submit .sold-out-message').removeClass("hidden");
-      }else{
-         product_form.find('.quick-add__submit>span').removeClass("hidden");
-         product_form.find('.quick-add__submit .sold-out-message').addClass("hidden");
-         product_form.find('[name="id"]').val(current_variant.id);
-         console.log(current_variant);
-      }
-  });
+    var variantIdInput = field.find('[name="id"]');
+    var current_variant = parseInt(variantIdInput.val());
     
-  }
-  function cart_recomm(){
-      var products= $('.cart_recomm .custom-product-form');
-      products.each(function(){
-        var field = $(this);
-        var current_variatn = parseInt($(this).find('[name="id"]').val());
-        var script = $(this).find('script[type="application/json"]');
-        script = JSON.parse(script.text());
-        var selected_option = script.find((item) => {
-          if(item.id == current_variatn){
-             
-          return item.title;
+    var script = field.find('script[type="application/json"]');
+    if (!script.length) {
+      console.log('No variant script found for form');
+      return;
+    }
+
+    try {
+      var variants = JSON.parse(script.text());
+      var selected_option;
+
+      // First try to find the current variant
+      if (current_variant) {
+        selected_option = variants.find((item) => item.id === current_variant);
+      }
+      
+      // If no variant is selected or current variant not found, select first available
+      if (!selected_option) {
+        selected_option = variants.find(variant => variant.available) || variants[0];
+        if (selected_option) {
+          console.log('Setting initial variant:', selected_option.id);
+          variantIdInput.val(selected_option.id);
+        }
+      }
+
+      if (selected_option) {
+        // Update radio buttons
+        selected_option.options.forEach(function(item, index) {
+          const input = field.find(`input[type="radio"][value="${item}"]`);
+          if (input.length) {
+            input.prop("checked", true);
+          } else {
+            console.log(`Could not find radio button for option ${index}:`, item);
           }
         });
-       selected_option.options.forEach(function (item) {
-           field.find('input[value="'+item+'"]').prop("checked", true);
-       });
-      });
-  }
+
+        // Update button state
+        const submitButton = field.find('.quick-add__submit');
+        const buttonSpan = submitButton.find('span');
+        const soldOutMessage = submitButton.find('.sold-out-message');
+
+        if (selected_option.available) {
+          buttonSpan.removeClass("hidden");
+          soldOutMessage.addClass("hidden");
+          submitButton.removeAttr('aria-disabled');
+        } else {
+          buttonSpan.addClass("hidden");
+          soldOutMessage.removeClass("hidden");
+          submitButton.attr('aria-disabled', 'true');
+        }
+      }
+    } catch (error) {
+      console.error('Error in collVariant for form:', error);
+    }
+  });
+
+  // Only attach change handlers if they haven't been attached yet
+  products.find('input[type="radio"]').off('change').on('change', function() {
+    var product_form = $(this).closest('.custom-product-form');
+    handleVariantChange(product_form[0]); // Pass the DOM element
+  });
+}
+
+// Ensure collVariant runs on page load
+$(document).ready(function() {
+  console.log('Running initial collVariant');
+  collVariant();
+});

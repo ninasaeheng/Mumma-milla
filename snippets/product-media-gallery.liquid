@@ -11,6 +11,8 @@
   {% render 'product-media-gallery', is_duplicate: true %}
 {% endcomment %}
 
+<script src="{{ 'gallery-slider-init.js' | asset_url }}" defer="defer"></script>
+
 {%- liquid
   if section.settings.hide_variants and variant_images.size == product.media.size
     assign single_media_visible = true

@@ -20,37 +20,11 @@ const commonSettings = {
 };
 
 // Enhanced initialize function with Safari fixes
-function initVideoSliders() {
+function initReviewSliders() {
   // Force layout recalculation for Safari
   document.body.offsetHeight;
 
   const sliderConfigs = [
-    {
-      selector: ".video-slider",
-      options: {
-        ...commonSettings,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        lazyLoad: "progressive",
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 370,
-            settings: {
-              arrows: false,
-              slidesToShow: 1,
-              adaptiveHeight: true,
-            },
-          },
-        ],
-      },
-    },
     {
       selector: ".customer-review-main",
       options: {
@@ -72,29 +46,6 @@ function initVideoSliders() {
 
       // Initialize with error handling
       $slider.slick(options);
-
-      // Special handling for video sliders
-      if (selector === ".video-slider") {
-        $slider.on(
-          "beforeChange",
-          function (event, slick, currentSlide, nextSlide) {
-            const videos = slick.$slides.find("video").get();
-            videos.forEach((video) => {
-              video.pause();
-              video.currentTime = 0;
-            });
-          }
-        );
-
-        $slider.on("afterChange", function (event, slick, currentSlide) {
-          const currentVideo = $(slick.$slides[currentSlide]).find("video")[0];
-          if (currentVideo) {
-            currentVideo
-              .play()
-              .catch((e) => console.log("Video autoplay prevented:", e));
-          }
-        });
-      }
 
       // Force slider refresh and show
       setTimeout(() => {
@@ -144,28 +95,28 @@ async function init() {
       // Add Safari-specific CSS fixes
       const style = document.createElement("style");
       style.textContent = `
-        .slick-slider {
-          -webkit-transform: translate3d(0,0,0);
-          -webkit-backface-visibility: hidden;
-          -webkit-perspective: 1000;
-        }
-        .slick-slide {
-          -webkit-transform: translate3d(0,0,0);
-        }
-      `;
+          .slick-slider {
+            -webkit-transform: translate3d(0,0,0);
+            -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+          }
+          .slick-slide {
+            -webkit-transform: translate3d(0,0,0);
+          }
+        `;
       document.head.appendChild(style);
     }
 
     // Initialize sliders
     if (document.readyState === "complete") {
-      initVideoSliders();
+      initReviewSliders();
     } else {
-      document.addEventListener("DOMContentLoaded", initVideoSliders);
+      document.addEventListener("DOMContentLoaded", initReviewSliders);
     }
 
     // Reinitialize on Shopify section updates
     document.addEventListener("shopify:section:load", function () {
-      initVideoSliders();
+      initReviewSliders();
     });
   } catch (error) {
     console.error("Slider initialization failed:", error);
