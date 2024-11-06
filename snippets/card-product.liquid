@@ -331,7 +331,15 @@
             {%- endif -%}
           </div>
         {%- else -%}
-          <a href="{{ card_product.url }}" class="button button--full-width button--secondary card-product-button">Choose your bundle</a>
+        {%  liquid
+          assign buttonTitle = ""
+          if card_product.title contains 'Bundle'
+            assign buttonTitle = "Choose your bundle"
+          else
+            assign buttonTitle = "Add to bag"
+          endif
+        %}
+          <a href="{{ card_product.url }}" class="button button--full-width button--secondary card-product-button">{{ buttonTitle }}</a>
         {%- endif -%}
         
       </div>

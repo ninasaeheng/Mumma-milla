@@ -1,28 +1,30 @@
-// Create constants for common configurations
-let commonArrows = {
-  prevArrow:
-    '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-  nextArrow:
-    '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-};
-
-let commonSettings = {
-  infinite: true,
-  autoplay: false,
-  dots: false,
-  arrows: true,
-  ...commonArrows,
-  // Safari-specific optimizations
-  touchThreshold: 10,
-  waitForAnimate: false,
-  useTransform: true,
-  respondTo: "slider",
-};
 
 // Enhanced initialize function with Safari fixes
 function initReviewSliders() {
   // Force layout recalculation for Safari
   document.body.offsetHeight;
+
+  // Create constants for common configurations
+  let commonArrows = {
+    prevArrow:
+      '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
+    nextArrow:
+      '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
+  };
+
+  let commonSettings = {
+    infinite: true,
+    autoplay: false,
+    dots: false,
+    arrows: true,
+    ...commonArrows,
+    // Safari-specific optimizations
+    touchThreshold: 10,
+    waitForAnimate: false,
+    useTransform: true,
+    respondTo: "slider",
+  };
+
 
   const sliderConfigs = [
     {
