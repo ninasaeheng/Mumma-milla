@@ -1639,6 +1639,18 @@ body .mega-menu[open] .mega-menu__content {
     overflow: scroll;
   }
 }
+.card__content .card-information .price {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+}
+
+@media screen and (max-width: 750px) {
+  .card__content .button {
+    display: none !important;
+  }
+}
+
 .f-badge {
   background: #e4e4cd;
   padding: 4px 8px;

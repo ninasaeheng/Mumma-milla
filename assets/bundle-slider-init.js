@@ -168,8 +168,7 @@ async function initBundleSlide() {
 initBundleSlide();
 
 // Optimized event binding function
-function bindSlickEvents() {
-  console.log("bindSlickEvents");
+function bindSlickEvents() { 
   const $topSlider = $(".pb_top_products .product__slider");
   const $bottomSlider = $(".pb_bottom_products .product__slider");
 
@@ -213,6 +212,7 @@ function bindSlickEvents() {
   }
 
   if ($bottomSlider.length) {
+    console.log($bottomSlider.length);
     $bottomSlider.on("afterChange", function (event, slick, currentSlide) {
       const element = slick.$slides
         .get(currentSlide)

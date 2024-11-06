@@ -1,70 +1,66 @@
+// Create constants for common configurations
+const commonVideoArrows = {
+  prevArrow:
+    '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
+  nextArrow:
+    '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
+};
 
+const commonVideoSettings = {
+  infinite: true,
+  autoplay: false,
+  dots: false,
+  arrows: true,
+  ...commonVideoArrows,
+  touchThreshold: 10,
+  waitForAnimate: true, // Changed to true for better performance
+  useTransform: true,
+  respondTo: 'window' // Changed to window for better caching
+};
+
+const sliderVideoConfigs = [
+  {
+    selector: '.video-slider',
+    options: {
+      ...commonVideoSettings,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            adaptiveHeight: true,
+          },
+        },
+        {
+          breakpoint: 370,
+          settings: {
+            arrows: false,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+          },
+        },
+      ],
+    },
+  },
+  {
+    selector: ".customer-review-main",
+    options: {
+      ...commonVideoSettings,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    },
+  },
+];
 // Enhanced initialize function with Safari fixes
 function initVideoSliders() {
   // Force layout recalculation for Safari
   document.body.offsetHeight;
-
-  // Create constants for common configurations
-  let commonArrows = {
-    prevArrow:
-      '<div class="slick-slider__prev"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-    nextArrow:
-      '<div class="slick-slider__next"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></svg></div>',
-  };
-
-  let commonSettings = {
-    infinite: true,
-    autoplay: false,
-    dots: false,
-    arrows: true,
-    ...commonArrows,
-    // Safari-specific optimizations
-    touchThreshold: 10,
-    waitForAnimate: false,
-    useTransform: true,
-    respondTo: "slider",
-  };
-
-
-  const sliderConfigs = [
-    {
-      selector: ".video-slider",
-      options: {
-        ...commonSettings,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        lazyLoad: "progressive",
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 370,
-            settings: {
-              arrows: false,
-              slidesToShow: 1,
-              adaptiveHeight: true,
-            },
-          },
-        ],
-      },
-    },
-    {
-      selector: ".customer-review-main",
-      options: {
-        ...commonSettings,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ];
-
+  
   // Enhanced initialization with error handling
-  sliderConfigs.forEach(({ selector, options }) => {
+  sliderVideoConfigs.forEach(({ selector, options }) => {
     const $slider = $(selector);
     if (!$slider.length) return;
 

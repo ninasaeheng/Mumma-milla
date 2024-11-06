@@ -1253,8 +1253,6 @@ class ProductRecommendations extends HTMLElement {
           if (html.querySelector('.grid__item')) {
             this.classList.add('product-recommendations--loaded');
           }
-          // this function is in custom.js file
-          // collVariant();
         })
         .catch((e) => {
           console.error(e);

@@ -67,7 +67,7 @@ function collVariant() {
 }
 
 function initializeVariantSelections() {
-  console.log('Initializing variant selections');
+  // console.log('Initializing variant selections');
   document.querySelectorAll('.custom-product-form').forEach(form => {
     try {
       // Find first available variant
@@ -162,57 +162,6 @@ function initializeCartRecommendations() {
     }
   });
 }
-
-/* function handleVariantChange(form) {
-  try {
-    const variantScript = form.querySelector('script[type="application/json"]');
-    const variants = JSON.parse(variantScript.textContent);
-    
-    // Get all selected options
-    const selectedOptions = [];
-    form.querySelectorAll('input[type="radio"]:checked').forEach(input => {
-      selectedOptions.push(input.value);
-    });
-
-    console.log('Selected options:', selectedOptions);
-
-    // Find matching variant
-    const matchingVariant = variants.find(variant => 
-      variant.options.every((option, index) => option === selectedOptions[index])
-    );
-
-    console.log('Matching variant:', matchingVariant);
-
-    if (matchingVariant) {
-      // Update hidden variant ID input without triggering form submission
-      const variantIdInput = form.querySelector('input[name="id"]');
-      if (variantIdInput) {
-        variantIdInput.value = matchingVariant.id;
-        console.log('Updated variant ID to:', matchingVariant.id);
-      }
-
-      // Update button state without triggering loading state
-      const submitButton = form.querySelector('button[type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = !matchingVariant.available;
-        
-        // Update button text without affecting loading spinner
-        const buttonTextSpan = submitButton.querySelector('span:not(.loading__spinner)');
-        const soldOutMessage = submitButton.querySelector('.sold-out-message');
-        
-        if (matchingVariant.available) {
-          if (buttonTextSpan) buttonTextSpan.classList.remove('hidden');
-          if (soldOutMessage) soldOutMessage.classList.add('hidden');
-        } else {
-          if (buttonTextSpan) buttonTextSpan.classList.add('hidden');
-          if (soldOutMessage) soldOutMessage.classList.remove('hidden');
-        }
-      }
-    }
-  } catch (error) {
-    console.error('Error in handleVariantChange:', error);
-  }
-} */
 
 function handleVariantChange(e) {
   const form = e.target.closest('.custom-product-form');

@@ -135,7 +135,8 @@
 
 .card__content {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+  /* grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr); */
+  grid-template-rows: 1fr; /* Fixed the cursor pointer only showing on top half */ 
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
