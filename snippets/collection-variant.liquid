@@ -84,6 +84,25 @@
   </product-form>
 </div>
 
+<script>
+  // Variant selection handler
+  $(document).ready(function() {
+    $('body').on('click', '#size-select span', function() {
+      var selectedVariant = $(this).text().trim();
+      var $select = $('select');
+      var variantId = 'aa';
+      $select.find('option').each(function() {
+        if ($(this).text().trim() === selectedVariant) {
+          variantId = $(this).val();
+          return false;
+        }
+      });
+      $('.product-variant-id').val(variantId);
+      console.log("!!!!", variantId); 
+    });
+  });
+</script>
+
 <style>
   .field_set, .size-select-inner {
       display: flex;

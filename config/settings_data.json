@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
     "title": "YOU MIGHT ALSO FANCY THESE",
@@ -21,9 +12,9 @@
     "enable_quick_add": true,
     "columns_mobile": "2",
     "swipe_on_mobile": true,
-    "logo": "shopify://shop_images/MUMMA_MILLA_LOGO_TRANSPARENT_5701c4a3-d54c-4616-b1a4-207108b96ee7.png",
+    "logo": "shopify:\/\/shop_images\/MUMMA_MILLA_LOGO_TRANSPARENT_5701c4a3-d54c-4616-b1a4-207108b96ee7_1.png",
     "logo_width": 90,
-    "favicon": "shopify://shop_images/favicon_fa08ad4b-604f-4ee9-8a7a-6a67bd0624ce.jpg",
+    "favicon": "shopify:\/\/shop_images\/favicon_fa08ad4b-604f-4ee9-8a7a-6a67bd0624ce.jpg",
     "cart_top_first_text": "SPEND $200.00 FOR FREE SHIPPING",
     "cart_top_last_text": "",
     "cart_bottom": "",
@@ -41,19 +32,19 @@
     "blog_card_color_scheme": "background-1",
     "badge_position": "top left",
     "sale_badge_color_scheme": "inverse",
-    "social_facebook_link": "https://www.facebook.com/www.mummamilla",
-    "social_instagram_link": "https://www.instagram.com/mumma_milla___/",
-    "social_twitter_link": "https://twitter.com/mumma_milla",
-    "social_pinterest_link": "https://www.pinterest.com.au/mumma_milla___",
+    "social_facebook_link": "https:\/\/www.facebook.com\/www.mummamilla",
+    "social_instagram_link": "https:\/\/www.instagram.com\/mumma_milla___\/",
+    "social_twitter_link": "https:\/\/twitter.com\/mumma_milla",
+    "social_pinterest_link": "https:\/\/www.pinterest.com.au\/mumma_milla___",
     "cart_type": "drawer",
     "show_vendor": false,
     "cart_discount_enable": true,
     "discount_total_price": 400,
-    "icon_1": "shopify://shop_images/unlock_096f4192-dc69-4eec-9efb-782c88745c37.jpg",
+    "icon_1": "shopify:\/\/shop_images\/unlock_096f4192-dc69-4eec-9efb-782c88745c37.jpg",
     "text_1": "",
     "discount_1": 0,
     "discount_product_1": "",
-    "icon_2": "shopify://shop_images/unlock_096f4192-dc69-4eec-9efb-782c88745c37.jpg",
+    "icon_2": "shopify:\/\/shop_images\/unlock_096f4192-dc69-4eec-9efb-782c88745c37.jpg",
     "text_2": "SPEND $200 FOR FREE SHIPPING",
     "discount_2": 200,
     "discount_product_2": "nipple-butter-gift-2",
@@ -63,7 +54,7 @@
     "text_4": "",
     "discount_4": 0,
     "discount_product_4": "",
-    "cart_discount_message": "You are <b>{{ cart.currency.symbol }}</b><span class=\"cart-discount__num\"></span> away from worldwide free shipping.",
+    "cart_discount_message": "You are <b>{{ cart.currency.symbol }}<\/b><span class=\"cart-discount__num\"><\/span> away from worldwide free shipping.",
     "cart_discount_theshold": 80,
     "cart_discount_theshold_world": 800,
     "sections": {
@@ -74,15 +65,14 @@
             "type": "announcement",
             "settings": {
               "text": "15% OFF ALL 4-PACK BUNDLES. Use code BUNDLE15. Free Shipping within Aus.",
-              "link": "shopify://collections/leakproof-bra-collection"
+              "link": "shopify:\/\/collections\/leakproof-bra-collection"
             }
           }
         },
         "block_order": [
           "announcement-bar-0"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "header": {
         "type": "header",
@@ -135,45 +125,32 @@
       },
       "main-password-header": {
         "type": "main-password-header",
-        "settings": {
-        }
+        "settings": {}
       },
       "main-password-footer": {
         "type": "main-password-footer",
-        "settings": {
-        }
+        "settings": {}
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "2751642906dc85a5e": {
-        "type": "shopify://apps/growave-loyalty-wishlist-3/blocks/block.embed.socialshopwave-helper/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+        "type": "shopify:\/\/apps\/growave-loyalty-wishlist-3\/blocks\/block.embed.socialshopwave-helper\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
         "disabled": false,
-        "settings": {
-        }
-      },
-      "6986766168588894248": {
-        "type": "shopify://apps/preorder-now-wolf/blocks/app-embed/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
-        "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "17453258828962521766": {
-        "type": "shopify://apps/captain-insure/blocks/app/a7ef2f88-bc96-4a68-ba4e-f042ccbc8beb",
+        "type": "shopify:\/\/apps\/captain-insure\/blocks\/app\/a7ef2f88-bc96-4a68-ba4e-f042ccbc8beb",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "124348908681409149": {
-        "type": "shopify://apps/simple-bundles-kits/blocks/simple-bundles-v2/e553276b-36b2-446d-b80a-aa47fe5f96ac",
+        "type": "shopify:\/\/apps\/simple-bundles-kits\/blocks\/simple-bundles-v2\/e553276b-36b2-446d-b80a-aa47fe5f96ac",
         "disabled": false,
         "settings": {
           "select_placeholder": "Please select an option",
@@ -181,6 +158,11 @@
           "custom_css": "",
           "custom_js": ""
         }
+      },
+      "6986766168588894248": {
+        "type": "shopify:\/\/apps\/preorder-now-wolf\/blocks\/app-embed\/7ee1d740-e67b-4ea8-b0c9-1f62cb8777ec",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
@@ -397,7 +379,7 @@
       "sale_badge_color_scheme": "accent-2",
       "sold_out_badge_color_scheme": "inverse",
       "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_description": "<p><\/p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

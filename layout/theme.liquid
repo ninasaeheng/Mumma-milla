@@ -21,7 +21,7 @@
     {%- endunless -%}
     <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://code.jquery.com" crossorigin>
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <!-- <link rel="preconnect" href="https://www.clarity.ms" crossorigin> -->
 
     <title>
       {{ page_title }}
@@ -37,22 +37,22 @@
     {% render 'meta-tags' %}
 
     <!-- Script loading error handling -->
-    <script>
+    <!-- <script>
       window.addEventListener('error', function(e) {
         if (e.target.tagName === 'SCRIPT') {
           console.error('Script loading error:', e.target.src);
         }
       }, true);
-    </script>
+    </script> -->
 
     <!-- Microsoft Clarity -->
-    <script type="text/javascript" defer async>
+    <!-- <script type="text/javascript" defer async>
       (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "nfexyiz4mw");
-    </script>
+    </script> -->
 
     <!-- jQuery and core scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
@@ -64,23 +64,33 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <!-- Inline critical CSS -->
-    <style>
-      /* Performance: LCP Reduction */
-      .slideshow__image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-      
-      .js-loading {
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-      .js-loading.loaded {
-        opacity: 1;
-      }
-    </style>
+    {% if template.name != 'index' %}
+      <!-- Inline critical CSS -->
+      <style>
+        .js-loading {
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .js-loading.loaded {
+          opacity: 1;
+        }
+      </style>
+      <!-- Performance monitoring -->
+      <script>
+        window.performance.mark('head_end');
+        document.addEventListener('DOMContentLoaded', function() {
+          window.performance.mark('dom_loaded');
+          try {
+            const headEnd = performance.getEntriesByName('head_end')[0];
+            const domLoaded = performance.getEntriesByName('dom_loaded')[0];
+            console.log(`Page load time: ${domLoaded.startTime - headEnd.startTime}ms`);
+          } catch(e) {
+            console.error('Performance monitoring error:', e);
+          }
+          document.body.classList.add('loaded');
+        });
+      </script>
+    {% endif %}
 
     {{ content_for_header }}
 
@@ -91,13 +101,11 @@
     %}
 
     {% style %}
-    
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
-
       {% render 'color-scheme-variables' %}
       
       :root {
@@ -107,17 +115,10 @@
       }
 
       {% render 'base-styles' %}
-
-      
     {% endstyle %}
 
-    <!-- Critical CSS -->
-    {% if 'base.css' | asset_url %}
-      {{ 'base.css' | asset_url | preload_tag: as: 'style' }}
-      <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
-    {% endif %}
-      
-    <!-- Defer non-critical CSS -->
+    <!-- Defer CSS -->
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'slick.min.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'slick-theme.min.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -171,27 +172,12 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-
-    <!-- Performance monitoring -->
-    <script>
-      window.performance.mark('head_end');
-      document.addEventListener('DOMContentLoaded', function() {
-        window.performance.mark('dom_loaded');
-        try {
-          const headEnd = performance.getEntriesByName('head_end')[0];
-          const domLoaded = performance.getEntriesByName('dom_loaded')[0];
-          console.log(`Page load time: ${domLoaded.startTime - headEnd.startTime}ms`);
-        } catch(e) {
-          console.error('Performance monitoring error:', e);
-        }
-        document.body.classList.add('loaded');
-      });
-    </script>
     
     <noscript>
       <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
       <link rel="stylesheet" href="{{ 'slick.min.css' | asset_url }}">
       <link rel="stylesheet" href="{{ 'slick-theme.min.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
     </noscript>
   </head>
 
@@ -266,79 +252,7 @@
     <!-- Core scripts with proper loading order -->
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
     {% comment %} <script src="{{ 'video-slider-init.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-    <script src="{{ 'custom.js' | asset_url }}"></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Debounce function
-        function debounce(func, wait) {
-          let timeout;
-          return function executedFunction(...args) {
-            const later = () => {
-              clearTimeout(timeout);
-              func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-          };
-        }
-
-        // Initial cart calculation
-        function calculateProgress(currentVal, targetVal) {
-          var progressBar = document.querySelectorAll('.cart-shippingThreshold__progress');
-          var progressNum = document.querySelectorAll('.cart-shipping__num');
-          var progressOuter = document.querySelectorAll('.cart-shipping__numOuter');
-          var successMsg = document.querySelectorAll('.cart-shipping__success');
-          
-          var result = Math.round(100 * currentVal / targetVal);
-          progressBar.forEach(function(el){
-            el.setAttribute('style', `width: ${result}%`);
-          });
-          
-          var newProgressNum = (targetVal - currentVal) / 100;
-          if(newProgressNum <= 0){
-            successMsg.forEach(el => el.style.display = 'block');
-            progressOuter.forEach(el => el.style.display = 'none');
-          } else {
-            successMsg.forEach(el => el.style.display = 'none');
-            progressOuter.forEach(el => el.style.display = 'block');
-          }
-          progressNum.forEach(el => el.textContent = newProgressNum);
-        }
-
-        // Debounced update function
-        const debouncedUpdateShippingProgress = debounce(function() {
-          fetch('/cart.js')
-            .then(response => response.json())
-            .then(data => {
-              calculateProgress(data.total_price, {{settings.cart_free_shipping_amount | times: 100}});
-            });
-        }, 250);
-
-        // Initial calculation
-        debouncedUpdateShippingProgress();
-
-        // Listen for cart updates with debounced handler
-        document.addEventListener('cart:updated', debouncedUpdateShippingProgress);
-        document.addEventListener('cart:refresh', debouncedUpdateShippingProgress);
-        
-        // Variant selection handler
-        $(document).ready(function() {
-          $('body').on('click', '#size-select span', function() {
-            var selectedVariant = $(this).text().trim();
-            var $select = $('select');
-            var variantId = 'aa';
-            $select.find('option').each(function() {
-              if ($(this).text().trim() === selectedVariant) {
-                variantId = $(this).val();
-                return false;
-              }
-            });
-            $('.product-variant-id').val(variantId);
-            console.log(variantId); 
-          });
-        });
-      });
-    </script>
   </body>
 </html>

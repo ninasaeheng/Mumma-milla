@@ -8,7 +8,7 @@
           "settings": {
             "banner_video_url": "",
             "show_video": true,
-            "image": "shopify:\/\/shop_images\/WEBSITE_BANNER_16dbe154-23b7-4404-92d1-90d4cb4b83a2.jpg",
+            "image": "shopify:\/\/shop_images\/WEBSITE_BANNER_16dbe154-23b7-4404-92d1-90d4cb4b83a2_1.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -118,8 +118,8 @@
         "content_alignment": "center",
         "color_scheme": "background-1",
         "full_width": true,
-        "padding_top": 32,
-        "padding_bottom": 16
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "rich_text": {
@@ -177,6 +177,7 @@
         "title": "",
         "heading_size": "h1",
         "description": "",
+        "text_alignment": "center",
         "show_description": false,
         "description_style": "body",
         "collection": "leakproof-bra-collection",
@@ -195,8 +196,8 @@
         "enable_quick_add": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 28,
-        "padding_bottom": 0
+        "padding_top": 36,
+        "padding_bottom": 8
       }
     },
     "rich_text_UPAMUX": {
@@ -247,15 +248,13 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 60
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "video_fBMXXt": {
       "type": "video",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "heading": "",
         "heading_size": "h2",
@@ -282,13 +281,12 @@
       "block_order": [
         "variant_picker_UqMUXz"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "Bundle + Save",
         "heading_size": "h1",
         "description": "<p>Bundle your favourites to save 15% + Free Shipping*<br\/>Use code BUNDLE15 at checkout<\/p>",
+        "text_alignment": "center",
         "show_description": false,
         "description_style": "body",
         "collection": "bundle-save",
@@ -307,8 +305,8 @@
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 68,
-        "padding_bottom": 0
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "rich_text_RFJDDL": {
@@ -350,7 +348,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 36,
-        "padding_bottom": 20
+        "padding_bottom": 36
       }
     },
     "image_tooltip_sec_y3pBCY": {
@@ -422,7 +420,7 @@
         "top_mob3": "28",
         "left_mob3": "45",
         "padding_top": 0,
-        "padding_bottom": 12
+        "padding_bottom": 0
       }
     },
     "slideshow_MUnNJD": {
@@ -549,7 +547,7 @@
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "padding_top": 12,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -592,7 +590,7 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 28,
+        "padding_top": 36,
         "padding_bottom": 0
       }
     },
@@ -645,8 +643,8 @@
         "video_xByiH3"
       ],
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 32,
+        "padding_bottom": 36
       }
     },
     "rich_text_xy7wNL": {
@@ -695,8 +693,8 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 20
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_fknwUx": {
@@ -743,7 +741,7 @@
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "padding_top": 20,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -814,8 +812,8 @@
         "show_date": false,
         "show_author": false,
         "show_view_all": true,
-        "padding_top": 76,
-        "padding_bottom": 8
+        "padding_top": 36,
+        "padding_bottom": 0
       }
     }
   },

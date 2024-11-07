@@ -5,8 +5,7 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "text_3HFnrY": {
           "type": "text",
@@ -18,8 +17,7 @@
         "4d8b38f9-1e3a-47e2-9140-900421d6159b": {
           "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "caption": {
           "type": "text",
@@ -52,14 +50,12 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -270,8 +266,7 @@
       "blocks": {
         "8866f504-865b-4613-8f57-6486c399dc55": {
           "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [

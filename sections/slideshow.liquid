@@ -128,18 +128,7 @@
   >
     {%- for block in section.blocks -%}
 
-      {%- liquid
-        assign is_first_slide = forloop.first 
-        assign loading_attr = ''
-        assign fetchpriority = ''
-        if forloop.first
-          assign loading_attr = 'eager'
-          assign fetchpriority = 'high'
-        else
-          assign loading_attr = 'lazy'
-          assign fetchpriority = 'low'
-        endif
-      -%}
+      
       
       <style>
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
@@ -161,6 +150,12 @@
               <source src="{{ block.settings.banner_video_url | escape }}" type="video/mp4">
             </video>
           {%- else block.settings.image -%}
+            {%- liquid
+              assign is_first_slide = forloop.first
+              assign loading_attr = forloop.first | default: 'lazy'
+              assign fetchpriority = forloop.first | default: 'high' | default: 'low'
+              assign decoding = forloop.first | default: 'sync' | default: 'async'
+            -%}
             {%- assign img = block.settings.image -%}
             {%- liquid
               assign mobile_widths = '375,550,750' | split: ','
@@ -172,11 +167,11 @@
             {% if forloop.first %}
               {%- # Preload critical images for first slide -%}
               <link rel="preload" as="image" 
-                href="{{ mobile_image_url | append: '&format=pjpg' }}" 
+                href="{{ img | image_url: width: 750, format: 'webp' }}" 
                 media="(max-width: 749px)"
                 fetchpriority="high">
               <link rel="preload" as="image" 
-                href="{{ desktop_image_url | append: '&format=pjpg' }}" 
+                href="{{ img | image_url: width: 1500, format: 'webp' }}" 
                 media="(min-width: 750px)"
                 fetchpriority="high">
             {% endif %}
@@ -185,20 +180,20 @@
               srcset="
                 {%- for width in mobile_widths -%}
                   {%- assign width_num = width | plus: 0 -%}
-                  {{ img | image_url: width: width_num, format: 'pjpg' }} {{ width }}w,
+                  {{ img | image_url: width: width_num, format: 'webp' }} {{ width }}w,
                 {%- endfor -%}
                 {%- for width in desktop_widths -%}
                   {%- assign width_num = width | plus: 0 -%}
-                  {{ img | image_url: width: width_num, format: 'pjpg' }} {{ width }}w{% unless forloop.last %},{% endunless %}
+                  {{ img | image_url: width: width_num, format: 'webp' }} {{ width }}w{% unless forloop.last %},{% endunless %}
                 {%- endfor -%}
               "
-              src="{{ img | image_url: width: 1500, format: 'pjpg' }}"
+              src="{{ img | image_url: width: 1500, format: 'webp' }}"
               sizes="100vw"
               alt="{{ img.alt | default: 'Slideshow image' | escape }}"
               class="slideshow__image"
               loading="{{ loading_attr }}"
               fetchpriority="{{ fetchpriority }}"
-              decoding="{{ forloop.first | default: 'async' }}"
+              decoding="{{ decoding }}"
               width="{{ img.width }}"
               height="{{ img.height }}"
               onload="{% if is_first_slide %}performance.mark('first-slide-loaded');{% endif %}"

@@ -43,7 +43,7 @@ function collVariant() {
 
         if (matched == true) {
           current_variant = item;
-          console.log(item);
+          // console.log(item);
           throw new Error("Break the loop.");
         }
       });
@@ -61,7 +61,7 @@ function collVariant() {
         .find(".quick-add__submit .sold-out-message")
         .addClass("hidden");
       product_form.find('[name="id"]').val(current_variant.id);
-      console.log(current_variant);
+      // console.log(current_variant);
     }
   });
 }
@@ -113,7 +113,7 @@ function initializeCartRecommendations() {
       }
 
       const variants = JSON.parse(variantScript.textContent);
-      console.log('Variants data:', variants);
+      // console.log('Variants data:', variants);
 
       // Find first available variant
       const firstAvailableVariant = variants.find(variant => variant.available);
@@ -129,11 +129,14 @@ function initializeCartRecommendations() {
         const input = form.querySelector(`input[type="radio"][value="${optionValue}"]`);
         if (input) {
           input.checked = true;
-          console.log(`Selected option ${index}:`, optionValue);
+          // console.log(`Selected option ${index}:`, optionValue);
         } else {
           console.log(`Could not find input for option ${index}:`, optionValue);
         }
       });
+
+      console.log('STOP');
+      return;
 
       // Update hidden variant ID input
       const variantIdInput = form.querySelector('input[name="id"]');
@@ -249,7 +252,7 @@ function cart_recomm() {
                     const radio = form.querySelector(`input[type="radio"][value="${optionValue}"]`);
                     if (radio) {
                       radio.checked = true;
-                      console.log(`Selected option ${index}:`, optionValue);
+                      // console.log(`Selected option ${index}:`, optionValue);
                     }
                   });
 
@@ -290,14 +293,15 @@ function cart_recomm() {
   });
 
   // Fetch recommendations
-  fetch('/recommendations/products.json?product_id=' + cartDrawer.productId + '&limit=2')
-    .then(response => response.json())
-    .then(data => {
-      console.log('Recommendations fetched successfully');
-    })
-    .catch(error => {
-      console.error('Error fetching recommendations:', error);
-    });
+  // fetch('/recommendations/products.json?product_id=' + cartDrawer.productId + '&limit=2')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log('Recommendations fetched successfully');
+  //     console.log(data);
+  //   })
+  //   .catch(error => {
+  //     console.error('Error fetching recommendations:', error);
+  //   });
 }
 
 // ON DOCUMENT READY

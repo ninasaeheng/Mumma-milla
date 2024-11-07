@@ -11,40 +11,40 @@
 </div>
 
 <style>
-      /*  Style the progress bar  */
-      .cart-shipping__wrapper {
-        padding: 15px;
-        max-width: 700px;
-        margin: 0 auto;
-      }
+  /*  Style the progress bar  */
+  .cart-shipping__wrapper {
+    padding: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-      .cart-shippingThreshold__bar {
-        margin-top: 10px;
-        position: relative;
-        background-color: #f9f9f9;
-        height: 1rem;
-        border-radius: 30px;
-      }
+  .cart-shippingThreshold__bar {
+    margin-top: 10px;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 1rem;
+    border-radius: 30px;
+  }
 
-      .cart-shippingThreshold__progress {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 0;
-        max-width: 100%;
-        height: 100%;
-        display: block;
-        background-color: #000;
-        border-radius: 30px;
-      }
-      .cart-shipping__success {
-      display: none;
-    }
+  .cart-shippingThreshold__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 0;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #000;
+    border-radius: 30px;
+  }
+  .cart-shipping__success {
+    display: none;
+  }
   /* fk style starts here */
 
   .cart-shippingThreshold__progress {
     height: 10px;
-    top:-2.5px;
+    top: -2.5px;
   }
 
   .cart-shippingThreshold__bar {
@@ -58,13 +58,13 @@
   }
 
   p.cart-shipping__numOuter,
-  .bar-bottom{
+  .bar-bottom {
     font-size: 12px;
     letter-spacing: 0;
   }
 
   .cart-shipping__success {
-    font-weight:bolder;
+    font-weight: bolder;
     font-size: 13px;
     letter-spacing: 0;
   }
@@ -75,7 +75,7 @@
   }
 
   .cart-shipping__wrapper {
-    padding-top:0;
+    padding-top: 0;
   }
 
   .cart-shipping__numOuter b {
@@ -84,6 +84,59 @@
   /* fk style ends here */
 </style>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Debounce function
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
 
+    // Initial cart calculation
+    function calculateProgress(currentVal, targetVal) {
+      var progressBar = document.querySelectorAll('.cart-shippingThreshold__progress');
+      var progressNum = document.querySelectorAll('.cart-shipping__num');
+      var progressOuter = document.querySelectorAll('.cart-shipping__numOuter');
+      var successMsg = document.querySelectorAll('.cart-shipping__success');
+      
+      var result = Math.round(100 * currentVal / targetVal);
+      progressBar.forEach(function(el){
+        el.setAttribute('style', `width: ${result}%`);
+      });
+      
+      var newProgressNum = (targetVal - currentVal) / 100;
+      if(newProgressNum <= 0){
+        successMsg.forEach(el => el.style.display = 'block');
+        progressOuter.forEach(el => el.style.display = 'none');
+      } else {
+        successMsg.forEach(el => el.style.display = 'none');
+        progressOuter.forEach(el => el.style.display = 'block');
+      }
+      progressNum.forEach(el => el.textContent = newProgressNum);
+    }
 
+    // Debounced update function
+    const debouncedUpdateShippingProgress = debounce(function() {
+      fetch('/cart.js')
+        .then(response => response.json())
+        .then(data => {
+          calculateProgress(data.total_price, {{settings.cart_free_shipping_amount | times: 100}});
+        });
+    }, 250);
 
+    // Initial calculation
+    debouncedUpdateShippingProgress();
+
+    // Listen for cart updates with debounced handler
+    document.addEventListener('cart:updated', debouncedUpdateShippingProgress);
+    document.addEventListener('cart:refresh', debouncedUpdateShippingProgress);
+    
+  });
+</script>
