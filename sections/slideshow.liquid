@@ -160,8 +160,6 @@
             {%- liquid
               assign mobile_widths = '375,550,750' | split: ','
               assign desktop_widths = '990,1100,1500,2000,2500' | split: ','
-              assign mobile_image_url = img | image_url: width: 750
-              assign desktop_image_url = img | image_url: width: 1500
             -%}
 
             {% if forloop.first %}
@@ -187,7 +185,7 @@
                   {{ img | image_url: width: width_num, format: 'webp' }} {{ width }}w{% unless forloop.last %},{% endunless %}
                 {%- endfor -%}
               "
-              src="{{ img | image_url: width: 2500, format: 'webp' }}"
+              src="{{ img | image_url: width: 1500, format: 'webp' }}"
               sizes="100vw"
               alt="{{ img.alt | default: 'Slideshow image' | escape }}"
               class="slideshow__image"
