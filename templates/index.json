@@ -283,9 +283,9 @@
       ],
       "custom_css": [],
       "settings": {
-        "title": "Bundle + Save",
+        "title": "Bundle + Save.  Select 4 or more of your favourites for 15% off, plus Free Shipping.",
         "heading_size": "h1",
-        "description": "<p>Bundle your favourites to save 15% + Free Shipping*<br\/>Use code BUNDLE15 at checkout<\/p>",
+        "description": "<p>Use code BUNDLE15 at checkout.<br\/>T+C's apply.<\/p>",
         "text_alignment": "center",
         "show_description": false,
         "description_style": "body",

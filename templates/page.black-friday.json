@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "rich_text_4J8FzH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rbRTrw": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "SHOP SOCIAL",
+            "heading_size": "h1"
+          }
+        },
+        "text_VrxjiT": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h5>Mums wearing MUMMA MILLA.<\/h5>"
+          }
+        },
+        "button_TrNKNp": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rbRTrw",
+        "text_VrxjiT",
+        "button_TrNKNp"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h1 {text-align: center !important;}"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "1711415973b23ed05e": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_cNhnzY": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "Rr3Lug"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_cNhnzY"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_U6MwYc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gqpdmT": {
+          "type": "heading",
+          "settings": {
+            "heading": "MUMMA MILLA",
+            "heading_size": "h2"
+          }
+        },
+        "text_TNU8XW": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>\"Let's celebrate the changes we go through from woman to mother.\"<\/h4>"
+          }
+        },
+        "button_KVKU6e": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gqpdmT",
+        "text_TNU8XW",
+        "button_KVKU6e"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "video_iaPqEQ": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify:\/\/files\/videos\/MUMMA MILLA - JENNA INTERVIEW -3.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_4J8FzH",
+    "main",
+    "1711415973b23ed05e",
+    "rich_text_U6MwYc",
+    "video_iaPqEQ"
+  ]
+}
