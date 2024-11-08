@@ -220,10 +220,6 @@
                               {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750, format: 'webp' }} 750w,{%- endif -%}
                               {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100, format: 'webp' }} 1100w,{%- endif -%}
                               {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500, format: 'webp' }} 1500w,{%- endif -%}
-                              {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780, format: 'webp' }} 1780w,{%- endif -%}
-                              {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000, format: 'webp' }} 2000w,{%- endif -%}
-                              {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000, format: 'webp' }} 3000w,{%- endif -%}
-                              {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840, format: 'webp' }} 3840w,{%- endif -%}
                               {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
                             "
                             sizes="100vw"
