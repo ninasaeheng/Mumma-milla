@@ -755,6 +755,7 @@ body .product-media-container.constrain-height .media {
   width: 100%;
   max-width: calc(100% - 90px);
 }
+
 /* ..14 feb nd.... */
 .pb_tiitle .h2 {
   font-size: 30px;
@@ -1394,8 +1395,8 @@ body,
   }
 
   .cart-recommendation button#-submit {
-    height: 20px;
-    min-height: 20px;
+    /* height: 20px; */
+    /* min-height: 20px; */
   }
 
   body .menu-drawer,
@@ -1648,7 +1649,7 @@ body .mega-menu[open] .mega-menu__content {
   width: fit-content;
   margin-right: 10px;
   white-space: nowrap;
-}
+}car
 
 .template-collection div#size-select {
   height: 55px;
@@ -1693,7 +1694,7 @@ body .mega-menu[open] .mega-menu__content {
 }
 
 @media screen and (max-width: 750px) {
-  .card__content .button {
+  .product-grid .card__content .button {
     display: none !important;
   }
 }

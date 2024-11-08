@@ -21,7 +21,6 @@
     {%- endunless -%}
     <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://code.jquery.com" crossorigin>
-    <!-- <link rel="preconnect" href="https://www.clarity.ms" crossorigin> -->
 
     <title>
       {{ page_title }}
@@ -35,15 +34,6 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
-    <!-- Script loading error handling -->
-    <!-- <script>
-      window.addEventListener('error', function(e) {
-        if (e.target.tagName === 'SCRIPT') {
-          console.error('Script loading error:', e.target.src);
-        }
-      }, true);
-    </script> -->
 
     <!-- jQuery and core scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
@@ -111,7 +101,6 @@
 
       {% render 'base-styles' %}
 
-      
     {% endstyle %}
 
     <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">

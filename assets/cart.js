@@ -263,6 +263,20 @@ if (!customElements.get('cart-note')) {
   );
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const checkoutButton = document.getElementById('CartDrawer-Checkout');
+  if (!checkoutButton) return;
+
+  checkoutButton.addEventListener('click', function(event) {
+    const spinner = this.querySelector('.loading__spinner');
+    const text = this.querySelector('.checkout-text');
+
+    this.classList.add('loading');
+    if (spinner) spinner.classList.remove('hidden');
+    if (text) text.textContent = ''; // Clear the text while loading
+  });
+});
+
 /*
 // ALREADY DECLEARED IN custom.js
 
