@@ -135,9 +135,6 @@ function initializeCartRecommendations() {
         }
       });
 
-      console.log('STOP');
-      return;
-
       // Update hidden variant ID input
       const variantIdInput = form.querySelector('input[name="id"]');
       if (variantIdInput) {
