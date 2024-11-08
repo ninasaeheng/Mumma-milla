@@ -45,15 +45,6 @@
       }, true);
     </script> -->
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript" defer async>
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "nfexyiz4mw");
-    </script>
-
     <!-- jQuery and core scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
@@ -188,6 +179,10 @@
   </head>
 
   <body class="js-loading template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', '-' | handle }} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    <!-- <div id="preloader">
+      <div class="loader"></div>
+    </div> -->
+    
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -260,5 +255,12 @@
     {% comment %} <script src="{{ 'video-slider-init.js' | asset_url }}" defer="defer"></script> {% endcomment %}
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
+    <!-- <script>
+      // wait atleast 1 second for page to load a bit and then take off the preloader...
+      setTimeout(function() {
+        var preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
+      }, 1000);
+    </script> -->
   </body>
 </html>

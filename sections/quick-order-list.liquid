@@ -1,6 +1,20 @@
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
-{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'section-related-products.css' | asset_url }}">
+
+{% if section.settings.image_shape == 'blob' %}
+  <link rel="stylesheet" href="{{ 'mask-blobs.css' | asset_url }}">
+{% endif %}
+
+<noscript>
+  {{ 'component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+  
+  {% if section.settings.image_shape == 'blob' %}
+    {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+</noscript>
 
 <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
