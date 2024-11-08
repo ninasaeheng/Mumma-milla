@@ -55,7 +55,7 @@
                 {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
                 {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330, format: 'webp' }} 330w,{%- endif -%}
                 {{ card_collection.featured_image | image_url: width: 700, format: 'webp' }} 700w"
-              src="{{ card_collection.featured_image | image_url: width: 330, format: 'webp' }}"
+              src="{{ card_collection.featured_image | image_url: width: 400, format: 'webp' }}"
               sizes="
                 (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
                 (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
