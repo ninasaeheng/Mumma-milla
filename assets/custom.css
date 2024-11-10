@@ -1634,7 +1634,7 @@ body,
 
 body .shopify-section-header-sticky .mega-menu__content,
 .js body .mega-menu__content {
-  opacity: 1 !important;
+  /* opacity: 1 !important; */
   transition: transform 0.4s 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transform: translateY(-100%) !important;
 }
