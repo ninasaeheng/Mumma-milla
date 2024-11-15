@@ -10,7 +10,7 @@
         "text_3HFnrY": {
           "type": "text",
           "settings": {
-            "text": "Our <em>clip-free <\/em>nursing intimates feature built-in, non-removable  leakproof layers to catch your breastfeeding spills. All styles have been designed to be worn from pregnancy - <em>postpartum.<\/em>",
+            "text": "{{ product.metafields.custom.product_subtitle.value }}",
             "text_style": "body"
           }
         },
