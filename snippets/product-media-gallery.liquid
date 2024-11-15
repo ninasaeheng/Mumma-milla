@@ -59,15 +59,15 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter main-gallery">
-  {% if product.metafields.custom.product_video %}
+    {% if product.metafields.custom.product_video %}
       <div class="sticky-video">
-          <div class='video-item'>
-            <video class="" loop="" preload="metadata" playsinline= 'true'>
-              <source src="{{ product.metafields.custom.product_video }}" type="video/mp4">
-            </video>
-            <div class="play-button"> </div>
-          </div>
-  	</div>  
+        <div class='video-item'>
+          <video class="" loop="" preload="metadata" playsinline= 'true'>
+            <source src="{{ product.metafields.custom.product_video }}" type="video/mp4">
+          </video>
+          <div class="play-button"> </div>
+        </div>
+      </div>  
     {% endif %}
     {%- unless is_duplicate -%}
       <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
@@ -110,6 +110,11 @@
             class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
+            {%- if settings.enable_sitewide_sale -%}
+              <div class="product-sale-banner">
+                {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
+              </div>
+            {%- endif -%}
             {%- liquid
               assign media_position = media_position | default: 0 | plus: 1
               assign lazy_load = false
@@ -321,6 +326,28 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+
+{%- if settings.enable_sitewide_sale -%}
+  <style>
+    .slider__slide {
+      position: relative;
+    }
+    .product-sale-banner {
+      background-color: {{ settings.sitewide_sale_bg_color }};
+      color: {{ settings.sitewide_sale_text_color }};
+      position: absolute;
+      bottom: 10%;
+      left: 1px;
+      right: 1px;
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 1.6rem;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+{%- endif -%}
 {% comment %}
 <div class="custom-product-slider">
   <div class="custom-slider custom-slider-for">

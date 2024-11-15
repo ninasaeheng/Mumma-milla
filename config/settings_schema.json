@@ -1729,6 +1729,46 @@
     ]
   },
   {
+    "name": "Sitewide Sale",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_sitewide_sale",
+        "label": "Enable Sitewide Sale?",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "sitewide_sale_percentage",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Percentage off",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "sitewide_sale_text",
+        "label": "Sale text",
+        "default": "Sale",
+        "info": "Example: Sale. This will be located after ##% off"
+      },
+      {
+        "type": "color",
+        "id": "sitewide_sale_bg_color",
+        "label": "Banner Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "sitewide_sale_text_color",
+        "label": "Banner Text Color",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {
