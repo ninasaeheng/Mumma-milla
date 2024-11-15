@@ -23,7 +23,7 @@
           <video class="" loop="" preload="metadata" playsinline= 'true'>
             <source src="{{ block.settings.sec_video_url }}#t=0.001" type="video/mp4">
           </video>
-          <div class="play-button"> </div>
+          <div class="play-button" style="display: none;"> </div>
         </div>
       {% endfor %}
 	</div>    
@@ -45,19 +45,27 @@
 </script> -->
 
 <script>
-  var videoContainers = document.querySelectorAll(".video-slider");
-  videoContainers.forEach(videoContainer => {
-  var playButtons = videoContainer.querySelectorAll('.play-button');
-    playButtons.forEach(playButton => {
-      playButton.addEventListener('click', function() {
-        this.classList.toggle('play');
-        var video = this.closest('.video-item').querySelector('video');
+   document.addEventListener('DOMContentLoaded', function() {
+    // Show all play buttons
+    document.querySelectorAll('.play-button').forEach(button => {
+      button.style.display = 'block';
+    });
 
-        if (this.classList.contains('play')) {
-          video.play();
-        } else {
-          video.pause();
-        }
+    // Existing video player functionality
+    var videoContainers = document.querySelectorAll(".video-slider");
+    videoContainers.forEach(videoContainer => {
+      var playButtons = videoContainer.querySelectorAll('.play-button');
+      playButtons.forEach(playButton => {
+        playButton.addEventListener('click', function() {
+          this.classList.toggle('play');
+          var video = this.closest('.video-item').querySelector('video');
+
+          if (this.classList.contains('play')) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
       });
     });
   });
