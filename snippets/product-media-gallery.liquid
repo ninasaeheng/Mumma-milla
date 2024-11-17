@@ -44,9 +44,6 @@
     assign id_append = '-duplicate'
   endif
 -%}
-
-    
-    
     
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
@@ -86,6 +83,12 @@
           class="product__media-item grid__item slider__slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
           data-media-id="{{ section.id }}-{{ featured_media.id }}"
         >
+          {%- if settings.enable_sitewide_sale -%}
+            <div class="product-sale-banner">
+              {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
+            </div>
+          {%- endif -%}
+
           {%- assign media_position = 1 -%}
           {% render 'product-thumbnail',
             media: featured_media,
@@ -110,11 +113,13 @@
             class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
+
             {%- if settings.enable_sitewide_sale -%}
               <div class="product-sale-banner">
                 {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
               </div>
             {%- endif -%}
+
             {%- liquid
               assign media_position = media_position | default: 0 | plus: 1
               assign lazy_load = false
@@ -329,6 +334,7 @@
 
 {%- if settings.enable_sitewide_sale -%}
   <style>
+    .product__media-list,
     .slider__slide {
       position: relative;
     }
@@ -348,6 +354,7 @@
     }
   </style>
 {%- endif -%}
+
 {% comment %}
 <div class="custom-product-slider">
   <div class="custom-slider custom-slider-for">

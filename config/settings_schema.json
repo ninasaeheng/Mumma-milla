@@ -1943,12 +1943,6 @@
         "id": "discount_product_4",
         "label": "Select discount four product"
       },
-      // {
-      //   "type": "liquid",
-      //   "id": "cart_discount_message",
-      //   "label": "Cart Discount Message",
-      //   "info": "Add [item] item to get discount"
-      // },
       {
         "type": "textarea",
         "id": "cart_success_message",

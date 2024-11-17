@@ -211,7 +211,8 @@
                   price_class: 'price--large'
                 -%}
               {% if product.tags contains 'new-arrival' %}
-                <div class="custom-tag-inner">{{ block.settings.custom_tag }}</div>
+                <div class="custom-tag-inner" style="background-color: #F4EDE5;">{{ block.settings.custom_tag }}</div>
+                {% comment %} <div class="custom-tag-inner" style="background-color: {{ block.settings.custom_tag_color }}; color: {{ block.settings.custom_tag_text_color }};">{{ block.settings.custom_tag }}</div> {% endcomment %}
               {% endif %}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
@@ -912,6 +913,18 @@
           "id": "custom_tag",
           "label": "Custom Tag Text",
           "default": "Best seller"
+        },
+        {
+          "type": "color",
+          "id": "custom_tag_color",
+          "label": "Custom Tag Background Color",
+          "default": "#f4ede5"
+        },
+        {
+          "type": "color",
+          "id": "custom_tag_text_color",
+          "label": "Custom Tag Text Color",
+          "default": "#000000"
         }
       ]
     },
