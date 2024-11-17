@@ -1,21 +1,9 @@
 <!-- Free discount progress markup -->
- {{ "/services/javascripts/currencies.js" | script_tag }}
+<script src="{{ '/services/javascripts/currencies.js' | asset_url }}" defer></script>
+
 <div class="cart-discount__wrapper">
-  <!-- <p class="cart-discount__numOuter">
-    <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect y="6.41431" width="2" height="6.29215" rx="1" transform="rotate(-45 0 6.41431)" fill="black"/>
-      <rect x="12.8853" width="2" height="13.6449" rx="1" transform="rotate(45.654 12.8853 0)" fill="black"/>
-    </svg>
-  {{ settings.cart_discount_message }}</p> -->
-  <!-- <p class="cart-discount__success" style="display:none">{{ settings.cart_success_message }}</p> -->
   <div class="cart-discountThreshold__bar">
     <span class="cart-discountThreshold__progress"></span>
-    <!-- <span class="cart-discountThreshold__bar-line" style="left: 80%;">
-      <div class="first_threshold">{{ settings.cart_discount_theshold }}</div>
-    </span>
-    <span class="cart-discountThreshold__bar-line" style="left: 99.5%;">
-      <div class="first_threshold">{{ settings.cart_discount_theshold_world }}</div>
-    </span> -->
     {% assign product_one = settings.discount_product_1 %}
     {% if settings.discount_product_1 != blank %}
       <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
@@ -98,13 +86,6 @@
     width: 100%;
     height: 162px;
   }
-  p.cart-discount__success, .cart-discount__numOuter {
-    margin-bottom: 0;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #000;
-    text-transform: uppercase !important;
-  }
   .first_threshold {
     margin-top: 9px;
     position: absolute;
@@ -140,13 +121,6 @@
     display: block;
     /*  Progress bar fill color  */
     background-color:{{settings.cart_discount_bar_fillcolor}};
-  }
-  .cart-discountThreshold__bar-line {
-    position: absolute;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background-color: {{settings.cart_discount_bar_fillcolor}};
   }
   .cart_discount__item {
     position: absolute;
@@ -224,8 +198,6 @@
   function calculateProgress(currentVal, targetVal) {
     var progressBar = document.querySelectorAll('.cart-discountThreshold__progress');
     var progressNum = document.querySelectorAll('.cart-discount__num');
-    var progressOuter = document.querySelectorAll('.cart-discount__numOuter');
-    var successMsg = document.querySelectorAll('.cart-discount__success');
     console.log(currentVal);
     // if(currentVal <= {{settings.discount_1}}) {
     //   var result = Math.round(30 * currentVal / {{settings.discount_1}});
