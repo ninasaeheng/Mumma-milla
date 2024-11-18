@@ -1,1 +1,162 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"Choose 4 + Save 15% off, Plus Free Shipping* - USE CODE BUNDLE15","link":"https:\/\/mumma-milla.com\/collections\/bundle-save"}},"announcement_c9YE8w":{"type":"announcement","disabled":true,"settings":{"text":"Welcome to our store","link":""}},"announcement_UipXCR":{"type":"announcement","settings":{"text":"Say goodbye to breastfeeding leaks and nursing pads. Shop Leakproof Collection","link":"shopify:\/\/collections\/leakproof-bra-collection"}},"announcement_URUGim":{"type":"announcement","disabled":true,"settings":{"text":"Receive a Free Pure Mama Nipple Butter when you spend +$150. *For a limited time only.","link":""}},"announcement_b3qKQw":{"type":"announcement","disabled":true,"settings":{"text":"Free Shipping for orders over $200.","link":""}}},"block_order":["announcement-bar-0","announcement_c9YE8w","announcement_UipXCR","announcement_URUGim","announcement_b3qKQw"],"settings":{"color_scheme":"accent-1","show_line_separator":true,"show_social":false,"auto_rotate":true,"change_slides_speed":4,"enable_country_selector":false,"enable_language_selector":false}},"header":{"type":"header","blocks":{"megamenu_UCjCeC":{"type":"megamenu","settings":{"menu_item_text":"Shop","promo_link":"shopify:\/\/products\/best-nursing-bra","promo_image":"shopify:\/\/shop_images\/hamburger_35a9530b-88ee-48d1-880b-363865d6e0bb.jpg","promo_text1":"Leakproof Day","promo_link2":"shopify:\/\/collections\/bundle-save","promo_image2":"shopify:\/\/shop_images\/hamburger2_8db0b6ae-a60c-4a2b-9a2c-a277ff956eb1.jpg","promo_text2":"Leakproof Night","promo_link3":"","promo_text3":"New Arrival"}},"megamenu_j33PwY":{"type":"megamenu","settings":{"menu_item_text":"Bundle + Save","promo_link":"","promo_image":"shopify:\/\/shop_images\/hamburger2_91ad746e-fd30-4951-83aa-d0eba8e56b78.jpg","promo_text1":"Shop Now","promo_link2":"","promo_text2":"New Arrival","promo_link3":"","promo_text3":"New Arrival"}},"megamenu_7WTJG7":{"type":"megamenu","settings":{"menu_item_text":"About","promo_link":"","promo_image":"shopify:\/\/shop_images\/hamburger3.jpg","promo_text1":"The Story","promo_link2":"","promo_text2":"New Arrival","promo_link3":"","promo_text3":"New Arrival"}},"megamenu_tJfJGT":{"type":"megamenu","settings":{"menu_item_text":"M. Magazine","promo_link":"","promo_image":"shopify:\/\/shop_images\/hamburger2_46cbe218-eee1-4cc8-9ea2-17d1b4b5d0c8.jpg","promo_text1":"New Arrival","promo_link2":"","promo_text2":"New Arrival","promo_link3":"","promo_text3":"New Arrival"}},"megamenu_ramhMG":{"type":"megamenu","settings":{"menu_item_text":"Ask","promo_link":"shopify:\/\/pages\/size-guide","promo_image":"shopify:\/\/shop_images\/Untitled-22_6846fc3f-b6dc-464f-94c4-01e1ae4bce7c.jpg","promo_text1":"Size Guide","promo_link2":"shopify:\/\/pages\/the-best-nursing-bra","promo_text2":"FAQ'S","promo_link3":"","promo_text3":"New Arrival"}}},"block_order":["megamenu_UCjCeC","megamenu_j33PwY","megamenu_7WTJG7","megamenu_tJfJGT","megamenu_ramhMG"],"settings":{"logo_position":"top-center","menu":"new-mega-menu","menu_type_desktop":"mega","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"background-1","menu_color_scheme":"","enable_country_selector":true,"enable_language_selector":false,"mobile_logo_position":"center","margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["announcement-bar","header"]}
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Choose 4 + Save 15% off, Plus Free Shipping* - USE CODE BUNDLE15",
+            "link": "https:\/\/mumma-milla.com\/collections\/bundle-save"
+          }
+        },
+        "announcement_c9YE8w": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
+        "announcement_UipXCR": {
+          "type": "announcement",
+          "settings": {
+            "text": "Say goodbye to breastfeeding leaks and nursing pads. Shop Leakproof Collection",
+            "link": "shopify:\/\/collections\/leakproof-bra-collection"
+          }
+        },
+        "announcement_URUGim": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Receive a Free Pure Mama Nipple Butter when you spend +$150. *For a limited time only.",
+            "link": ""
+          }
+        },
+        "announcement_b3qKQw": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Free Shipping for orders over $200.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_c9YE8w",
+        "announcement_UipXCR",
+        "announcement_URUGim",
+        "announcement_b3qKQw"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 4,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "megamenu_UCjCeC": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item_text": "Shop",
+            "promo_link": "shopify:\/\/products\/best-nursing-bra",
+            "promo_image": "shopify:\/\/shop_images\/hamburger_35a9530b-88ee-48d1-880b-363865d6e0bb.jpg",
+            "promo_text1": "Leakproof Day",
+            "promo_link2": "shopify:\/\/collections\/bundle-save",
+            "promo_image2": "shopify:\/\/shop_images\/hamburger2_8db0b6ae-a60c-4a2b-9a2c-a277ff956eb1.jpg",
+            "promo_text2": "Leakproof Night",
+            "promo_link3": "",
+            "promo_text3": "New Arrival"
+          }
+        },
+        "megamenu_j33PwY": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item_text": "Bundle + Save",
+            "promo_link": "",
+            "promo_image": "shopify:\/\/shop_images\/hamburger2_91ad746e-fd30-4951-83aa-d0eba8e56b78.jpg",
+            "promo_text1": "Shop Now",
+            "promo_link2": "",
+            "promo_text2": "New Arrival",
+            "promo_link3": "",
+            "promo_text3": "New Arrival"
+          }
+        },
+        "megamenu_7WTJG7": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item_text": "About",
+            "promo_link": "",
+            "promo_image": "shopify:\/\/shop_images\/hamburger3.jpg",
+            "promo_text1": "The Story",
+            "promo_link2": "",
+            "promo_text2": "New Arrival",
+            "promo_link3": "",
+            "promo_text3": "New Arrival"
+          }
+        },
+        "megamenu_tJfJGT": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item_text": "M. Magazine",
+            "promo_link": "",
+            "promo_image": "shopify:\/\/shop_images\/hamburger2_46cbe218-eee1-4cc8-9ea2-17d1b4b5d0c8.jpg",
+            "promo_text1": "New Arrival",
+            "promo_link2": "",
+            "promo_text2": "New Arrival",
+            "promo_link3": "",
+            "promo_text3": "New Arrival"
+          }
+        },
+        "megamenu_ramhMG": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item_text": "Ask",
+            "promo_link": "shopify:\/\/pages\/size-guide",
+            "promo_image": "shopify:\/\/shop_images\/Untitled-22_6846fc3f-b6dc-464f-94c4-01e1ae4bce7c.jpg",
+            "promo_text1": "Size Guide",
+            "promo_link2": "shopify:\/\/pages\/the-best-nursing-bra",
+            "promo_text2": "FAQ'S",
+            "promo_link3": "",
+            "promo_text3": "New Arrival"
+          }
+        }
+      },
+      "block_order": [
+        "megamenu_UCjCeC",
+        "megamenu_j33PwY",
+        "megamenu_7WTJG7",
+        "megamenu_tJfJGT",
+        "megamenu_ramhMG"
+      ],
+      "settings": {
+        "logo_position": "top-center",
+        "menu": "new-mega-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "",
+        "enable_country_selector": true,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

@@ -1849,7 +1849,7 @@
       },
       {
         "type": "header",
-        "content": "First discount"
+        "content": "First dicount"
       },
       {
         "type": "image_picker",
@@ -1873,7 +1873,7 @@
       },
       {
         "type": "header",
-        "content": "Second discount"
+        "content": "Second dicount"
       },
       {
         "type": "image_picker",
@@ -1897,7 +1897,7 @@
       },
       {
         "type": "header",
-        "content": "Third discount"
+        "content": "third dicount"
       },
       {
         "type": "image_picker",
@@ -1921,7 +1921,7 @@
       },
       {
         "type": "header",
-        "content": "four discount"
+        "content": "four dicount"
       },
       {
         "type": "image_picker",

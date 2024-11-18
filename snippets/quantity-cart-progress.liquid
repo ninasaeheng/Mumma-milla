@@ -1,105 +1,125 @@
 <!-- Free discount progress markup -->
-<script src="{{ '/services/javascripts/currencies.js' | asset_url }}" defer></script>
-
+{{ "/services/javascripts/currencies.js" | script_tag }}
 <div class="cart-discount__wrapper">
+  <!-- <p class="cart-discount__numOuter">
+    <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="6.41431" width="2" height="6.29215" rx="1" transform="rotate(-45 0 6.41431)" fill="black"/>
+      <rect x="12.8853" width="2" height="13.6449" rx="1" transform="rotate(45.654 12.8853 0)" fill="black"/>
+    </svg>
+  {{ settings.cart_discount_message }}</p> -->
+  <!-- <p class="cart-discount__success" style="display:none">{{ settings.cart_success_message }}</p> -->
   <div class="cart-discountThreshold__bar">
     <span class="cart-discountThreshold__progress"></span>
+    <!-- <span class="cart-discountThreshold__bar-line" style="left: 80%;">
+      <div class="first_threshold">{{ settings.cart_discount_theshold }}</div>
+    </span>
+    <span class="cart-discountThreshold__bar-line" style="left: 99.5%;">
+      <div class="first_threshold">{{ settings.cart_discount_theshold_world }}</div>
+    </span> -->
     {% assign product_one = settings.discount_product_1 %}
     {% if settings.discount_product_1 != blank %}
-      <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
-        <div class="cdi__image">
-          <img src="{{ settings.icon_1 | img_url: '100x100' }}">
-        </div>
-        <div class="cdi__content">
-          <div class="cdi__text">{{ settings.text_1 }}</div>
-        </div>
-        <div class="cdi__product">
-          <div class="cdip_image">
-            <img src="{{ product_one.featured_image | img_url: '150x150' }} ">
-          </div>
+    <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
+      <div class="cdi__image">
+        <img src="{{ settings.icon_1 | img_url: '100x100' }}">
+      </div>
+      <div class="cdi__content">
+        <div class="cdi__text">{{ settings.text_1 }}</div>
+      </div>
+      <div class="cdi__product">
+        <div class="cdip_image">
+          <img src="{{ product_one.featured_image | img_url: '150x150' }} ">
         </div>
       </div>
+    </div>
     {% endif %}
     {% assign product_two = settings.discount_product_2 %}   
     {% if settings.discount_product_2 != blank  %}
-      <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
-        <div class="cdi__image">
-          <img src="{{ settings.icon_2 | img_url: '100x100' }}">
-        </div>
-        <div class="cdi__content">
-          <div class="cdi__text">{{ settings.text_2 }}</div>
-        </div>
-        <div class="cdi__product">
+    <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
+      <div class="cdi__image">
+        <img src="{{ settings.icon_2 | img_url: '100x100' }}">
+      </div>
+      <div class="cdi__content">
+        <div class="cdi__text">{{ settings.text_2 }}</div>
+      </div>
+      <div class="cdi__product">
 
-          <div class="cdip_image">
-            <img src="{{ product_two.featured_image | img_url: '150x150' }} ">
-          </div>
+        <div class="cdip_image">
+          <img src="{{ product_two.featured_image | img_url: '150x150' }} ">
         </div>
       </div>
-    {% endif %}    
+    </div>
+{% endif %}    
     {% assign product_three = settings.discount_product_3 %}  
     {% if settings.discount_product_3 != blank  %}
-      <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
-        <div class="cdi__image">
-          <img src="{{ settings.icon_3 | img_url: '100x100' }}">
-        </div>
-        <div class="cdi__content">
-          <div class="cdi__text">{{ settings.text_3 }}</div>
-        </div>
-        <div class="cdi__product">
-          <div class="cdip_image">
-            <img src="{{ product_three.featured_image | img_url: '150x150' }} ">
-          </div>
+    <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
+      <div class="cdi__image">
+        <img src="{{ settings.icon_3 | img_url: '100x100' }}">
+      </div>
+      <div class="cdi__content">
+        <div class="cdi__text">{{ settings.text_3 }}</div>
+      </div>
+      <div class="cdi__product">
+        <div class="cdip_image">
+          <img src="{{ product_three.featured_image | img_url: '150x150' }} ">
         </div>
       </div>
-    {% endif %}
+    </div>
+{% endif %}
+    
+
     {% assign product_four = settings.discount_product_4 %}
     {% if settings.discount_product_4 != blank  %}
-      <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
-        <div class="cdi__image">
-          <img src="{{ settings.icon_4 | img_url: '100x100' }}">
-        </div>
-        <div class="cdi__content">
-          <div class="cdi__text">{{ settings.text_4 }}</div>
-        </div>
-        <div class="cdi__product">
-          <div class="cdip_image">
-            <img src="{{ product_four.featured_image | img_url: '150x150' }} ">
-          </div>
+    <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
+      <div class="cdi__image">
+        <img src="{{ settings.icon_4 | img_url: '100x100' }}">
+      </div>
+      <div class="cdi__content">
+        <div class="cdi__text">{{ settings.text_4 }}</div>
+      </div>
+      <div class="cdi__product">
+        <div class="cdip_image">
+          <img src="{{ product_four.featured_image | img_url: '150x150' }} ">
         </div>
       </div>
-    {% endif %}
+    </div>
+      {% endif %}
     
   </div>
 </div>
-{% assign total_discount_price = settings.discount_total_price %}
-{% assign discount_one = settings.discount_1 | times: 1.0 | divided_by : total_discount_price | times: 100 %}
-{% assign discount_two = settings.discount_2 | times: 1.0 | divided_by : total_discount_price | times: 100 %}
-{% assign discount_three = settings.discount_3 | times: 1.0 | divided_by : total_discount_price | times: 100 %}
-{% assign discount_four = settings.discount_4 | times: 1.0 | divided_by : total_discount_price | times: 100 %}
-
+{% assign total_disocunt_price = settings.discount_total_price %}
+{% assign discount_one = settings.discount_1 | times: 1.0 | divided_by : total_disocunt_price | times: 100   %}
+{% assign discount_two = settings.discount_2 | times: 1.0 | divided_by : total_disocunt_price | times: 100   %}
+{% assign discount_three = settings.discount_3 | times: 1.0 | divided_by : total_disocunt_price | times: 100   %}
+{% assign discount_four = settings.discount_4 | times: 1.0 | divided_by : total_disocunt_price | times: 100   %}
 <style>
-  .cart-discount__wrapper {
-    padding: 20px 15px 15px 0;
-    max-width: 700px;
-    margin: 0 auto;
-    width: 100%;
-    height: 162px;
+    .cart-discount__wrapper {
+      padding: 20px 15px 15px 0;
+      max-width: 700px;
+      margin: 0 auto;
+      width: 100%;
+      height: 162px;
+    }
+  p.cart-discount__success, .cart-discount__numOuter {
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000;
+    text-transform: uppercase !important;
+}
+    .first_threshold {
+      margin-top: 9px;
+      position: absolute;
+      left: -12px;
   }
-  .first_threshold {
-    margin-top: 9px;
-    position: absolute;
-    left: -12px;
-  }
-  .cart-discountThreshold__bar {
-    position: relative;
-    /*  Progress bar background color  */
-    background-color: {{settings.cart_discount_bar_color}};
-    height: .5rem;
-    border-radius: 30px;
-    border: 1px solid #000;
-    /* overflow: hidden; */
-  }
+    .cart-discountThreshold__bar {
+      position: relative;
+      /*  Progress bar background color  */
+      background-color: {{settings.cart_discount_bar_color}};
+      height: .5rem;
+      border-radius: 30px;
+      border: 1px solid #000;
+      /* overflow: hidden; */
+    }
     /* span.cart-discount__num {
         font-weight: 800;
     } */
@@ -111,74 +131,83 @@
       height: 15px;
       width: 15px;
   } */
-  .cart-discountThreshold__progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 0;
-    max-width: 100%;
-    height: 100%;
-    display: block;
-    /*  Progress bar fill color  */
-    background-color:{{settings.cart_discount_bar_fillcolor}};
-  }
-  .cart_discount__item {
-    position: absolute;
-    top: -18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .cart_discount__item-one {
-      left: calc({{ discount_one }}% - 30px);
-      left: 30%;
-  }
-  .cart_discount__item-two {
-    left: calc({{ discount_two }}% - 30px);
-    left: 65%;
-  }
-  .cart_discount__item-three {
-    left: calc({{ discount_three }}% - 30px);
-    left: 54%;
-  }
-  .cart_discount__item-four {
-    left: calc({{ discount_four }}% - 30px);
-    left: 75%;
-  }
-  .cdi__image {
-    height: 38px;
-    width: 38px;
-    border: 1px solid #C7C7C7;
-    background: #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 0 3px;
-  }
-  .cdi__image img {
-    height: 100%;
-    width: 100%;
-  }
-  .cdip_image {
-    width: 60px;
-    height: 60px;
-  }
+    .cart-discountThreshold__progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 0;
+      max-width: 100%;
+      height: 100%;
+      display: block;
+      /*  Progress bar fill color  */
+      background-color:{{settings.cart_discount_bar_fillcolor}};
+    }
+
+
+     .cart-discountThreshold__bar-line {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: {{settings.cart_discount_bar_fillcolor}};
+    }
+.cart_discount__item {
+  position: absolute;
+  top: -18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart_discount__item-one {
+  left: calc({{ discount_one }}% - 40px);
+}
+.cart_discount__item-two {
+  left: calc({{ discount_two }}% - 40px);
+}
+.cart_discount__item-three {
+  left: calc({{ discount_three }}% - 40px);
+}
+.cart_discount__item-four {
+  left: calc({{ discount_four }}% - 40px);
+}
+.cdi__image {
+  height: 38px;
+  width: 38px;
+  border: 1px solid #C7C7C7;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0 3px;
+}
+
+.cdi__image img {
+  height: 100%;
+  width: 100%;
+}
+.cdip_image {
+  width: 60px;
+  height: 60px;
+}
+
   .active_discount .cdip_image {
     display: block;
   }
-  .cdip_image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .cdi__text {
-    max-width: 60px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 12px;
-    padding: 3px 0;
-  }
+  
+.cdip_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cdi__text {
+  max-width: 60px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 3px 0;
+  min-height: 4.25em;
+}
   @media(max-width: 759px) {
     .cdi__text {
       font-size: 10px;
@@ -189,6 +218,7 @@
     }
     .cart-discount__wrapper {
       min-height: 119px;
+      overflow: hidden;
     }
   }
 </style>
@@ -196,233 +226,213 @@
 <script>
   calculateDiscount();
   function calculateProgress(currentVal, targetVal) {
-    var progressBar = document.querySelectorAll('.cart-discountThreshold__progress');
-    var progressNum = document.querySelectorAll('.cart-discount__num');
-    console.log(currentVal);
-    // if(currentVal <= {{settings.discount_1}}) {
-    //   var result = Math.round(30 * currentVal / {{settings.discount_1}});
-    // } else if (currentVal > {{settings.discount_1}} && currentVal < {{settings.discount_2}}) {
-    //   var result = Math.round(65 * currentVal / {{settings.discount_2}});
-    // } else {
-    //   var result = Math.round(100 * currentVal / targetVal);
-    // }
-    if (currentVal <= {{settings.discount_1}}) {
-      result = Math.round(25 * currentVal / {{settings.discount_1}});
-    } else if (currentVal > {{settings.discount_1}} && currentVal <= {{settings.discount_2}}) {
-        result = 25 + Math.round(25 * (currentVal - {{settings.discount_1}}) / ({{settings.discount_2}} - {{settings.discount_1}}));
-    } else if (currentVal > {{settings.discount_2}} && currentVal <= {{settings.discount_3}}) {
-        result = 50 + Math.round(25 * (currentVal - {{settings.discount_2}}) / ({{settings.discount_3}} - {{settings.discount_2}}));
-    } else if (currentVal > {{settings.discount_3}} && currentVal <= {{settings.discount_4}}) {
-        result = 75 + Math.round(25 * (currentVal - {{settings.discount_3}}) / ({{settings.discount_4}} - {{settings.discount_3}}));
-    } else {
-        result = 100;
-    }
-
-    progressBar.forEach(function(el) {
-      el.setAttribute('style', "width: ".concat(result, "%"));
-    });
-
-    var newProgressNum = targetVal - currentVal;
-    var newProgressNum = targetVal - currentVal;
-    if (newProgressNum <= 0) {
-      successMsg.forEach(function(el) {
+      var progressBar = document.querySelectorAll('.cart-discountThreshold__progress');
+      var progressNum = document.querySelectorAll('.cart-discount__num');
+      var progressOuter = document.querySelectorAll('.cart-discount__numOuter');
+      var successMsg = document.querySelectorAll('.cart-discount__success');
+      console.log(currentVal);
+      if(currentVal <= {{settings.discount_1}}) {
+        var result = Math.round(30 * currentVal / {{settings.discount_1}});
+      } else if (currentVal > {{settings.discount_1}} && currentVal < {{settings.discount_2}}) {
+        var result = Math.round(65 * currentVal / {{settings.discount_2}});
+      }else {
+        var result = Math.round(100 * currentVal / targetVal);
+      }
+      progressBar.forEach(function(el){
+        el.setAttribute('style', "width: ".concat(result, "%"));
+      })
+      var newProgressNum = targetVal - currentVal;
+      if(newProgressNum <= 0){
+        successMsg.forEach(function(el){
           el.style.display = 'block';
-      });
-      progressOuter.forEach(function(el) {
+        });
+        progressOuter.forEach(function(el){
           el.style.display = 'none';
-      });
-      progressNum.forEach(function(el) {
+        });
+        progressNum.forEach(function(el){
           el.textContent = newProgressNum;
-      });
-    } else {
-      successMsg.forEach(function(el) {
+        });
+      } else {
+        successMsg.forEach(function(el){
           el.style.display = 'none';
-      });
-      progressOuter.forEach(function(el) {
+        });
+        progressOuter.forEach(function(el){
           el.style.display = 'block';
-      });
-      progressNum.forEach(function(el) {
+        });
+        progressNum.forEach(function(el){
           el.textContent = newProgressNum;
-      });
-    }
-  };
+        });
+      }
+    };
   function calculateDiscount(){
-    const loadingBar = document.querySelector('.cart-drawer .loading__spinner');
-    loadingBar.classList.remove('hidden');
+    const laodingBar = document.querySelector('.cart-drawer .loading__spinner');
+    laodingBar.classList.remove('hidden');
     fetch('/cart.js')
-      .then(response => response.json())
-      .then(data => {
-      vartotal_cartPrice = data.total_price;
-      var total_price = formatMoney(vartotal_cartPrice);
-      total_price = parseFloat(total_price.replace(/[^0-9.-]+/g,""));
-      let variantData = [];
-      var items = data.items;
+    .then(response => response.json())
+    .then(data => {
+     vartotal_cartPrice = data.total_price;
+     var total_price = formatMoney(vartotal_cartPrice);
+     total_price = parseFloat(total_price.replace(/[^0-9.-]+/g,""));
+     let variantData = [];
+     var items = data.items;
 
       
     const discountItems = document.querySelectorAll('.cart_discount__item');
-    if (discountItems.length > 0) {
-      discountItems.forEach(discount_item => {
-        let price = parseFloat(discount_item.getAttribute('data-price'));
-        let id = parseInt(discount_item.getAttribute('data-id'));
-        let alreadyExist = false;
-        if (id !== null) {
-          items.forEach(item => {
-            var variant_id = parseInt(item.variant_id);
-            if (variant_id == id) {
-              alreadyExist = true;
-              $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
-            }
-          });
-        }
+      if (discountItems.length > 0) {
+        discountItems.forEach(discount_item => {
+          let price = parseFloat(discount_item.getAttribute('data-price'));
+          let id = parseInt(discount_item.getAttribute('data-id'));
+          let alreadyExist = false;
+          if (id !== null) {
+            items.forEach(item => {
+              var varaint_id = parseInt(item.variant_id);
+  
+              if (varaint_id == id) {
+                alreadyExist = true;
+                $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
+              }
 
-        if (alreadyExist == false && total_price >= price) {
-          let dataObject = {
-            id: id,
-            qty: 1
+            });
           }
-          if (!variantData.some(variant => variant.id === id)) {
+
+          if (alreadyExist == false && total_price >= price) {
+            let dataObject = {
+              id: id,
+              qty: 1
+            }
+            if (!variantData.some(variant => variant.id === id)) {
+              variantData.push(dataObject);
+            }
+          } else if (alreadyExist == true && price >= total_price) {
+            let dataObject = {
+              id: id,
+              qty: 0
+            }
             variantData.push(dataObject);
           }
-        } else if (alreadyExist == true && price >= total_price) {
-          let dataObject = {
-            id: id,
-            qty: 0
-          }
-          variantData.push(dataObject);
-        }
-      })
+        })
 
-      if(variantData.length == 0) {
-        loadingBar.classList.add('hidden');
-      }
-      
-      // Function to add items to the cart
-      async function addItemsToCart(variantData) {
-        for (let index = 0; index < variantData.length; index++) {
-          const { id, qty } = variantData[index];
-          const formData = { items: [{ id: id, quantity: qty }] };
-      
-          try {
-            if (qty == 1) {
-              let response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-              });
-      
-              const data = await response.json();
-              if (data.items) {
-                // Handle success
-                $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
-              } else if (data.status === 422) {
-                alert(data.message);
-              }
-            } else if (qty == 0) {
-      
-              // Convert $.ajax to a promise and await it
-              await new Promise((resolve, reject) => {
-                $.ajax({
-                  type: 'POST',
-                  url: '/cart/change.js',
-                  dataType: 'json',
-                  data: {
-                    'id': id,
-                    'quantity': qty
+        if(variantData.length == 0) {
+          laodingBar.classList.add('hidden');
+        }
+        
+        // Function to add items to the cart
+        async function addItemsToCart(variantData) {
+          for (let index = 0; index < variantData.length; index++) {
+            const { id, qty } = variantData[index];
+            const formData = { items: [{ id: id, quantity: qty }] };
+        
+            try {
+              if (qty == 1) {
+                let response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
                   },
-                  success: (data) => {
-                    resolve(data);
-                    $('.cart_discount__item[data-id="'+id+'"]').removeClass("active_discount");
-                  },
-                  error: (xhr, status, error) => {
-                    console.error(error);
-                    reject(error);
-                  }
+                  body: JSON.stringify(formData)
                 });
-              });
+        
+                const data = await response.json();
+                if (data.items) {
+                  // Handle success
+                  $('.cart_discount__item[data-id="'+id+'"]').addClass("active_discount");
+                } else if (data.status === 422) {
+                  alert(data.message);
+                }
+              } else if (qty == 0) {
+        
+                // Convert $.ajax to a promise and await it
+                await new Promise((resolve, reject) => {
+                  $.ajax({
+                    type: 'POST',
+                    url: '/cart/change.js',
+                    dataType: 'json',
+                    data: {
+                      'id': id,
+                      'quantity': qty
+                    },
+                    success: (data) => {
+                      resolve(data);
+                      $('.cart_discount__item[data-id="'+id+'"]').removeClass("active_discount");
+                    },
+                    error: (xhr, status, error) => {
+                      console.error(error);
+                      reject(error);
+                    }
+                  });
+                });
+              }
+            } catch (error) {
+              console.error(`Error adding item with ID ${id}:`, error);
             }
-          } catch (error) {
-            console.error(`Error adding item with ID ${id}:`, error);
-          }
-      
-          if (index === variantData.length - 1) {
-      
-            // Fetch updated cart data
-            fetch(window.location.href)
-              .then((response) => response.text())
-              .then((responseText) => {
-                const htmlData = new DOMParser().parseFromString(responseText, 'text/html');
-                const cartItemshtml = htmlData.querySelector('#CartDrawer .cart-drawer__form');
-                $('#CartDrawer .totals__total-value').text($(htmlData).find('#CartDrawer .totals__total-value').text());
-                $('.cart-count-bubble').html($(htmlData).find('.cart-count-bubble').html());
-                document.querySelector('#CartDrawer .cart__drawer--form').innerHTML = cartItemshtml.innerHTML;
-              })
-              .catch(e => {
-                console.error(e);
-              })
-              .finally(() => {
-                // alert("All items have been added to the cart.");
-                loadingBar.classList.add('hidden');
-                var discount_items = $('.cart_discount__item:not(.active_discount)');
-                fetch('/cart.js')
+        
+            if (index === variantData.length - 1) {
+        
+              // Fetch updated cart data
+              fetch(window.location.href)
+                .then((response) => response.text())
+                .then((responseText) => {
+                  const htmlData = new DOMParser().parseFromString(responseText, 'text/html');
+                  const cartItemshtml = htmlData.querySelector('#CartDrawer .cart-drawer__form');
+                  $('#CartDrawer .totals__total-value').text($(htmlData).find('#CartDrawer .totals__total-value').text());
+                  $('.cart-count-bubble').html($(htmlData).find('.cart-count-bubble').html());
+                  document.querySelector('#CartDrawer .cart__drawer--form').innerHTML = cartItemshtml.innerHTML;
+                })
+                .catch(e => {
+                  console.error(e);
+                })
+                .finally(() => {
+                  // alert("All items have been added to the cart.");
+                  laodingBar.classList.add('hidden');
+                  var discount_items = $('.cart_discount__item:not(.active_discount)');
+                  fetch('/cart.js')
                   .then(response => response.json())
                   .then(data => {
                     vartotal_cartPrice = data.total_price;
-                    var total_price_new = formatMoney(vartotal_cartPrice);
-                    total_price_new = parseFloat(total_price_new.replace(/[^0-9.-]+/g,""));
-
-                    if (total_price_new == 0) {
-                      document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'none';
-                    } else {
-                      document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'block';
-                      if (total_price_new >= {{settings.discount_4}}) {
-                        calculateProgress(total_price_new, {{settings.discount_4}});
-                      } else if (total_price_new >= {{settings.discount_3}}) {
-                        calculateProgress(total_price_new, {{settings.discount_3}});
+                   var total_price_new = formatMoney(vartotal_cartPrice);
+                   total_price_new = parseFloat(total_price_new.replace(/[^0-9.-]+/g,""));
+                      if (total_price_new == 0) {
+                        document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'none';
                       } else if (total_price_new >= {{settings.discount_2}}) {
-                        calculateProgress(total_price_new, {{settings.discount_2}});
+                        document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'block';
+                        // calculateProgress(total_price, {{settings.discount_total_price}});
+                        calculateProgress(total_price_new, {{settings.discount_2}} ); 
                       } else {
-                        calculateProgress(total_price_new, {{settings.discount_1}});
+                         calculateProgress(total_price, {{settings.discount_total_price}});
                       }
-                    }
-
-                    discount_items.each(function(index, newitem) {
-                      var newItemPrice = parseInt($(newitem).attr('data-price'));
-                      if (total_price_new > newItemPrice) {
-                        console.log(newItemPrice + "newItemPrice");
-                        calculateDiscount();
-                      }
+                    discount_items.each(function(index, newitem){
+                        var newItemPrice = parseInt($(newitem).attr('data-price'));
+                        if(total_price_new > newItemPrice) {
+                          console.log(newItemPrice+"newItemPrice");
+                          calculateDiscount();
+                        }
                     });
                   });
-                  
-              });
+                    
+                });
+            }
           }
         }
+        
+        // Example: Call the function to process the variantData array
+        addItemsToCart(variantData);
+
+        
       }
       
-      // Example: Call the function to process the variantData array
-      addItemsToCart(variantData);
-
-    }
-    
-    if (total_price == 0) {
-      document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'none';
-    } else {
-      document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'block';
-      if (total_price >= {{ settings.discount_4 }}) {
-        calculateProgress(total_price, {{ settings.discount_4 }});
-      } else if (total_price >= {{ settings.discount_3 }}) {
-        calculateProgress(total_price, {{ settings.discount_3 }});
-      } else if (total_price >= {{ settings.discount_2 }}) {
-        calculateProgress(total_price, {{ settings.discount_2 }});
+      if (total_price == 0) {
+        document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'none';
+      } else if (total_price >= {{ settings.discount_2}}){
+        document.querySelectorAll(".cart-discount__wrapper")[0].style.display = 'block';
+        // calculateProgress(total_price, {{settings.cart_discount_theshold_world}});
+        // calculateProgress(total_price,{{ settings.discount_total_price}} ); 
+        calculateProgress(total_price, {{settings.discount_2}} ); 
       } else {
-        calculateProgress(total_price, {{ settings.discount_1 }});
+         calculateProgress(total_price,{{ settings.discount_total_price}} ); 
       }
-    }
 
-  });
-}
+      });
+    }
   // function formatMoney(cents) {
   //   var dollars = Math.floor(cents / 100);
   //   var centsPart = cents % 100;
