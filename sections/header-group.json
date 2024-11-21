@@ -153,10 +153,137 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "header-advanced": {
+      "type": "header-advanced",
+      "blocks": {
+        "tab_f6zzEF": {
+          "type": "tab",
+          "settings": {
+            "title": "Shop"
+          }
+        },
+        "menu_item_Ci33tR": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Bundle and Save",
+            "link": "shopify:\/\/collections\/bundle-save",
+            "description": "15% off + Free Shipping",
+            "image": "shopify:\/\/shop_images\/gift_website_tiles.jpg"
+          }
+        },
+        "menu_item_AU8QzX": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Day Bra",
+            "link": "shopify:\/\/products\/best-nursing-bra",
+            "description": "XXXX"
+          }
+        },
+        "menu_item_9xt4ab": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Night Bra",
+            "link": "shopify:\/\/products\/nursing-bra-night",
+            "description": "XXXX"
+          }
+        },
+        "menu_item_BxrTLm": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Cami",
+            "link": "shopify:\/\/products\/leakproof-cami",
+            "description": ""
+          }
+        },
+        "menu_item_FHpPN8": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Bandeau",
+            "link": "shopify:\/\/products\/leakproof-scallop-bralette",
+            "description": "XXXX"
+          }
+        },
+        "tab_jzqXAR": {
+          "type": "tab",
+          "settings": {
+            "title": "Breastfeeding"
+          }
+        },
+        "menu_item_kjYfNB": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Why Leakproof?",
+            "link": "shopify:\/\/blogs\/news\/the-importance-of-nipple-care-whilst-breastfeeding",
+            "description": "XXXXX"
+          }
+        },
+        "menu_item_adbzYj": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Nipple Care",
+            "link": "shopify:\/\/blogs\/news\/how-to-care-for-sore-nipples-with-ibclc-holistic-lactation-consultant-jwp",
+            "description": "XXXXX"
+          }
+        },
+        "menu_item_y9jbEz": {
+          "type": "menu_item",
+          "settings": {
+            "title": "How to choose the best nursing bra",
+            "link": "shopify:\/\/blogs\/news\/choosing-the-right-maternity-bra-for-pre-and-postpartum",
+            "description": ""
+          }
+        },
+        "blog_rjRnb6": {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        },
+        "tab_bWLdiU": {
+          "type": "tab",
+          "settings": {
+            "title": "Learn"
+          }
+        },
+        "menu_item_xFWXWA": {
+          "type": "menu_item",
+          "settings": {
+            "title": "Sizing",
+            "link": "shopify:\/\/pages\/size-guide",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_f6zzEF",
+        "menu_item_Ci33tR",
+        "menu_item_AU8QzX",
+        "menu_item_9xt4ab",
+        "menu_item_BxrTLm",
+        "menu_item_FHpPN8",
+        "tab_jzqXAR",
+        "menu_item_kjYfNB",
+        "menu_item_adbzYj",
+        "menu_item_y9jbEz",
+        "blog_rjRnb6",
+        "tab_bWLdiU",
+        "menu_item_xFWXWA"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#121212",
+        "menu_background_color": "#f4ede5",
+        "menu_text_color": "#121212",
+        "footer_background_color": "#121212",
+        "footer_text_color": "#ffffff",
+        "enable_social_media": true
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "header-advanced"
   ]
 }

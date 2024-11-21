@@ -35,6 +35,9 @@
 
     {% render 'meta-tags' %}
 
+    <link rel="stylesheet" href="{{ 'mobile-nav.css' | asset_url }}">
+    <script src="{{ 'mobile-nav.js' | asset_url }}" defer></script>
+
     <!-- jQuery and core scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>

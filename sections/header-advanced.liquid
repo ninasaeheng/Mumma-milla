@@ -1,0 +1,363 @@
+<div class="mm-nav-container">
+    <aside class="mm-nav-back" aria-hidden="true"></aside>
+    {% render 'icon-close' %}
+    <div class="mm-nav-wrap" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+        <div class="mm-tabs">
+            {% for block in section.blocks %}
+                {% if block.type == 'tab' %}
+                    <div class="tab {% if forloop.first %}active{% endif %}" data-target="#{{ block.settings.title | handle }}">{{ block.settings.title }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="mm-tab-content">
+            {% for block in section.blocks %}
+                {% liquid 
+                    assign mm_link = block.settings.link
+                    assign mm_title = block.settings.title
+                    assign mm_description = block.settings.description
+                    assign mm_image = block.settings.image
+                    assign mm_blog = block.settings.blog
+                    assign mm_collection = block.settings.collection
+                %}
+
+                {%- case block.type -%}
+                    {%- when 'tab' -%}
+                        {% unless forloop.first %}</div> <!-- end mm-tab-pane -->{% endunless %}
+                        <div class="mm-tab-pane {% if forloop.first %}active{% endif %}" id="{{ mm_title | handle }}">
+                    {%- when 'menu_item' -%}
+                        {% if mm_link and mm_title %}
+                            <div class="mm-menu-item">
+                                <a href="{{ mm_link }}" class="mm-menu-item-content" style="background-color: {{ section.settings.menu_background_color }}; color: {{ section.settings.menu_text_color }};">
+                                    <h3>{{ mm_title }}</h3>
+                                    {% if mm_description %}<p>{{ mm_description }}</p>{% endif %}
+                                </a>
+                                {% if mm_image %}
+                                    <span class="mm-menu-item-image">
+                                        <img src="{{ mm_image | image_url: width: 60, format: 'webp' }}" alt="{{ mm_title }}" width="100%" height="100%">
+                                    </span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {%- when 'blog' -%}
+                        {% if mm_blog %}
+                            <div class="mm-menu-item mm-menu-item--blog">
+                                {% for article in blogs[mm_blog].articles limit: 4 %}
+                                    <a href="{{ article.url }}" class="mm-blog-article">
+                                        <img src="{{ article.image | image_url: width: 300, format: 'webp' }}" alt="{{ article.title }}">
+                                        <p>{{ article.title }}</p>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                {% endcase  %}
+            {% endfor %}
+            </div> <!-- end mm-tab-pane -->
+        </div>
+
+        <div class="mm-footer" style="background-color: {{ section.settings.footer_background_color }}; color: {{ section.settings.footer_text_color }};">
+            <div class="mm-footer-content">
+                {%- if localization.available_countries or localization.available_languages -%}
+                    <div class="mm-footer-currency">
+                        <div class="menu-drawer__localization header-localization">
+                            {%- if localization.available_countries and localization.available_countries.size > 1 -%}
+                                <noscript>
+                                {%- form 'localization', id: 'HeaderCountryMobileFormNoScriptDrawer', class: 'localization-form' -%}
+                                    <div class="localization-form__select">
+                                    <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScriptDrawer">
+                                        {{ 'localization.country_label' | t }}
+                                    </h2>
+                                    <select
+                                        style="color: {{ section.settings.footer_text_color }};"
+                                        class="localization-selector link"
+                                        name="country_code"
+                                        aria-labelledby="HeaderCountryMobileLabelNoScriptDrawer"
+                                    >
+                                        {%- for country in localization.available_countries -%}
+                                        <option
+                                            value="{{ country.iso_code }}"
+                                            {%- if country.iso_code == localization.country.iso_code %}
+                                            selected
+                                            {% endif %}
+                                        >
+                                            {{ country.name }} ({{ country.currency.iso_code }}
+                                            {{ country.currency.symbol }})
+                                        </option>
+                                        {%- endfor -%}
+                                    </select>
+                                    {% render 'icon-caret' %}
+                                    </div>
+                                    <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
+                                {%- endform -%}
+                                </noscript>
+            
+                                <localization-form class="no-js-hidden">
+                                {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
+                                    <div>
+                                    <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
+                                        {{ 'localization.country_label' | t }}
+                                    </h2>
+                                    {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
+                                    </div>
+                                {%- endform -%}
+                                </localization-form>
+                            {% endif %}
+            
+                            {%- if localization.available_languages and localization.available_languages.size > 1 -%}
+                                <noscript>
+                                {%- form 'localization',
+                                    id: 'HeaderLanguageMobileFormNoScriptDrawer',
+                                    class: 'localization-form'
+                                -%}
+                                    <div class="localization-form__select">
+                                    <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScriptDrawer">
+                                        {{ 'localization.language_label' | t }}
+                                    </h2>
+                                    <select
+                                        style="color: {{ section.settings.footer_text_color }};"
+                                        class="localization-selector link"
+                                        name="locale_code"
+                                        aria-labelledby="HeaderLanguageMobileLabelNoScriptDrawer"
+                                    >
+                                        {%- for language in localization.available_languages -%}
+                                        <option
+                                            value="{{ language.iso_code }}"
+                                            lang="{{ language.iso_code }}"
+                                            {%- if language.iso_code == localization.language.iso_code %}
+                                            selected
+                                            {% endif %}
+                                        >
+                                            {{ language.endonym_name | capitalize }}
+                                        </option>
+                                        {%- endfor -%}
+                                    </select>
+                                    {% render 'icon-caret' %}
+                                    </div>
+                                    <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+                                {%- endform -%}
+                                </noscript>
+            
+                                <localization-form class="no-js-hidden">
+                                {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
+                                    <div>
+                                    <h2 class="visually-hidden" id="HeaderLanguageMobileLabel">
+                                        {{ 'localization.language_label' | t }}
+                                    </h2>
+                                    {%- render 'language-localization', localPosition: 'HeaderLanguageMobile' -%}
+                                    </div>
+                                {%- endform -%}
+                                </localization-form>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                {%- endif -%}
+                
+                <div class="mm-footer-login">
+                    <a
+                        style="color: {{ section.settings.footer_text_color }};"
+                        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                        class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
+                    >
+                        {%- liquid
+                        if customer
+                            echo 'customer.account_fallback' | t
+                        else
+                            echo 'customer.log_in' | t
+                        endif
+                        -%}
+                    </a>
+                </div>
+                {% comment %} {% if section.settings.enable_social_media %}
+                    <div class="mm-footer-socials">
+                        <ul class="list list-social list-unstyled" role="list">
+                            {%- if settings.social_twitter_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
+                                    {%- render 'icon-twitter' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_facebook_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
+                                    {%- render 'icon-facebook' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_pinterest_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
+                                    {%- render 'icon-pinterest' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_instagram_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
+                                    {%- render 'icon-instagram' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_tiktok_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
+                                    {%- render 'icon-tiktok' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_tumblr_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
+                                    {%- render 'icon-tumblr' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_snapchat_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
+                                    {%- render 'icon-snapchat' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_youtube_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
+                                    {%- render 'icon-youtube' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                            {%- if settings.social_vimeo_link != blank -%}
+                                <li class="list-social__item">
+                                <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
+                                    {%- render 'icon-vimeo' -%}
+                                    <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                                </a>
+                                </li>
+                            {%- endif -%}
+                        </ul>
+                    </div>
+                {% endif %} {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mm-footer .localization-form__select,
+    .mm-footer svg {
+        color: {{ section.settings.footer_text_color }};
+    }
+</style>
+
+{% comment %} {
+    "type": "checkbox",
+    "id": "enable_social_media",
+    "label": "Enable Social Media"
+} {% endcomment %}
+
+{% schema %}
+    {
+        "name": "Hamburger Menu",
+        "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Background Colour"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Colour"
+            },
+            {
+                "type": "color",
+                "id": "menu_background_color",
+                "label": "Menu Background Colour"
+            },
+            {
+                "type": "color",
+                "id": "menu_text_color",
+                "label": "Menu Text Colour"
+            },
+            {
+                "type": "color",
+                "id": "footer_background_color",
+                "label": "Footer Background Colour"
+            },
+            {
+                "type": "color",
+                "id": "footer_text_color",
+                "label": "Footer Text Colour"
+            }
+        ],
+      "blocks": [
+        {
+          "type": "tab",
+          "name": "Tab",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Tab Name"
+            }
+          ]
+        },
+        {
+          "type": "menu_item",
+          "name": "Menu Item",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link"
+            },
+            {
+              "type": "textarea",
+              "id": "description",
+              "label": "Description"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            }
+          ]
+        },
+        {
+          "type": "blog",
+          "name": "Blog",
+          "settings": [
+            {
+                "type": "blog",
+                "id": "blog",
+                "label": "Select Blog"
+            }
+          ]
+        },
+        {
+          "type": "featured_collection",
+          "name": "Featured Collection",
+          "settings": [
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Select Collection"
+            }
+          ]
+        }
+      ]
+    }
+{% endschema %}
