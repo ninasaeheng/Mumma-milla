@@ -50,6 +50,19 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
+                    {% when 'featured_collection' %}
+                        {% if mm_collection %}
+                            <div class="mm-menu-item mm-menu-item--collection">
+                                {% for product in mm_collection.products limit: 4 %}
+                                    {% render 'card-product',
+                                        card_product: product,
+                                        show_quick_add: true,
+                                        section_id: section.id,
+                                        block: block
+                                    %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                 {% endcase  %}
             {% endfor %}
             </div> <!-- end mm-tab-pane -->
