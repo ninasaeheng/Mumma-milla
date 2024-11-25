@@ -233,6 +233,7 @@
                         assign has_vol_pricing = true
                       endif
                     -%}
+                    {% if item.original_line_price != 0 %}
                     <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
                       <quantity-popover>
                         <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
@@ -394,6 +395,7 @@
                         </div>
                       </quantity-popover>
                     </td>
+                    {% endif %}
 
                     <td class="cart-item__totals right small-hide">
                       {%- render 'loading-spinner' -%}
