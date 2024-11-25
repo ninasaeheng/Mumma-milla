@@ -1,6 +1,6 @@
 <!-- Free discount progress markup -->
 {{ "/services/javascripts/currencies.js" | script_tag }}
-<div class="cart-discount__wrapper">
+<div class="cart-discount__wrapper" style="background-color: {{ settings.cart_header_bg_color }}; color: {{ settings.cart_header_text_color }};">
   <!-- <p class="cart-discount__numOuter">
     <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="6.41431" width="2" height="6.29215" rx="1" transform="rotate(-45 0 6.41431)" fill="black"/>
@@ -10,78 +10,49 @@
   <!-- <p class="cart-discount__success" style="display:none">{{ settings.cart_success_message }}</p> -->
   <div class="cart-discountThreshold__bar">
     <span class="cart-discountThreshold__progress"></span>
-    <!-- <span class="cart-discountThreshold__bar-line" style="left: 80%;">
-      <div class="first_threshold">{{ settings.cart_discount_theshold }}</div>
-    </span>
-    <span class="cart-discountThreshold__bar-line" style="left: 99.5%;">
-      <div class="first_threshold">{{ settings.cart_discount_theshold_world }}</div>
-    </span> -->
     {% assign product_one = settings.discount_product_1 %}
     {% if settings.discount_product_1 != blank %}
-    <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
-      <div class="cdi__image">
-        <img src="{{ settings.icon_1 | img_url: '100x100' }}">
-      </div>
-      <div class="cdi__content">
-        <div class="cdi__text">{{ settings.text_1 }}</div>
-      </div>
-      <div class="cdi__product">
-        <div class="cdip_image">
-          <img src="{{ product_one.featured_image | img_url: '150x150' }} ">
+      <div class="cart_discount__item cart_discount__item-one" data-price="{{ settings.discount_1 }}" data-id="{{ product_one.selected_or_first_available_variant.id }}">
+        <div class="cdi__image">
+          <img src="{{ product_one.featured_image | img_url: '150x150' }}">
+        </div>
+        <div class="cdi__content">
+          <div class="cdi__text">{{ settings.text_1 }}</div>
         </div>
       </div>
-    </div>
     {% endif %}
     {% assign product_two = settings.discount_product_2 %}   
     {% if settings.discount_product_2 != blank  %}
-    <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
-      <div class="cdi__image">
-        <img src="{{ settings.icon_2 | img_url: '100x100' }}">
-      </div>
-      <div class="cdi__content">
-        <div class="cdi__text">{{ settings.text_2 }}</div>
-      </div>
-      <div class="cdi__product">
-
-        <div class="cdip_image">
-          <img src="{{ product_two.featured_image | img_url: '150x150' }} ">
+      <div class="cart_discount__item cart_discount__item-two" data-price="{{ settings.discount_2 }}" data-id="{{ product_two.selected_or_first_available_variant.id }}">
+        <div class="cdi__image">
+          <img src="{{ product_two.featured_image | img_url: '150x150' }}">
+        </div>
+        <div class="cdi__content">
+          <div class="cdi__text">{{ settings.text_2 }}</div>
         </div>
       </div>
-    </div>
-{% endif %}    
+    {% endif %}    
     {% assign product_three = settings.discount_product_3 %}  
     {% if settings.discount_product_3 != blank  %}
-    <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
-      <div class="cdi__image">
-        <img src="{{ settings.icon_3 | img_url: '100x100' }}">
-      </div>
-      <div class="cdi__content">
-        <div class="cdi__text">{{ settings.text_3 }}</div>
-      </div>
-      <div class="cdi__product">
-        <div class="cdip_image">
-          <img src="{{ product_three.featured_image | img_url: '150x150' }} ">
+      <div class="cart_discount__item cart_discount__item-three" data-price="{{ settings.discount_3 }}" data-id="{{ product_three.selected_or_first_available_variant.id }}">
+        <div class="cdi__image">
+          <img src="{{ product_three.featured_image | img_url: '150x150' }}">
+        </div>
+        <div class="cdi__content">
+          <div class="cdi__text">{{ settings.text_3 }}</div>
         </div>
       </div>
-    </div>
-{% endif %}
-    
-
+    {% endif %}
     {% assign product_four = settings.discount_product_4 %}
     {% if settings.discount_product_4 != blank  %}
-    <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
-      <div class="cdi__image">
-        <img src="{{ settings.icon_4 | img_url: '100x100' }}">
-      </div>
-      <div class="cdi__content">
-        <div class="cdi__text">{{ settings.text_4 }}</div>
-      </div>
-      <div class="cdi__product">
-        <div class="cdip_image">
-          <img src="{{ product_four.featured_image | img_url: '150x150' }} ">
+      <div class="cart_discount__item cart_discount__item-four" data-price="{{ settings.discount_4 }}" data-id="{{ product_four.selected_or_first_available_variant.id }}">
+        <div class="cdi__image">
+          <img src="{{ product_four.featured_image | img_url: '150x150' }}">
+        </div>
+        <div class="cdi__content">
+          <div class="cdi__text">{{ settings.text_4 }}</div>
         </div>
       </div>
-    </div>
       {% endif %}
     
   </div>
@@ -93,11 +64,10 @@
 {% assign discount_four = settings.discount_4 | times: 1.0 | divided_by : total_disocunt_price | times: 100   %}
 <style>
     .cart-discount__wrapper {
-      padding: 20px 15px 15px 0;
       max-width: 700px;
       margin: 0 auto;
       width: 100%;
-      height: 162px;
+      height: 100px;
     }
   p.cart-discount__success, .cart-discount__numOuter {
     margin-bottom: 0;
@@ -118,19 +88,7 @@
       height: .5rem;
       border-radius: 30px;
       border: 1px solid #000;
-      /* overflow: hidden; */
     }
-    /* span.cart-discount__num {
-        font-weight: 800;
-    } */
-    /* .cart-discountThreshold__progress:before {
-      content: url('https://cdn.shopify.com/s/files/1/0630/9783/1675/files/icon-logo.png?v=1692470164');
-      position: absolute;
-      top: -24px;
-      right: 0px;
-      height: 15px;
-      width: 15px;
-  } */
     .cart-discountThreshold__progress {
       position: absolute;
       top: 0;
@@ -142,7 +100,6 @@
       /*  Progress bar fill color  */
       background-color:{{settings.cart_discount_bar_fillcolor}};
     }
-
 
      .cart-discountThreshold__bar-line {
       position: absolute;
@@ -178,7 +135,7 @@
   background: #fff;
   border-radius: 50%;
   overflow: hidden;
-  padding: 0 3px;
+  /* padding: 0 3px; */
 }
 
 .cdi__image img {
@@ -217,7 +174,7 @@
       height: 45px;
     }
     .cart-discount__wrapper {
-      min-height: 119px;
+      height: 90px;
       overflow: hidden;
     }
   }

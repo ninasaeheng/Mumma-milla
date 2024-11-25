@@ -5,9 +5,15 @@ div#CartDrawer .drawer__inner {
   padding: 0;
 }
 div#CartDrawer .drawer__inner .drawer__header,
-div#CartDrawer .drawer__inner cart-drawer-items,
-div#CartDrawer .drawer__inner .drawer__footer {
-  padding: 0 1.5rem;
+div#CartDrawer .drawer__inner cart-drawer-items .cart__drawer--form,
+div#CartDrawer .drawer__inner cart-drawer-items .cart-recommendation,
+div#CartDrawer .drawer__inner .drawer__footer .cart-drawer__footer,
+div#CartDrawer .drawer__inner .drawer__footer .ship-insurance {
+  padding: 0.5rem 1.5rem;
+}
+
+div#CartDrawer .drawer__inner cart-drawer-items .cart-discount__wrapper {
+  padding: 1.75rem 1.5rem;
 }
 
 #CartDrawer-Checkout.loading .cart-drawer__checkout-spinner svg circle.path {
@@ -35,7 +41,7 @@ div#CartDrawer .drawer__inner .drawer__footer {
   visibility: hidden;
 }
 h2.drawer__heading {
-  margin: .5em 0;
+  margin: .25em 0;
   font-family: "ProximaSansRegular" !important;
   font-size: 18px;
   text-transform: uppercase;
@@ -131,7 +137,7 @@ button.drawer__close:hover {
   gap: 6px;
 }
 .cart-drawer .cart__checkout-button {
-  border-radius: 3rem;
+  /* border-radius: 3rem; */
   font-family: "ProximaSansRegular";
   text-transform: uppercase;
   font-size: 14px;

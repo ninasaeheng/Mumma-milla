@@ -10,7 +10,8 @@ cart-items .title-wrapper-with-link {
 
 .cart-items th {
   text-align: left;
-  padding-bottom: 1.8rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   opacity: 0.85;
   font-weight: normal;
 }

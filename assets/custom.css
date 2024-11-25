@@ -1209,7 +1209,8 @@ body
   min-height: 30px;
   /* width: fit-content; */
   min-width: 80%;
-  margin: auto;
+  width: 86%;
+  /* margin: auto; */
 }
 
 .cart-recommendation .custom-product-form button#-submit span {
@@ -1233,9 +1234,14 @@ body .cart-recommendation .product-grid .price__regular .price-item--regular {
 .cart-recommendation .product-card-wrapper .card:not(.ratio) {
   padding-bottom: 20px;
 }
-
+.cart_recomm .card {
+  padding-bottom: 0;
+}
+.cart_recomm .title.inline-richtext {
+  margin: 0;
+}
 .cart_recomm .slider--desktop.grid--2-col-desktop .grid__item {
-  width: 50%;
+  width: 40%;
 }
 .cart_recomm .main-Colour .field_set {
   padding-left: 5px;
@@ -1715,20 +1721,27 @@ body .mega-menu[open] .mega-menu__content {
 }
 
 /* Ship Insurance on Cart */
+.ship-insurance {
+  margin: 5px 0 10px !important;
+}
 .ship-insurance .tm_cart {
   margin: 0 auto !important;
   transform: scale(1) !important;
+  padding: 0 !important;
 }
 .ship-insurance .tm_cart .logo_img {
   flex: 0 0 40px !important;
+  display: none !important;
 }
 .ship-insurance .tm_cart .logo_img img {
   width: 40px !important;
   height: 40px !important;
 }
-.ship-insurance .tm_cart .tm_description,
-.ship-insurance .tm_cart .tm_branding {
+.ship-insurance .tm_cart .tm_description {
   font-size: 0.75em !important;
+}
+.ship-insurance .tm_cart .tm_branding {
+  display: none !important;
 }
 @media screen and (min-width: 750px) {
   .ship-insurance .tm_cart .tm_description {
