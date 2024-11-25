@@ -186,6 +186,9 @@
                                 </span>
                                 <span class="price">
                                   {{ item.final_line_price | money }}
+                                  {% if item.variant.compare_at_price > item.variant.price %}
+                                    <s>{{ item.variant.compare_at_price | times: item.quantity | money }}</s>
+                                  {% endif %}
                                 </span>
                               </div>
                             {%- else -%}
@@ -194,6 +197,9 @@
                                   <div class="custom-tag-inner" style="margin-left: 0; font-family: ProximaSansRegular!important; background-color: {{ settings.cart_free_tag_bg_color }}; color: {{ settings.cart_free_tag_text_color }};">FREE</div>
                                 {% else %}
                                   {{ item.original_line_price | money }}
+                                  {% if item.variant.compare_at_price > item.variant.price %}
+                                    <s>{{ item.variant.compare_at_price | times: item.quantity | money }}</s>
+                                  {% endif %}
                                 {% endif %}
                               </span>
                             {%- endif -%}
@@ -258,7 +264,7 @@
                            
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                           {%- endif -%}
- </div>
+                        </div>
                           <ul
                             class="discounts list-unstyled"
                             role="list"
