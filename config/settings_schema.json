@@ -335,6 +335,54 @@
         "id": "cart_discount_success_message",
         "label": "Message On FreeShipping",
         "default": "You have successfully unlocked 100% free shipping"
+      },
+      {
+        "type": "color",
+        "id": "cart_free_tag_bg_color",
+        "label": "Cart Free Tag Background Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "cart_free_tag_text_color",
+        "label": "Cart Free Tag Text Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "cart_header_bg_color",
+        "label": "Cart Header Background Color",
+        "default": "#f4ede5"
+      },
+      {
+        "type": "color",
+        "id": "cart_header_text_color",
+        "label": "Cart Header Text Color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "cart_contents_bg_color",
+        "label": "Cart Contents Background Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "cart_contents_text_color",
+        "label": "Cart Contents Text Color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "cart_footer_bg_color",
+        "label": "Cart Footer Background Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "cart_footer_text_color",
+        "label": "Cart Footer Text Color",
+        "default": "#121212"
       }
     ]
   },

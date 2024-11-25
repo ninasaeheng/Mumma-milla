@@ -1,3 +1,15 @@
+div#CartDrawer * {
+  font-family: ProximaSansRegular !important;
+}
+div#CartDrawer .drawer__inner {
+  padding: 0;
+}
+div#CartDrawer .drawer__inner .drawer__header,
+div#CartDrawer .drawer__inner cart-drawer-items,
+div#CartDrawer .drawer__inner .drawer__footer {
+  padding: 0 1.5rem;
+}
+
 #CartDrawer-Checkout.loading .cart-drawer__checkout-spinner svg circle.path {
   stroke: #fff !important;
 }
@@ -23,7 +35,7 @@
   visibility: hidden;
 }
 h2.drawer__heading {
-  margin: 0;
+  margin: .5em 0;
   font-family: "ProximaSansRegular" !important;
   font-size: 18px;
   text-transform: uppercase;

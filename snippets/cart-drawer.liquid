@@ -68,16 +68,18 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
-        <button
-          class="drawer__close"
-          type="button"
-          onclick="this.closest('cart-drawer').close()"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          {% render 'icon-close' %}
-        </button>
+      <div class="drawer__header" style="background-color: {{ settings.cart_header_bg_color }}; color: {{ settings.cart_header_text_color }};">
+        <div class="mm_header">
+          <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+          <button
+            class="drawer__close"
+            type="button"
+            onclick="this.closest('cart-drawer').close()"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            {% render 'icon-close' %}
+          </button>
+        </div>
       </div>
       <cart-drawer-items
         {% if cart == empty %}
@@ -89,7 +91,7 @@
             <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
           </svg>
         </div>
-      {% render 'quantity-cart-progress' %}
+        {% render 'quantity-cart-progress' %}
         <div class="cart__drawer--form">
         <form
           action="{{ routes.cart_url }}"
@@ -188,7 +190,11 @@
                               </div>
                             {%- else -%}
                               <span class="price">
-                                {{ item.original_line_price | money }}
+                                {% if item.original_line_price == 0 %}
+                                  <div class="custom-tag-inner" style="margin-left: 0; font-family: ProximaSansRegular!important; background-color: {{ settings.cart_free_tag_bg_color }}; color: {{ settings.cart_free_tag_text_color }};">FREE</div>
+                                {% else %}
+                                  {{ item.original_line_price | money }}
+                                {% endif %}
                               </span>
                             {%- endif -%}
 
