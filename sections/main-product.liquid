@@ -210,9 +210,11 @@
                   show_badges: true,
                   price_class: 'price--large'
                 -%}
-              {% if product.tags contains 'new-arrival' %}
-                <div class="custom-tag-inner">{{ block.settings.custom_tag }}</div>
-              {% endif %}
+                {% if settings.enable_sitewide_sale %}
+                  <div class="custom-tag-inner" style="font-family: ProximaSansRegular!important; background-color: {{ settings.sitewide_sale_bg_color }}; color: {{ settings.sitewide_sale_text_color }};">{{ settings.sitewide_sale_percentage }}% off</div>
+                {% elsif product.tags contains 'new-arrival' %}
+                  <div class="custom-tag-inner">{{ block.settings.custom_tag }}</div>
+                {% endif %}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
                 <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
