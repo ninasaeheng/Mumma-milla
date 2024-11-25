@@ -373,6 +373,15 @@
             "description": "We'd love to hear from you!",
             "image": "shopify:\/\/shop_images\/77733_0513.jpg"
           }
+        },
+        "menu_item_PCXL7k": {
+          "type": "menu_item",
+          "settings": {
+            "title": "BLACK FRIDAY SALE",
+            "link": "shopify:\/\/pages\/black-friday-sale",
+            "description": "Sign up for VIP access",
+            "image": "shopify:\/\/shop_images\/BLACK_FRIDAY_CREATIVE13.jpg"
+          }
         }
       },
       "block_order": [
@@ -401,7 +410,8 @@
         "menu_item_cArqEe",
         "menu_item_w74Tmz",
         "menu_item_crCbjJ",
-        "menu_item_D7yDnL"
+        "menu_item_D7yDnL",
+        "menu_item_PCXL7k"
       ],
       "settings": {
         "background_color": "#ffffff",
