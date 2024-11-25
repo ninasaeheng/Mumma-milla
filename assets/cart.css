@@ -35,14 +35,14 @@ a.cart-item__name {
   font-weight: 600;
 }
 button.drawer__close {
-  border: 1px solid rgba(32, 38, 33, 0.2);
+  /* border: 1px solid rgba(32, 38, 33, 0.2); */
   width: 57px;
   height: 35px;
-  border-radius: 1.75rem;
+  /* border-radius: 1.75rem; */
 }
 button.drawer__close svg.icon.icon-close {
-  width: 8px;
-  height: 8px;
+  width: 15px;
+  height: 15px;
   font-family: "ProximaSansRegular" !important;
   fill: #000 !important;
 }
