@@ -372,6 +372,10 @@ a.product__text {
   margin-bottom: 0.5rem;
 }
 
+.product .custom-tag .custom-tag-inner {
+  margin-bottom: 0.5rem;
+}
+
 .product .price dl {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -385,11 +389,10 @@ a.product__text {
   .product__info-container {
     max-width: 60rem;
   }
-
+  .product__info-container .price--on-sale .price-item--sale,
   .product__info-container .price--on-sale .price-item--regular {
     font-size: 1.6rem;
   }
-
   .product__info-container > *:first-child {
     margin-top: 0;
   }
