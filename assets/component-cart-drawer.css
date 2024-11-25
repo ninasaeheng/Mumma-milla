@@ -182,6 +182,7 @@ cart-drawer {
 .cart-drawer tbody {
   display: block;
   width: 100%;
+  border-spacing: 0px;
 }
 
 .cart-drawer thead {

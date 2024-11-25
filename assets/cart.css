@@ -13,7 +13,12 @@ div#CartDrawer .drawer__inner .drawer__footer .ship-insurance {
 }
 
 div#CartDrawer .drawer__inner cart-drawer-items .cart-discount__wrapper {
-  padding: 1.75rem 1.5rem;
+  padding: 2.9rem 1.5rem 2.8em;
+}
+@media screen and (max-width: 750px) {
+  div#CartDrawer .drawer__inner cart-drawer-items .cart-discount__wrapper {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
 }
 
 #CartDrawer-Checkout.loading .cart-drawer__checkout-spinner svg circle.path {
@@ -65,10 +70,11 @@ button.drawer__close svg.icon.icon-close {
   fill: #000 !important;
 }
 button.drawer__close:hover svg.icon.icon-close path {
-  fill: #fff !important;
+  fill: #000 !important;
 }
-button.drawer__close:hover {
-  background: #000;
+button.drawer__close:hover * {
+  color: #000;
+  fill: #000;
 }
 .drawer__cart-items-wrapper .cart-item__price-wrapper span {
   font-size: 12px !important;
