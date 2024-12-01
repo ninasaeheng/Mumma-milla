@@ -104,9 +104,11 @@
               {%- endif -%}
             </div>
             {%- if settings.enable_sitewide_sale -%}
-              <div class="sale-banner">
-                {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
-              </div>
+              {% unless card_product.title contains 'GIFT VOUCHER' %}
+                <div class="sale-banner">
+                  {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
+                </div>
+              {% endunless %}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -312,24 +314,26 @@
 {%- endif -%}
 
 {%- if settings.enable_sitewide_sale -%}
-  <style>
-    /* .card__media {
-      position: relative;
-    } */
-    .sale-banner {
-      background-color: {{ settings.sitewide_sale_bg_color }};
-      color: {{ settings.sitewide_sale_text_color }};
-      position: absolute;
-      bottom: 20%;
-      left: 0;
-      right: 0;
-      padding: 8px 12px;
-      text-align: center;
-      font-weight: 500;
-      font-size: 1.6rem;
-      z-index: 2;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-  </style>
+  {% unless card_product.title contains 'GIFT VOUCHER' %}
+    <style>
+      /* .card__media {
+        position: relative;
+      } */
+      .sale-banner {
+        background-color: {{ settings.sitewide_sale_bg_color }};
+        color: {{ settings.sitewide_sale_text_color }};
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        right: 0;
+        padding: 8px 12px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.6rem;
+        z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  {% endunless %}
 {%- endif -%}

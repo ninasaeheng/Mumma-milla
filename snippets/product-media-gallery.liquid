@@ -87,9 +87,11 @@
           data-media-id="{{ section.id }}-{{ featured_media.id }}"
         >
           {%- if settings.enable_sitewide_sale -%}
+            {% unless product.title contains 'GIFT VOUCHER' %}
             <div class="product-sale-banner">
               {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
-            </div>
+              </div>
+            {% endunless %}
           {%- endif -%}
 
           {%- assign media_position = 1 -%}
@@ -117,9 +119,11 @@
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
             {%- if settings.enable_sitewide_sale -%}
+              {% unless product.title contains 'GIFT VOUCHER' %}
               <div class="product-sale-banner">
                 {{ settings.sitewide_sale_percentage }}% OFF {{ settings.sitewide_sale_text }}
-              </div>
+                </div>
+              {% endunless %}
             {%- endif -%}
             {%- liquid
               assign media_position = media_position | default: 0 | plus: 1
@@ -334,6 +338,7 @@
 </media-gallery>
 
 {%- if settings.enable_sitewide_sale -%}
+  {% unless product.title contains 'GIFT VOUCHER' %}
   <style>
     .slider__slide {
       position: relative;
@@ -353,6 +358,7 @@
       letter-spacing: 0.05em;
     }
   </style>
+  {% endunless %}
 {%- endif -%}
 {% comment %}
 <div class="custom-product-slider">
