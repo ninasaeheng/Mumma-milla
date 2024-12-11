@@ -1061,7 +1061,7 @@ body .product__info-container .price__regular .price-item--regular {
 }
 
 .custom-tag-inner {
-  font-family: "Figue-Regular" !important;
+  /* font-family: "Figue-Regular" !important; */
   text-transform: uppercase;
   background-color: #f4ede5;
   padding: 5px;
