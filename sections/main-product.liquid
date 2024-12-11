@@ -215,6 +215,13 @@
                 {% elsif product.tags contains 'new-arrival' %}
                   <div class="custom-tag-inner">{{ block.settings.custom_tag }}</div>
                 {% endif %}
+                {% if product.tags %}
+                  {% for tag in product.tags %}
+                    {% if tag contains 'tag_' %}
+                      <div class="custom-tag-inner">{{ tag | remove: 'tag_' }}</div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
                 <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">

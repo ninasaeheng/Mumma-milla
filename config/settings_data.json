@@ -20,6 +20,11 @@
     "cart_bottom": "",
     "cart_free_shipping_amount": "200",
     "cart_discount_success_message": "Yay! You are eligible for Free Shipping!",
+    "cart_announcement_bg_color": "#fa9792",
+    "cart_announcement_text_color": "#000000",
+    "cart_announcement_text": "<p>All new Triangle Bra purchases will receive a <br\/>$20 MUMMA MILLA GIFT CARD!*<\/p>",
+    "cart_contents_bg_color": "#FFF",
+    "cart_contents_text_color": "#f4ede5",
     "type_header_font": "playfair_display_n4",
     "heading_scale": 100,
     "type_body_font": "arapey_n4",
@@ -39,13 +44,13 @@
     "social_pinterest_link": "https:\/\/www.pinterest.com.au\/mumma_milla___",
     "cart_type": "drawer",
     "show_vendor": false,
-    "cart_discount_enable": true,
+    "cart_discount_enable": false,
     "discount_total_price": 400,
     "text_1": "",
     "discount_1": 0,
     "discount_product_1": "",
     "icon_2": "shopify:\/\/shop_images\/shipping2.png",
-    "text_2": "SPEND $200 FOR FREE SHIPPING",
+    "text_2": "Spend $200 Free Shipping",
     "discount_2": 200,
     "discount_product_2": "nipple-butter-gift-2",
     "text_3": "",
@@ -218,6 +223,17 @@
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-5dc34d19-79a7-4740-bfd7-723db8796a30": {
+        "settings": {
+          "background": "#caa97a",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       }

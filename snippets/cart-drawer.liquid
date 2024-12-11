@@ -92,6 +92,13 @@
           </svg>
         </div>
         {% render 'quantity-cart-progress' %}
+
+        {% if settings.cart_announcement_text != blank %}
+          <div class="cart__drawer--announcement-bar" style="background-color: {{ settings.cart_announcement_bg_color }}; color: {{ settings.cart_announcement_text_color }}; ">
+            {{ settings.cart_announcement_text }}
+          </div>
+        {% endif %}
+        
         <div class="cart__drawer--form">
         <form
           action="{{ routes.cart_url }}"
@@ -103,6 +110,9 @@
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 {% render 'quantity-cart-bar' %}
+
+                
+              
                 <table class="cart-items" role="table">
                   <thead role="rowgroup">
                     <tr role="row">

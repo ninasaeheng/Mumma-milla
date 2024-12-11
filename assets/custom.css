@@ -1754,3 +1754,12 @@ body .mega-menu[open] .mega-menu__content {
     text-align: right;
   }
 }
+
+/* cart__drawer--announcement-bar */
+.cart__drawer--announcement-bar {
+  text-align: center;
+  padding: 0.5em;
+}
+.cart__drawer--announcement-bar p {
+  margin: 0;
+}

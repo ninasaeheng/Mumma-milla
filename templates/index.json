@@ -7,57 +7,17 @@
           "type": "slide",
           "settings": {
             "banner_video_url": "",
-            "show_video": true,
-            "image": "shopify:\/\/shop_images\/WEBSITE_BANNER_16dbe154-23b7-4404-92d1-90d4cb4b83a2_1.jpg",
+            "show_video": false,
+            "image": "shopify:\/\/shop_images\/WHITE_XMAS_ad5bf9f7-f532-4bbb-84dd-1c02a5a71994.jpg",
             "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "SHOP COLLECTION NOW",
-            "link": "shopify:\/\/collections\/leakproof-bra-collection",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "inverse",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_qP39V3": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/63d13ee2bb8f45b9a230aa2ccb2bd7e9.mp4",
-            "show_video": true,
-            "heading": "A Modern Approach to Maternity.",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "Shop the collection",
-            "link": "shopify:\/\/collections\/all",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "inverse",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_ThEXka": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c9d97a8e63214d349c3e81ea360a31e9.mp4",
-            "show_video": true,
-            "heading": "NEW IN | THE LEAKPROOF MATERNITY SPORTS BRA",
             "heading_size": "h2",
-            "subheading": "<a href=\"\/products\/leakproof-maternity-sports-bra\" target=\"_blank\" title=\"NEW IN : Leakproof Maternity Sports Bra\">SHOP NOW<\/a>",
+            "subheading": "",
             "button_label": "",
-            "link": "",
+            "link": "shopify:\/\/products\/leakproof-triangle-bralette",
             "button_style_secondary": false,
-            "box_align": "middle-center",
+            "box_align": "bottom-left",
             "show_text_box": true,
-            "text_alignment": "center",
+            "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "inverse",
             "text_alignment_mobile": "center"
@@ -65,42 +25,40 @@
         }
       },
       "block_order": [
-        "slide_mQ6wVp",
-        "slide_qP39V3",
-        "slide_ThEXka"
+        "slide_mQ6wVp"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "large",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
         "image_behavior": "none",
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "rich_text_dJi9cb": {
+    "rich_text_NUMiQD": {
       "type": "rich-text",
       "blocks": {
-        "heading_jQHghC": {
+        "heading_iQpDf8": {
           "type": "heading",
           "settings": {
-            "heading": "LEAKPROOF NURSING BRAS TO MAKE MUM-LIFE LIFE EASIER",
-            "heading_size": "h2"
+            "heading": "ENJOY A $20 MUMMA MILLA GIFT CARD WITH ALL WHITE TRIANGLE BRALETTE PURCHASES*",
+            "heading_size": "h1"
           }
         },
-        "text_VbLiQw": {
+        "text_CqYXfc": {
           "type": "text",
           "settings": {
-            "text": "<h2>Modern Nursing Intimates designed to be worn from pregnancy to postpartum and beyond. With built-in <em>leakproof<\/em> layers to catch your breastfeeding spills, you will feel confident and comfortable <br\/>all day, and night.<\/h2>"
+            "text": "<h5>Our version of a White Christmas with a brand new leakproof style in a triangle silhouette in of our most requested colours. Introducing The Leakproof Triangle Bralette in Ivory White.<\/h5>"
           }
         },
-        "button_dKb3ga": {
+        "button_cjNKCM": {
           "type": "button",
           "settings": {
-            "button_label": "SHOP",
-            "button_link": "shopify:\/\/collections\/leakproof-bra-collection",
+            "button_label": "SHOP NEW TRIANGLE",
+            "button_link": "shopify:\/\/products\/leakproof-triangle-bralette",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -109,17 +67,17 @@
         }
       },
       "block_order": [
-        "heading_jQHghC",
-        "text_VbLiQw",
-        "button_dKb3ga"
+        "heading_iQpDf8",
+        "text_CqYXfc",
+        "button_cjNKCM"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "background-1",
+        "color_scheme": "",
         "full_width": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 12,
+        "padding_bottom": 52
       }
     },
     "rich_text": {
@@ -196,8 +154,261 @@
         "enable_quick_add": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_7crGLB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9Kz9bT": {
+          "type": "heading",
+          "settings": {
+            "heading": "AS SEEN ON",
+            "heading_size": "h1"
+          }
+        },
+        "text_K3aRzE": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>We love seeing mums in MUMMA MILLA. A functional and modern nursing bra that is comfortable, chic and designed to <em>grow<\/em> with you from pregnancy-to- postpartum, and beyond.<\/h5>"
+          }
+        },
+        "button_ddzeiq": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9Kz9bT",
+        "text_K3aRzE",
+        "button_ddzeiq"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "video_cards_slider_TVbLxb": {
+      "type": "video-cards-slider",
+      "blocks": {
+        "video_HRfEjd": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/26f38d86f0954020aa02141eb661d320.mp4"
+          }
+        },
+        "video_kBPUDV": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/253592b9896b46a686581df7bbfbb239.mp4"
+          }
+        },
+        "video_nkNLyk": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/369e5f6f3cc54a7b8138f16a97a07567.mp4"
+          }
+        },
+        "video_hmMQNz": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f4fd7ffb3eb44db9b0d85e7063cbe33a.mp4"
+          }
+        },
+        "video_HhVfTX": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e8fbf27310a9495ca685f2bf903dd23b.mp4"
+          }
+        },
+        "video_xByiH3": {
+          "type": "video",
+          "settings": {
+            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8e90ce9fa9a64086bda82aba199bf891.mov"
+          }
+        }
+      },
+      "block_order": [
+        "video_HRfEjd",
+        "video_kBPUDV",
+        "video_nkNLyk",
+        "video_hmMQNz",
+        "video_HhVfTX",
+        "video_xByiH3"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_dJi9cb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jQHghC": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "LEAKPROOF NURSING BRAS TO MAKE MUM-LIFE LIFE EASIER",
+            "heading_size": "h2"
+          }
+        },
+        "text_VbLiQw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h2>Modern Nursing Intimates designed to be worn from pregnancy to postpartum and beyond. With built-in <em>leakproof<\/em> layers to catch your breastfeeding spills, you will feel confident and comfortable <br\/>all day, and night.<\/h2>"
+          }
+        },
+        "button_dKb3ga": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "SHOP",
+            "button_link": "shopify:\/\/collections\/leakproof-bra-collection",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jQHghC",
+        "text_VbLiQw",
+        "button_dKb3ga"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 76
+      }
+    },
+    "featured_collection_FxCVmW": {
+      "type": "featured-collection",
+      "blocks": {
+        "variant_picker_UqMUXz": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker_UqMUXz"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title": "Shop + Save Christmas Bundles",
+        "heading_size": "h1",
+        "description": "<p>Choose 4 or more for 15% off, plus Free Shipping.<br\/>Use code <em>BUNDLE15<\/em> at checkout.<br\/>Return T&C's apply.<\/p>",
+        "text_alignment": "center",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bundle-save",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_product_MtiFKr": {
+      "type": "featured-product",
+      "blocks": {
+        "title_gWgnkP": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "text_k9dGVC": {
+          "type": "text",
+          "settings": {
+            "text": "A gift with a difference! Spoil a mum or mum-to be with a Mumma Milla Gift Card. She'll be able to choose her style and size of choice and have leakproof bralettes delivered to her doorstep.",
+            "text_style": "body"
+          }
+        },
+        "price_APbC96": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_Fwtm7i": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_KtrPQb": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_aAdYH6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_hiM3Rf": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title_gWgnkP",
+        "text_k9dGVC",
+        "price_APbC96",
+        "variant_picker_Fwtm7i",
+        "quantity_selector_KtrPQb",
+        "buy_buttons_aAdYH6",
+        "share_hiM3Rf"
+      ],
+      "settings": {
+        "product": "mumma-milla-gift-voucher",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 8
+        "padding_bottom": 12
       }
     },
     "rich_text_UPAMUX": {
@@ -266,47 +477,6 @@
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "featured_collection_FxCVmW": {
-      "type": "featured-collection",
-      "blocks": {
-        "variant_picker_UqMUXz": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        }
-      },
-      "block_order": [
-        "variant_picker_UqMUXz"
-      ],
-      "custom_css": [],
-      "settings": {
-        "title": "Bundle + Save.  Select 4 or more of your favourites for 15% off, plus Free Shipping.",
-        "heading_size": "h1",
-        "description": "<p>Use code BUNDLE15 at checkout.<br\/>T+C's apply.<\/p>",
-        "text_alignment": "center",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "bundle-save",
-        "products_to_show": 3,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "rich_text_RFJDDL": {
@@ -509,6 +679,7 @@
       "blocks": {
         "heading_er4CUt": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Postpartum is not about \"bouncing back.\" It's about <em>celebrating<\/em> our new body, new changes, new challenges, new life.",
             "heading_size": "h2"
@@ -516,6 +687,7 @@
         },
         "text_qrDBQm": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>We want mums to celebrate their bodies through a time of change and growth. There is no better way to do this than embodying your own style and wearing clothes that make ‘you’ <em>feel<\/em> good, embracing the change and experiencing maximum comfort and confidence all day, and night.<\/p>",
             "text_style": "body"
@@ -523,6 +695,7 @@
         },
         "button_xV8VB9": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "SHOP THE COLLECTION",
             "button_link": "shopify:\/\/collections\/the-leakproof-cami",
@@ -535,6 +708,7 @@
         "text_qrDBQm",
         "button_xV8VB9"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/darcy_a3249538-e201-49ba-86d5-240d45f6e012.jpg",
         "height": "adapt",
@@ -548,102 +722,6 @@
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_7crGLB": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_9Kz9bT": {
-          "type": "heading",
-          "settings": {
-            "heading": "TRENDING ON SOCIALS",
-            "heading_size": "h1"
-          }
-        },
-        "text_K3aRzE": {
-          "type": "text",
-          "settings": {
-            "text": "<h2>We love seeing mums in MUMMA MILLA. A functional and modern nursing bra that is comfortable, chic and designed to <em>grow<\/em> with you from pregnancy-to- postpartum, and beyond.<\/h2>"
-          }
-        },
-        "button_ddzeiq": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_9Kz9bT",
-        "text_K3aRzE",
-        "button_ddzeiq"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "video_cards_slider_TVbLxb": {
-      "type": "video-cards-slider",
-      "blocks": {
-        "video_HRfEjd": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/26f38d86f0954020aa02141eb661d320.mp4"
-          }
-        },
-        "video_hmMQNz": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f4fd7ffb3eb44db9b0d85e7063cbe33a.mp4"
-          }
-        },
-        "video_nkNLyk": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/369e5f6f3cc54a7b8138f16a97a07567.mp4"
-          }
-        },
-        "video_HhVfTX": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e8fbf27310a9495ca685f2bf903dd23b.mp4"
-          }
-        },
-        "video_kBPUDV": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/253592b9896b46a686581df7bbfbb239.mp4"
-          }
-        },
-        "video_xByiH3": {
-          "type": "video",
-          "settings": {
-            "sec_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8e90ce9fa9a64086bda82aba199bf891.mov"
-          }
-        }
-      },
-      "block_order": [
-        "video_HRfEjd",
-        "video_hmMQNz",
-        "video_nkNLyk",
-        "video_HhVfTX",
-        "video_kBPUDV",
-        "video_xByiH3"
-      ],
-      "settings": {
-        "padding_top": 32,
         "padding_bottom": 36
       }
     },
@@ -819,18 +897,20 @@
   },
   "order": [
     "slideshow_LzfDik",
-    "rich_text_dJi9cb",
+    "rich_text_NUMiQD",
     "rich_text",
     "featured_collection",
+    "rich_text_7crGLB",
+    "video_cards_slider_TVbLxb",
+    "rich_text_dJi9cb",
+    "featured_collection_FxCVmW",
+    "featured_product_MtiFKr",
     "rich_text_UPAMUX",
     "video_fBMXXt",
-    "featured_collection_FxCVmW",
     "rich_text_RFJDDL",
     "image_tooltip_sec_y3pBCY",
     "slideshow_MUnNJD",
     "image_with_text_dt6gHx",
-    "rich_text_7crGLB",
-    "video_cards_slider_TVbLxb",
     "rich_text_xy7wNL",
     "image_with_text_fknwUx",
     "customer_review_xULKBK",

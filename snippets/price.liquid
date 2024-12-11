@@ -116,7 +116,8 @@
       </span>
     </small>
   </div>
-     {% assign custom_tag = product.tags | where: 'tag__' %}
+  {% comment %}
+    {% assign custom_tag = product.tags | where: 'tag__' %}
     {% if custom_tag.size > 0 %}
       {%- for tag in product.tags -%}
         {%- if tag contains 'tag__' -%}
@@ -129,6 +130,7 @@
         {%- endif -%}
       {%- endfor -%}
     {% endif %}
+  {% endcomment %}
   {%- if show_badges -%}
     <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
       {{ 'products.product.on_sale' | t }}

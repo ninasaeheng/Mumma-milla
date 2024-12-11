@@ -8,8 +8,15 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Choose 4 + Save 15% off, Plus Free Shipping* - USE CODE BUNDLE15",
-            "link": "https:\/\/mumma-milla.com\/collections\/bundle-save"
+            "text": "Enjoy a $20 GIFT CARD with all White Triangle Bra Purchases",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "announcement_bbTnVw": {
+          "type": "announcement",
+          "settings": {
+            "text": "Christmas Bundles - Save 15% Plus Free Shipping",
+            "link": ""
           }
         },
         "announcement_c9YE8w": {
@@ -22,6 +29,7 @@
         },
         "announcement_UipXCR": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Say goodbye to breastfeeding leaks and nursing pads. Shop Leakproof Collection",
             "link": "shopify:\/\/collections\/leakproof-bra-collection"
@@ -46,6 +54,7 @@
       },
       "block_order": [
         "announcement-bar-0",
+        "announcement_bbTnVw",
         "announcement_c9YE8w",
         "announcement_UipXCR",
         "announcement_URUGim",
@@ -170,6 +179,15 @@
             "link": "shopify:\/\/collections\/bundle-save",
             "description": "15% off + Free Shipping",
             "image": "shopify:\/\/shop_images\/bundle_pics_169617cb-6fa0-48a7-981d-ba20276b6105.jpg"
+          }
+        },
+        "menu_item_6PGXY3": {
+          "type": "menu_item",
+          "settings": {
+            "title": "NEW TRIANGLE BRA",
+            "link": "shopify:\/\/products\/leakproof-triangle-bralette",
+            "description": "Our brand new style in ivory white",
+            "image": "shopify:\/\/shop_images\/WEBSITEBRAIMAGESWHITE2.jpg"
           }
         },
         "menu_item_AU8QzX": {
@@ -373,20 +391,12 @@
             "description": "We'd love to hear from you!",
             "image": "shopify:\/\/shop_images\/77733_0513.jpg"
           }
-        },
-        "menu_item_PCXL7k": {
-          "type": "menu_item",
-          "settings": {
-            "title": "BLACK FRIDAY SALE",
-            "link": "shopify:\/\/pages\/black-friday-sale",
-            "description": "Sign up for VIP access",
-            "image": "shopify:\/\/shop_images\/BLACK_FRIDAY_CREATIVE13.jpg"
-          }
         }
       },
       "block_order": [
         "tab_f6zzEF",
         "menu_item_Ci33tR",
+        "menu_item_6PGXY3",
         "menu_item_AU8QzX",
         "menu_item_9xt4ab",
         "menu_item_BxrTLm",
@@ -410,8 +420,7 @@
         "menu_item_cArqEe",
         "menu_item_w74Tmz",
         "menu_item_crCbjJ",
-        "menu_item_D7yDnL",
-        "menu_item_PCXL7k"
+        "menu_item_D7yDnL"
       ],
       "settings": {
         "background_color": "#ffffff",

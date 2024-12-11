@@ -362,6 +362,23 @@
       },
       {
         "type": "color",
+        "id": "cart_announcement_bg_color",
+        "label": "Cart Announcement Background Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "cart_announcement_text_color",
+        "label": "Cart Announcement Text Color",
+        "default": "#121212"
+      },
+      {
+        "type": "richtext",
+        "id": "cart_announcement_text",
+        "label": "Cart Announcement Text"
+      },
+      {
+        "type": "color",
         "id": "cart_contents_bg_color",
         "label": "Cart Contents Background Color",
         "default": "#FFF"
